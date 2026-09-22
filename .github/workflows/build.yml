@@ -1,0 +1,42 @@
+name: Build Fyucha Player Database
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 3 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Download repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build player database
+        run: python build_master_database.py
+
+      - name: Save generated database
+        run: |
+
+          git config user.name "Fyucha Database Bot"
+
+          git config user.email "actions@users.noreply.github.com"
+
+          git add output/
+
+          git diff --cached --quiet || git commit -m "Update Fyucha player database"
+
+          git push

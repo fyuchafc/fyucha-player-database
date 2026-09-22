@@ -1,0 +1,21 @@
+{
+  "database": "Fyucha Football Player Master Database",
+  "version": "1.0.0",
+  "generatedAt": "2026-09-22T12:15:36.048764+00:00",
+  "source": {
+    "name": "OpenFootball Players",
+    "repository": "https://github.com/openfootball/players",
+    "license": "CC0-1.0"
+  },
+  "statistics": {
+    "playerRecords": 31333,
+    "sourceFiles": 184,
+    "parsedPlayerLines": 31689,
+    "scannedLines": 36406
+  },
+  "statusPolicy": {
+    "active": "Will be populated during enrichment",
+    "retired": "Will be populated during enrichment",
+    "unknown": "Used when retirement status has not been verified"
+  }
+}

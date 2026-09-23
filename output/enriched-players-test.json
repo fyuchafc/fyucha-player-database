@@ -32,14 +32,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:18.655774+00:00",
     "wikidataId": "Q125257682",
-    "wikidataMatchedName": "Abdi Sharif",
+    "matchedName": "Abdi Sharif",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Abdi Sharif"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-fc71fc478c331584",
@@ -74,14 +72,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:00.126886+00:00",
     "wikidataId": "Q2528624",
-    "wikidataMatchedName": "Abdoulaye Ba",
+    "matchedName": "Abdoulaye Ba",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1991-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Abdoulaye Ba"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ca00d30496136027",
@@ -117,14 +113,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:57.700032+00:00",
     "wikidataId": "Q13427925",
-    "wikidataMatchedName": "Abdoulaye Doucouré",
+    "matchedName": "Abdoulaye Doucouré",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1993-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Abdoulaye Doucouré"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-357fda8515c1aa72",
@@ -159,14 +153,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:19.297579+00:00",
     "wikidataId": "Q29350735",
-    "wikidataMatchedName": "Abukar Mohamed",
+    "matchedName": "Abukar Mohamed",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Abukar Mohamed"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-acaaf526a76571bd",
@@ -201,14 +193,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:18.674987+00:00",
     "wikidataId": "Q4202937",
-    "wikidataMatchedName": "Adam Campbell",
+    "matchedName": "Adam Campbell",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Adam Campbell"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-6dfd7d0edede4a8f",
@@ -243,14 +233,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:25.071084+00:00",
     "wikidataId": "Q121549185",
-    "wikidataMatchedName": "Adrian Przyborek",
+    "matchedName": "Adrian Przyborek",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2007-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Adrian Przyborek"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b255ba764b823178",
@@ -285,14 +273,15 @@
     },
     "lastUpdated": "2026-09-22T12:15:27.263167+00:00",
     "wikidataId": "Q130053390",
-    "wikidataMatchedName": "Adrián Pica",
+    "matchedName": "Adrián Pica",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2002-04-25",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Adrián Pica"
+    "sourceDateOfBirth": "2002-01-01",
+    "sourceDatePrecision": "year",
+    "dateOfBirthPrecision": "day"
   },
   {
     "id": "fy-f6f5f543f4ccfa11",
@@ -327,14 +316,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:30.851494+00:00",
     "wikidataId": "Q14566703",
-    "wikidataMatchedName": "Aias Aosman",
+    "matchedName": "Aias Aosman",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-10-21",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 110,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Aias Aosman"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ca8c8676b1f10c7d",
@@ -369,14 +356,13 @@
     },
     "lastUpdated": "2026-09-22T12:15:25.945146+00:00",
     "wikidataId": "Q4296037",
-    "wikidataMatchedName": "Aleksey Mironov",
+    "matchedName": "Aleksey Mironov",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 95,
+    "footballRelated": false,
     "wikidataDateOfBirth": "1924-01-03",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 95,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Aleksey Mironov"
+    "wikidataDateOfDeath": "1999-11-16T00:00:00Z"
   },
   {
     "id": "fy-6b796aeb7690d37b",
@@ -409,7 +395,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.942649+00:00"
+    "lastUpdated": "2026-09-22T12:15:21.942649+00:00",
+    "wikidataId": "Q111740073",
+    "matchedName": "Alessio Maestrelli",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2003",
+    "wikidataDatePrecision": "year"
   },
   {
     "id": "fy-6d20108b6f07c3a1",
@@ -477,14 +470,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:21.957184+00:00",
     "wikidataId": "Q1875903",
-    "wikidataMatchedName": "Alex Cordaz",
+    "matchedName": "Alex Cordaz",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1983-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Alex Cordaz"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e48a21f0656c60eb",
@@ -519,14 +510,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.133392+00:00",
     "wikidataId": "Q66817637",
-    "wikidataMatchedName": "Ali Karakaya",
+    "matchedName": "Ali Karakaya",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Ali Karakaya"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4dcb788bed98bb94",
@@ -561,14 +550,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:01.965856+00:00",
     "wikidataId": "Q2836275",
-    "wikidataMatchedName": "Ali Maâloul",
+    "matchedName": "Ali Maâloul",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Ali Maâloul"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-3142621e8b911abf",
@@ -601,7 +588,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131950+00:00"
+    "lastUpdated": "2026-09-22T12:15:28.131950+00:00",
+    "wikidataId": "Q123182290",
+    "matchedName": "Ali Şahin Yılmaz",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2004-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7d35e927fd26d488",
@@ -636,14 +630,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.137561+00:00",
     "wikidataId": "Q17432101",
-    "wikidataMatchedName": "Alperen Uysal",
+    "matchedName": "Alperen Uysal",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Alperen Uysal"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-eee7817483fea986",
@@ -711,14 +703,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:00.502117+00:00",
     "wikidataId": "Q16153407",
-    "wikidataMatchedName": "Amadou Bakayoko",
+    "matchedName": "Amadou Bakayoko",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Amadou Bakayoko"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-5cf7ba6951cbe006",
@@ -753,14 +743,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:20.659740+00:00",
     "wikidataId": "Q257295",
-    "wikidataMatchedName": "Tasos Avlonitis",
+    "matchedName": "Tasos Avlonitis",
+    "nameMatchMethod": "partial-token-overlap",
+    "matchScore": 95,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 70,
-    "wikidataIdentityScore": 95,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Anastasios Avlonitis"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7834837bb7dfa5e0",
@@ -794,7 +782,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:16.049789+00:00"
+    "lastUpdated": "2026-09-22T12:15:16.049789+00:00",
+    "wikidataId": "Q17619350",
+    "matchedName": "Andreas Pereira",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1996-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7148349fc462d4fe",
@@ -829,14 +824,15 @@
     },
     "lastUpdated": "2026-09-22T12:14:55.241012+00:00",
     "wikidataId": "Q31951",
-    "wikidataMatchedName": "André Biyogo Poko",
+    "matchedName": "André Biyogo Poko",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1993-03-07",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "André Biyogo Poko"
+    "sourceDateOfBirth": "1993-01-01",
+    "sourceDatePrecision": "year",
+    "dateOfBirthPrecision": "day"
   },
   {
     "id": "fy-df15fa3c84a4fe30",
@@ -871,14 +867,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.133988+00:00",
     "wikidataId": "Q61671698",
-    "wikidataMatchedName": "Arda Akbulut",
+    "matchedName": "Arda Akbulut",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Arda Akbulut"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b4364966dafe5ffd",
@@ -913,14 +907,13 @@
     },
     "lastUpdated": "2026-09-22T12:15:00.124567+00:00",
     "wikidataId": "Q2866947",
-    "wikidataMatchedName": "Assane Seck",
+    "matchedName": "Assane Seck",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 95,
+    "footballRelated": false,
     "wikidataDateOfBirth": "1919-02-01",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 95,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Assane Seck"
+    "wikidataDateOfDeath": "2012-11-27T00:00:00Z"
   },
   {
     "id": "fy-64787a97889b3199",
@@ -955,14 +948,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.134003+00:00",
     "wikidataId": "Q84239790",
-    "wikidataMatchedName": "Atakan Gündüz",
+    "matchedName": "Atakan Gündüz",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Atakan Gündüz"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-dea43985593c1ab6",
@@ -997,14 +988,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.137738+00:00",
     "wikidataId": "Q4501316",
-    "wikidataMatchedName": "Aykut Özer",
+    "matchedName": "Aykut Özer",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1993-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Aykut Özer"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-93af7685f9cdcdc3",
@@ -1039,14 +1028,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:16.937219+00:00",
     "wikidataId": "Q97817607",
-    "wikidataMatchedName": "Bartol Barišić",
+    "matchedName": "Bartol Barišić",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Bartol Barišić"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e7d6c7097e4571f9",
@@ -1079,7 +1066,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:33.239769+00:00"
+    "lastUpdated": "2026-09-22T12:15:33.239769+00:00",
+    "wikidataId": "Q204825",
+    "matchedName": "Bebeto",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1964-02-16",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-fefb6aee0cea8694",
@@ -1147,14 +1141,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:20.180234+00:00",
     "wikidataId": "Q59639978",
-    "wikidataMatchedName": "Benjamin Goller",
+    "matchedName": "Benjamin Goller",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Benjamin Goller"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-502d7ec24c5578b1",
@@ -1189,14 +1181,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.134739+00:00",
     "wikidataId": "Q97351397",
-    "wikidataMatchedName": "Berk Balaban",
+    "matchedName": "Berk Balaban",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Berk Balaban"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-5cdcaede0640b35d",
@@ -1231,14 +1221,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.137058+00:00",
     "wikidataId": "Q4999443",
-    "wikidataMatchedName": "Beykan Şimşek",
+    "matchedName": "Beykan Şimşek",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Beykan Şimşek"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4c02f2420187f814",
@@ -1273,14 +1261,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:27.275565+00:00",
     "wikidataId": "Q23907436",
-    "wikidataMatchedName": "Borja Lasso",
+    "matchedName": "Borja Lasso",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Borja Lasso"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ae3f2259f55c3430",
@@ -1315,14 +1301,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:16.938408+00:00",
     "wikidataId": "Q61910598",
-    "wikidataMatchedName": "Boško Šutalo",
+    "matchedName": "Boško Šutalo",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Boško Šutalo"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-268ab82e65a28db0",
@@ -1357,14 +1341,10 @@
     },
     "lastUpdated": "2026-09-22T12:15:25.267823+00:00",
     "wikidataId": "Q21285798",
-    "wikidataMatchedName": "Breno",
-    "wikidataDateOfBirth": null,
-    "wikidataDatePrecision": null,
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 100,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Breno"
+    "matchedName": "Breno",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 100,
+    "footballRelated": false
   },
   {
     "id": "fy-d89ef4c294618b16",
@@ -1397,7 +1377,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:19.790442+00:00"
+    "lastUpdated": "2026-09-22T12:15:19.790442+00:00",
+    "wikidataId": "Q36694978",
+    "matchedName": "Brighton Labeau",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1996-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4c936e27830f7173",
@@ -1432,14 +1419,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:14.008177+00:00",
     "wikidataId": "Q16300353",
-    "wikidataMatchedName": "Bryan Róchez",
+    "matchedName": "Bryan Róchez",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Bryan Róchez"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ba6b09a6a2d28a1d",
@@ -1507,14 +1492,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:57.700112+00:00",
     "wikidataId": "Q23761952",
-    "wikidataMatchedName": "Charles Traoré",
+    "matchedName": "Charles Traoré",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Charles Traoré"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4a08cdeea53fc0cf",
@@ -1549,14 +1532,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:53.912782+00:00",
     "wikidataId": "Q124733317",
-    "wikidataMatchedName": "Cheick Mamadou Diabaté",
+    "matchedName": "Cheick Mamadou Diabaté",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Cheick Mamadou Diabaté"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c3b59c78d5842d2b",
@@ -1589,7 +1570,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:59.461639+00:00"
+    "lastUpdated": "2026-09-22T12:14:59.461639+00:00",
+    "wikidataId": "Q22958457",
+    "matchedName": "Chidozie Awaziem",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1997-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ccd69148b33b91d0",
@@ -1622,7 +1610,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.448530+00:00"
+    "lastUpdated": "2026-09-22T12:15:21.448530+00:00",
+    "wikidataId": "Q65930912",
+    "matchedName": "Cian Coleman",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1997",
+    "wikidataDatePrecision": "year"
   },
   {
     "id": "fy-9310880136a5c69e",
@@ -1658,14 +1653,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:20.177604+00:00",
     "wikidataId": "Q96678310",
-    "wikidataMatchedName": "Conor Noß",
+    "matchedName": "Conor Noß",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Conor Noß"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-dd53f38af5fb77c5",
@@ -1733,14 +1726,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.131270+00:00",
     "wikidataId": "Q123182238",
-    "wikidataMatchedName": "Demir Sarıcalı",
+    "matchedName": "Demir Sarıcalı",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Demir Sarıcalı"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-9bd521ab9b2adc3f",
@@ -1775,14 +1766,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.415647+00:00",
     "wikidataId": "Q60677532",
-    "wikidataMatchedName": "Denys Yanakov",
+    "matchedName": "Denys Yanakov",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Denys Yanakov"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c545e295210b9927",
@@ -1815,7 +1804,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.945158+00:00"
+    "lastUpdated": "2026-09-22T12:15:25.945158+00:00",
+    "wikidataId": "Q111103267",
+    "matchedName": "Dzambolat Tsallagov",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-2d3364e37adc58c2",
@@ -1848,7 +1844,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131280+00:00"
+    "lastUpdated": "2026-09-22T12:15:28.131280+00:00",
+    "wikidataId": "Q134302454",
+    "matchedName": "Efe Sayhan",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2005-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ed557075dbd4b28b",
@@ -1883,14 +1886,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:35.135816+00:00",
     "wikidataId": "Q315674",
-    "wikidataMatchedName": "Egidio Arévalo Rios",
+    "matchedName": "Egidio Arévalo Rios",
+    "nameMatchMethod": "alias-exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1982-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 80,
-    "wikidataIdentityScore": 105,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Egidio Arévalo"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-80ec641b3e212dfc",
@@ -1925,14 +1926,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:18.655786+00:00",
     "wikidataId": "Q78828832",
-    "wikidataMatchedName": "Elijah Dixon-Bonner",
+    "matchedName": "Elijah Dixon-Bonner",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Elijah Dixon-Bonner"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b4578a4cc60d5a5e",
@@ -1967,14 +1966,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.133405+00:00",
     "wikidataId": "Q123182302",
-    "wikidataMatchedName": "Emir Şenocak",
+    "matchedName": "Emir Şenocak",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Emir Şenocak"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-6547c26f81d4b5b4",
@@ -2009,14 +2006,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:53.913704+00:00",
     "wikidataId": "Q27062813",
-    "wikidataMatchedName": "Emmanuel Latte Lath",
+    "matchedName": "Emmanuel Latte Lath",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Emmanuel Latte Lath"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4f7c76e123741e55",
@@ -2051,14 +2046,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:23.938409+00:00",
     "wikidataId": "Q114000545",
-    "wikidataMatchedName": "Ennio van der Gouw",
+    "matchedName": "Ennio van der Gouw",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Ennio van der Gouw"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-2de18db1ffd47671",
@@ -2093,14 +2086,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:02.415058+00:00",
     "wikidataId": "Q29588856",
-    "wikidataMatchedName": "Enock Mwepu",
+    "matchedName": "Enock Mwepu",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Enock Mwepu"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-0efce344b6b55d02",
@@ -2135,14 +2126,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.131294+00:00",
     "wikidataId": "Q123182221",
-    "wikidataMatchedName": "Eren Durmuş",
+    "matchedName": "Eren Durmuş",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Eren Durmuş"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a396df4b61bc1946",
@@ -2175,7 +2164,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134752+00:00"
+    "lastUpdated": "2026-09-22T12:15:28.134752+00:00",
+    "wikidataId": "Q60050428",
+    "matchedName": "Eren Karadağ",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-62c6c8612da961a8",
@@ -2210,14 +2206,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.134014+00:00",
     "wikidataId": "Q60050402",
-    "wikidataMatchedName": "Ersin Destanoğlu",
+    "matchedName": "Ersin Destanoğlu",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Ersin Destanoğlu"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-1b0e75d80003a83f",
@@ -2252,14 +2246,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:51.357108+00:00",
     "wikidataId": "Q2113669",
-    "wikidataMatchedName": "Essaïd Belkalem",
+    "matchedName": "Essaïd Belkalem",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1989-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Essaïd Belkalem"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-8d7da6fab2a5add4",
@@ -2294,14 +2286,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.132833+00:00",
     "wikidataId": "Q104777286",
-    "wikidataMatchedName": "Fatih Yiğit Şanlıtürk",
+    "matchedName": "Fatih Yiğit Şanlıtürk",
+    "nameMatchMethod": "strong-token-overlap",
+    "matchScore": 110,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 80,
-    "wikidataIdentityScore": 105,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Fatih Şanlıtürk"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4200b5d41281903a",
@@ -2336,14 +2326,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:17.637089+00:00",
     "wikidataId": "Q12008635",
-    "wikidataMatchedName": "Filip Kaša",
+    "matchedName": "Filip Kaša",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Filip Kaša"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4071a57cb86b03fc",
@@ -2411,14 +2399,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:15.392922+00:00",
     "wikidataId": "Q25938107",
-    "wikidataMatchedName": "Florian Fischerauer",
+    "matchedName": "Florian Fischerauer",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Florian Fischerauer"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-f848ea3f6cfe9a97",
@@ -2453,14 +2439,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:59.461465+00:00",
     "wikidataId": "Q56292818",
-    "wikidataMatchedName": "Frank Onyeka",
+    "matchedName": "Frank Onyeka",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Frank Onyeka"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-44ee5ed2cf18ed56",
@@ -2493,7 +2477,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:33.235864+00:00"
+    "lastUpdated": "2026-09-22T12:15:33.235864+00:00",
+    "wikidataId": "Q19708664",
+    "matchedName": "Gabriel Souza",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 95,
+    "footballRelated": false,
+    "wikidataDateOfBirth": "1984-01-02",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-aa58a97c56787aa3",
@@ -2561,14 +2552,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:21.948757+00:00",
     "wikidataId": "Q22237703",
-    "wikidataMatchedName": "Gianluca Scamacca",
+    "matchedName": "Gianluca Scamacca",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Gianluca Scamacca"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e6fdcfe42735505d",
@@ -2603,14 +2592,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:21.946341+00:00",
     "wikidataId": "Q102119122",
-    "wikidataMatchedName": "Gianluigi Sueva",
+    "matchedName": "Gianluigi Sueva",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Gianluigi Sueva"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c592acf68bac62e0",
@@ -2645,14 +2632,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:26.146354+00:00",
     "wikidataId": "Q55500500",
-    "wikidataMatchedName": "Glenn Middleton",
+    "matchedName": "Glenn Middleton",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Glenn Middleton"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ef79968e24a644b2",
@@ -2687,14 +2672,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:32.868694+00:00",
     "wikidataId": "Q26255087",
-    "wikidataMatchedName": "Gonzalo Montiel",
+    "matchedName": "Gonzalo Montiel",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Gonzalo Montiel"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ffbe3d735466c9ae",
@@ -2729,14 +2712,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.137083+00:00",
     "wikidataId": "Q1559253",
-    "wikidataMatchedName": "Gökhan Akkan",
+    "matchedName": "Gökhan Akkan",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Gökhan Akkan"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-d690dabb704958e6",
@@ -2771,14 +2752,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:53.914303+00:00",
     "wikidataId": "Q28970899",
-    "wikidataMatchedName": "Habib Maïga",
+    "matchedName": "Habib Maïga",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Habib Maïga"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-85bb55e9cfb0c0c1",
@@ -2813,14 +2792,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.133417+00:00",
     "wikidataId": "Q97351712",
-    "wikidataMatchedName": "Hakan Yeşil",
+    "matchedName": "Hakan Yeşil",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Hakan Yeşil"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b1b797f386d75dd2",
@@ -2853,7 +2830,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134764+00:00"
+    "lastUpdated": "2026-09-22T12:15:28.134764+00:00",
+    "wikidataId": "Q56175090",
+    "matchedName": "Halil Yeral",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-02a2a9597cb58b1a",
@@ -2886,7 +2870,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:18.658675+00:00"
+    "lastUpdated": "2026-09-22T12:15:18.658675+00:00",
+    "wikidataId": "Q84590521",
+    "matchedName": "Henry Wise",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-42934fa989f7eb86",
@@ -2921,14 +2912,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:27.546945+00:00",
     "wikidataId": "Q53846713",
-    "wikidataMatchedName": "Hugo Andersson",
+    "matchedName": "Hugo Andersson",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Hugo Andersson"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-31fde1f3483cd9dc",
@@ -2962,15 +2951,13 @@
       "apiFootball": null
     },
     "lastUpdated": "2026-09-22T12:15:27.274630+00:00",
-    "wikidataId": "Q5906278",
-    "wikidataMatchedName": "Héctor Martínez",
-    "wikidataDateOfBirth": "1973-08-16",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 110,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Héctor Martínez"
+    "wikidataId": "Q60735599",
+    "matchedName": "David Martínez",
+    "nameMatchMethod": "alias-exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1998-01-21",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4009192594dd40d8",
@@ -3005,14 +2992,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.138406+00:00",
     "wikidataId": "Q1652459",
-    "wikidataMatchedName": "Hüsamettin Tut",
+    "matchedName": "Hüsamettin Tut",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1991-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Hüsamettin Tut"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-20f655bfea3eb954",
@@ -3047,14 +3032,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.135807+00:00",
     "wikidataId": "Q53387877",
-    "wikidataMatchedName": "Hüseyin Türkmen",
+    "matchedName": "Hüseyin Türkmen",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Hüseyin Türkmen"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b77dfa067e9bd6c7",
@@ -3089,14 +3072,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:56.273716+00:00",
     "wikidataId": "Q23541212",
-    "wikidataMatchedName": "Ibrahima Sory Sankhon",
+    "matchedName": "Ibrahima Sory Sankhon",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Ibrahima Sory Sankhon"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-1ac917cfedfb6e76",
@@ -3131,14 +3112,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:56.273828+00:00",
     "wikidataId": "Q14166912",
-    "wikidataMatchedName": "Issiaga Sylla",
+    "matchedName": "Issiaga Sylla",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Issiaga Sylla"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-2ebbec544b1945fc",
@@ -3206,14 +3185,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:14.848192+00:00",
     "wikidataId": "Q972933",
-    "wikidataMatchedName": "Iván Balliu",
+    "matchedName": "Iván Balliu",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Iván Balliu"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b4d32e36108497b3",
@@ -3248,14 +3225,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:18.678022+00:00",
     "wikidataId": "Q15199",
-    "wikidataMatchedName": "Jack Wilshere",
+    "matchedName": "Jack Wilshere",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Jack Wilshere"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-1ba7515ebaf43fab",
@@ -3289,15 +3264,13 @@
       "apiFootball": null
     },
     "lastUpdated": "2026-09-22T12:15:27.272448+00:00",
-    "wikidataId": "Q164073",
-    "wikidataMatchedName": "Javi Navarro",
-    "wikidataDateOfBirth": "1974-02-06",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 110,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Javi Navarro"
+    "wikidataId": "Q124094890",
+    "matchedName": "Javi Navarro",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 110,
+    "footballRelated": false,
+    "wikidataDateOfBirth": "1997-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e64a83d972e9ea1b",
@@ -3332,14 +3305,15 @@
     },
     "lastUpdated": "2026-09-22T12:15:27.280185+00:00",
     "wikidataId": "Q2632726",
-    "wikidataMatchedName": "Javier Matilla",
+    "matchedName": "Javier Matilla",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1988-08-16",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Javier Matilla"
+    "sourceDateOfBirth": "1988-01-01",
+    "sourceDatePrecision": "year",
+    "dateOfBirthPrecision": "day"
   },
   {
     "id": "fy-e303393ad0cbb6a6",
@@ -3374,14 +3348,10 @@
     },
     "lastUpdated": "2026-09-22T12:15:27.263178+00:00",
     "wikidataId": "Q43743850",
-    "wikidataMatchedName": "Javier Vicario",
-    "wikidataDateOfBirth": null,
-    "wikidataDatePrecision": null,
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 100,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Javier Vicario"
+    "matchedName": "Javier Vicario",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 100,
+    "footballRelated": false
   },
   {
     "id": "fy-112d7faee0036b5c",
@@ -3416,14 +3386,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:31.427367+00:00",
     "wikidataId": "Q19667463",
-    "wikidataMatchedName": "Jay Chapman",
+    "matchedName": "Jay Chapman",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Jay Chapman"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e27695ab38bffda0",
@@ -3458,14 +3426,15 @@
     },
     "lastUpdated": "2026-09-22T12:15:23.943933+00:00",
     "wikidataId": "Q182189",
-    "wikidataMatchedName": "Jens Toornstra",
+    "matchedName": "Jens Toornstra",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1989-04-04",
     "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Jens Toornstra"
+    "sourceDateOfBirth": "1989-01-01",
+    "sourceDatePrecision": "year",
+    "dateOfBirthPrecision": "day"
   },
   {
     "id": "fy-4b9e9052e75304d4",
@@ -3498,7 +3467,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.543602+00:00"
+    "lastUpdated": "2026-09-22T12:15:27.543602+00:00",
+    "wikidataId": "Q106489320",
+    "matchedName": "Johan Bengtsson",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2004-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4bdbf0d6184cdab4",
@@ -3533,14 +3509,12 @@
     },
     "lastUpdated": "2026-09-22T12:14:55.764569+00:00",
     "wikidataId": "Q124080812",
-    "wikidataMatchedName": "Jonathan Sowah",
+    "matchedName": "Jonathan Sowah",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-09",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 110,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Jonathan Sowah"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-3eb14e4f2246ffec",
@@ -3575,14 +3549,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:32.181839+00:00",
     "wikidataId": "Q22006420",
-    "wikidataMatchedName": "Jordan Lyden",
+    "matchedName": "Jordan Lyden",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-30",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 110,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Jordan Lyden"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-8dd5dcd22b4dddec",
@@ -3617,14 +3589,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:20.182692+00:00",
     "wikidataId": "Q24837881",
-    "wikidataMatchedName": "Joshua Bitter",
+    "matchedName": "Joshua Bitter",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Joshua Bitter"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-fa7e80532c9282cf",
@@ -3692,14 +3662,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:34.748927+00:00",
     "wikidataId": "Q156802",
-    "wikidataMatchedName": "Paolo Guerrero",
+    "matchedName": "Paolo Guerrero",
+    "nameMatchMethod": "partial-token-overlap",
+    "matchScore": 95,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1984-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 80,
-    "wikidataIdentityScore": 105,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "José Paolo Guerrero"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a3afd03bf2441374",
@@ -3732,7 +3700,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:32.870788+00:00"
+    "lastUpdated": "2026-09-22T12:15:32.870788+00:00",
+    "wikidataId": "Q2066619",
+    "matchedName": "Juan Sánchez Miño",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1990-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-9410cdcdf282c600",
@@ -3767,14 +3742,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:25.073013+00:00",
     "wikidataId": "Q125756121",
-    "wikidataMatchedName": "Kacper Duda",
+    "matchedName": "Kacper Duda",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Kacper Duda"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-aacfd2dc95aa16eb",
@@ -3809,14 +3782,10 @@
     },
     "lastUpdated": "2026-09-22T12:15:25.074296+00:00",
     "wikidataId": "Q59661868",
-    "wikidataMatchedName": "Kamil Sobczak",
-    "wikidataDateOfBirth": null,
-    "wikidataDatePrecision": null,
-    "wikidataIdentityClassification": "REVIEW",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 100,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Kamil Sobczak"
+    "matchedName": "Kamil Sobczak",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 100,
+    "footballRelated": false
   },
   {
     "id": "fy-0390e47c48d5de17",
@@ -3851,14 +3820,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:28.136657+00:00",
     "wikidataId": "Q65219444",
-    "wikidataMatchedName": "Yasin Subaşı",
+    "matchedName": "Yasin Subaşı",
+    "nameMatchMethod": "alias-exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "REJECT",
-    "wikidataNameScore": 0,
-    "wikidataIdentityScore": 25,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Karahan Yasir Subaşı"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-555cfe148e5699c1",
@@ -3891,7 +3858,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:13.641069+00:00"
+    "lastUpdated": "2026-09-22T12:15:13.641069+00:00",
+    "wikidataId": "Q5959005",
+    "matchedName": "Kendall Waston",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1988-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a085803999ed8a1f",
@@ -3926,14 +3900,12 @@
     },
     "lastUpdated": "2026-09-22T12:15:00.124577+00:00",
     "wikidataId": "Q116896436",
-    "wikidataMatchedName": "Lamine Camara",
+    "matchedName": "Lamine Camara",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Lamine Camara"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-67455ccfad641c98",
@@ -3968,13 +3940,11 @@
     },
     "lastUpdated": "2026-09-22T12:15:22.251369+00:00",
     "wikidataId": "Q136294516",
-    "wikidataMatchedName": "Lorent Talla",
+    "matchedName": "Lorent Talla",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "wikidataIdentityClassification": "SAFE",
-    "wikidataNameScore": 100,
-    "wikidataIdentityScore": 125,
-    "wikidataSearchPass": "primary",
-    "wikidataSearchQuery": "Lorent Talla"
+    "wikidataDatePrecision": "day"
   }
 ]

@@ -8,20 +8,20 @@ import requests
 
 
 # ============================================================
-# Fyucha Player Database - Wikidata V2.3.0
+# Fyucha Player Database - Wikidata V2.3.1
 #
 # Workflow:
 #
 #     DISCOVER -> SCORE -> CLASSIFY -> DIAGNOSE -> APPLY
 #
-# V2.3.0 PURPOSE:
+# V2.3.1 PURPOSE:
 #
 #   V2.2.9 achieved:
 #       91 matched
 #        9 not matched
 #        8 DOB conflicts
 #
-#   V2.3.0 DOES NOT loosen the SAFE rules.
+#   V2.3.1 DOES NOT loosen the SAFE rules.
 #
 #   Instead, it explains why the remaining cases fail.
 #
@@ -45,7 +45,7 @@ import requests
 # ============================================================
 
 
-VERSION = "2.3.0"
+VERSION = "2.3.1"
 
 
 # ============================================================
@@ -90,7 +90,7 @@ ERRORS_FILE = (
     / "wikidata-errors-test.json"
 )
 
-# NEW V2.3.0 FILES
+# NEW V2.3.1 FILES
 
 UNMATCHED_DIAGNOSTICS_FILE = (
     OUTPUT_DIR
@@ -127,7 +127,7 @@ DIAGNOSTIC_TOP_CANDIDATES = 5
 
 
 USER_AGENT = (
-    "FyuchaPlayerDatabase/2.3.0 "
+    "FyuchaPlayerDatabase/2.3.1 "
     "(football player birthday database)"
 )
 
@@ -290,7 +290,7 @@ def build_search_queries(name):
     # NORMALIZED
     # --------------------------------------------------------
 
-    if normalized != normalize_name(name):
+    if str(name).strip() != normalized:
 
         add_query(
             normalized
@@ -2100,7 +2100,9 @@ def diagnose_unmatched(
     name,
     candidates,
     search_queries,
-    search_errors
+    search_errors,
+    search_stage_details=None,
+    search_stop_reason=None
 ):
 
     ranked = sort_candidates(
@@ -2113,9 +2115,29 @@ def diagnose_unmatched(
 
     if not ranked:
 
-        primary_reason = (
-            "no-wikidata-candidates-found"
-        )
+        if search_errors and not search_queries:
+
+            primary_reason = (
+                "search-stage-error"
+            )
+
+        elif search_errors and len(search_errors) >= len(search_queries):
+
+            primary_reason = (
+                "search-stage-errors"
+            )
+
+        elif search_queries:
+
+            primary_reason = (
+                "no-wikidata-candidates-found"
+            )
+
+        else:
+
+            primary_reason = (
+                "no-search-query-generated"
+            )
 
     else:
 
@@ -2177,6 +2199,10 @@ def diagnose_unmatched(
         ),
 
         "searchErrors": search_errors,
+
+        "searchStages": search_stage_details or [],
+
+        "searchStopReason": search_stop_reason,
 
         "topCandidates": [
             diagnostic_candidate(
@@ -2643,6 +2669,28 @@ def main():
 
     total_search_queries = 0
 
+    primary_queries_attempted = 0
+
+    fallback_queries_attempted = 0
+
+    queries_with_results = 0
+
+    queries_without_results = 0
+
+    query_errors = 0
+
+    search_candidates_discovered = 0
+
+    search_candidates_rejected_duplicate = 0
+
+    search_entities_loaded = 0
+
+    search_entities_missing = 0
+
+    search_candidates_built = 0
+
+    search_early_stops = 0
+
     # --------------------------------------------------------
     # API DIAGNOSTICS
     # --------------------------------------------------------
@@ -3074,6 +3122,10 @@ def main():
 
             search_errors = []
 
+            search_stage_details = []
+
+            search_stop_reason = "all-search-stages-exhausted"
+
             # ------------------------------------------------
             # SEARCH
             # ------------------------------------------------
@@ -3091,7 +3143,35 @@ def main():
 
                     fallback_queries_used += 1
 
+                    fallback_queries_attempted += 1
+
+                else:
+
+                    primary_queries_attempted += 1
+
                 total_search_queries += 1
+
+                stage_detail = {
+                    "queryIndex": query_index,
+                    "query": query,
+                    "searchPass": (
+                        "primary"
+                        if is_primary
+                        else "fallback"
+                    ),
+                    "resultCount": 0,
+                    "uniqueQids": 0,
+                    "entitiesLoaded": 0,
+                    "entitiesMissing": 0,
+                    "candidatesBuilt": 0,
+                    "duplicateQidsSkipped": 0,
+                    "error": None,
+                    "stopReason": None
+                }
+
+                search_stage_details.append(
+                    stage_detail
+                )
 
                 search_results, search_error = (
                     cached_search(
@@ -3102,6 +3182,10 @@ def main():
                 if search_error:
 
                     api_error_count += 1
+
+                    query_errors += 1
+
+                    stage_detail["error"] = search_error
 
                     search_errors.append({
                         "query": query,
@@ -3131,6 +3215,18 @@ def main():
 
                     continue
 
+                stage_detail["resultCount"] = len(
+                    search_results or []
+                )
+
+                if stage_detail["resultCount"]:
+
+                    queries_with_results += 1
+
+                else:
+
+                    queries_without_results += 1
+
                 for search_result in (
                     search_results or []
                 ):
@@ -3151,11 +3247,17 @@ def main():
 
                     if qid in candidate_qids:
 
+                        search_candidates_rejected_duplicate += 1
+
+                        stage_detail["duplicateQidsSkipped"] += 1
+
                         continue
 
                     candidate_qids.add(
                         qid
                     )
+
+                    stage_detail["uniqueQids"] += 1
 
                     entity, entity_error = (
                         cached_entity(
@@ -3188,7 +3290,15 @@ def main():
 
                     if not entity:
 
+                        search_entities_missing += 1
+
+                        stage_detail["entitiesMissing"] += 1
+
                         continue
+
+                    search_entities_loaded += 1
+
+                    stage_detail["entitiesLoaded"] += 1
 
                     candidate, build_error = (
                         build_candidate_from_entity(
@@ -3222,6 +3332,12 @@ def main():
 
                     if candidate:
 
+                        search_candidates_discovered += 1
+
+                        search_candidates_built += 1
+
+                        stage_detail["candidatesBuilt"] += 1
+
                         candidate[
                             "searchQuery"
                         ] = query
@@ -3242,6 +3358,21 @@ def main():
                         REQUEST_DELAY
                     )
 
+                print(
+                    "    SEARCH "
+                    f"{query_index}/{len(search_queries)} "
+                    f"{stage_detail['searchPass']} | "
+                    f"results={stage_detail['resultCount']} | "
+                    f"uniqueQIDs={stage_detail['uniqueQids']} | "
+                    f"entities={stage_detail['entitiesLoaded']} | "
+                    f"candidates={stage_detail['candidatesBuilt']}"
+                    + (
+                        f" | error={stage_detail['error']}"
+                        if stage_detail['error']
+                        else ""
+                    )
+                )
+
                 # ------------------------------------------------
                 # STOP EARLY ONLY WHEN A VALID MATCH EXISTS
                 # ------------------------------------------------
@@ -3254,9 +3385,14 @@ def main():
 
                 if (
                     is_primary
-                    and preliminary
-                    is_primary
+                    and preliminary is not None
                 ):
+
+                    stage_detail["stopReason"] = "valid-match-found-in-primary"
+
+                    search_stop_reason = "valid-match-found-in-primary"
+
+                    search_early_stops += 1
 
                     break
 
@@ -3264,6 +3400,12 @@ def main():
                     not is_primary
                     and preliminary is not None
                 ):
+
+                    stage_detail["stopReason"] = "valid-match-found-in-fallback"
+
+                    search_stop_reason = "valid-match-found-in-fallback"
+
+                    search_early_stops += 1
 
                     break
 
@@ -3327,7 +3469,7 @@ def main():
                     })
 
                 # ------------------------------------------------
-                # V2.3.0 DIAGNOSTIC
+                # V2.3.1 DIAGNOSTIC
                 # ------------------------------------------------
 
                 diagnosis = diagnose_unmatched(
@@ -3335,7 +3477,9 @@ def main():
                     name,
                     candidates,
                     search_queries,
-                    search_errors
+                    search_errors,
+                    search_stage_details,
+                    search_stop_reason
                 )
 
                 unmatched_diagnostics.append(
@@ -3796,7 +3940,7 @@ def main():
                 })
 
                 # ------------------------------------------------
-                # V2.3.0 CONFLICT DIAGNOSTIC
+                # V2.3.1 CONFLICT DIAGNOSTIC
                 # ------------------------------------------------
 
                 conflict_diagnostics.append(
@@ -4140,7 +4284,41 @@ def main():
 
             "totalSearchQueries": (
                 total_search_queries
-            )
+            ),
+
+            "primaryQueriesAttempted": (
+                primary_queries_attempted
+            ),
+
+            "fallbackQueriesAttempted": (
+                fallback_queries_attempted
+            ),
+
+            "queriesWithResults": (
+                queries_with_results
+            ),
+
+            "queriesWithoutResults": (
+                queries_without_results
+            ),
+
+            "queryErrors": query_errors,
+
+            "uniqueCandidatesDiscovered": (
+                search_candidates_discovered
+            ),
+
+            "duplicateQidsSkipped": (
+                search_candidates_rejected_duplicate
+            ),
+
+            "entitiesLoaded": search_entities_loaded,
+
+            "entitiesMissing": search_entities_missing,
+
+            "candidatesBuilt": search_candidates_built,
+
+            "earlyStops": search_early_stops
         },
 
         "apiDiagnostics": {
@@ -4231,7 +4409,7 @@ def main():
     )
 
     print(
-        "V2.3.0 TEST COMPLETE"
+        "V2.3.1 TEST COMPLETE"
     )
 
     print(
@@ -4334,6 +4512,56 @@ def main():
     print(
         f"Total search queries:     "
         f"{total_search_queries}"
+    )
+
+    print()
+
+    print(
+        "SEARCH STAGES:"
+    )
+
+    print(
+        f"Primary queries attempted:  {primary_queries_attempted}"
+    )
+
+    print(
+        f"Fallback queries attempted: {fallback_queries_attempted}"
+    )
+
+    print(
+        f"Queries with results:        {queries_with_results}"
+    )
+
+    print(
+        f"Queries without results:     {queries_without_results}"
+    )
+
+    print(
+        f"Query errors:                {query_errors}"
+    )
+
+    print(
+        f"Unique candidates found:     {search_candidates_discovered}"
+    )
+
+    print(
+        f"Duplicate QIDs skipped:      {search_candidates_rejected_duplicate}"
+    )
+
+    print(
+        f"Entities loaded:              {search_entities_loaded}"
+    )
+
+    print(
+        f"Entities missing:             {search_entities_missing}"
+    )
+
+    print(
+        f"Candidates built:             {search_candidates_built}"
+    )
+
+    print(
+        f"Early search stops:           {search_early_stops}"
     )
 
     print()
@@ -4528,7 +4756,7 @@ def main():
     print()
 
     print(
-        "NEW V2.3.0 DIAGNOSTIC FILES:"
+        "NEW V2.3.1 DIAGNOSTIC FILES:"
     )
 
     print(

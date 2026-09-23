@@ -31,24 +31,11 @@
       "apiFootball": null
     },
     "lastUpdated": "2026-09-22T12:15:18.655774+00:00",
-    "wikidata": {
-      "id": "Q125257682",
-      "label": "Abdi Sharif",
-      "description": "Somali association football player",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "wikidataId": "Q125257682",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataDateOfBirthPrecision": "day",
+    "wikidataMatchScore": 76,
+    "wikidataMatchMethod": "full-date-match"
   },
   {
     "id": "fy-fc71fc478c331584",
@@ -82,26 +69,11 @@
       "apiFootball": null
     },
     "lastUpdated": "2026-09-22T12:15:00.126886+00:00",
-    "wikidata": {
-      "id": "Q2528624",
-      "label": "Abdoulaye Ba",
-      "description": "Senegalese footballer",
-      "dateOfBirth": "1991-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q273779",
-      "citizenship": [
-        "Q1041"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "OM - FC Porto - Valais Cup 2013 - Abdoulaye Ba.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "wikidataId": "Q2528624",
+    "wikidataDateOfBirth": "1991-01-01",
+    "wikidataDateOfBirthPrecision": "day",
+    "wikidataMatchScore": 76,
+    "wikidataMatchMethod": "full-date-match"
   },
   {
     "id": "fy-ca00d30496136027",
@@ -135,27 +107,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:57.700032+00:00",
-    "wikidata": {
-      "id": "Q13427925",
-      "label": "Abdoulaye Doucouré",
-      "description": "French-Malian footballer (born 1993)",
-      "dateOfBirth": "1993-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q275371",
-      "citizenship": [
-        "Q142"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Stade rennais - Le Havre AC 20150708 40.JPG"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:57.700032+00:00"
   },
   {
     "id": "fy-357fda8515c1aa72",
@@ -188,27 +140,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:19.297579+00:00",
-    "wikidata": {
-      "id": "Q29350735",
-      "label": "Abukar Mohamed",
-      "description": "Finnish association football player",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q2449",
-      "citizenship": [
-        "Q33"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:19.297579+00:00"
   },
   {
     "id": "fy-acaaf526a76571bd",
@@ -241,27 +173,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:18.674987+00:00",
-    "wikidata": {
-      "id": "Q4202937",
-      "label": "Adam Campbell",
-      "description": "English footballer (born 1995)",
-      "dateOfBirth": "1995-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q746096",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:18.674987+00:00"
   },
   {
     "id": "fy-6dfd7d0edede4a8f",
@@ -294,32 +206,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.071084+00:00",
-    "wikidata": {
-      "id": "Q121549185",
-      "label": "Adrian Przyborek",
-      "description": "Polish footballer (born 2007)",
-      "dateOfBirth": "2007-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q62868",
-      "citizenship": [],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:25.071084+00:00"
   },
   {
     "id": "fy-b255ba764b823178",
     "name": "Adrián Pica",
     "displayName": "Adrián Pica",
-    "dateOfBirth": "2002-04-25",
-    "birthDay": "04-25",
+    "dateOfBirth": "2002-01-01",
+    "birthDay": "01-01",
     "birthYear": 2002,
     "birthPlace": "Alba de Tormes",
     "nationality": null,
@@ -345,34 +239,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.263167+00:00",
-    "wikidata": {
-      "id": "Q130053390",
-      "label": "Adrián Pica",
-      "description": "Spanish footballer",
-      "dateOfBirth": "2002-04-25",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q946344",
-      "citizenship": [
-        "Q29"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.263167+00:00"
   },
   {
     "id": "fy-f6f5f543f4ccfa11",
     "name": "Aias Aosman",
     "displayName": "Aias Aosman",
-    "dateOfBirth": "1994-10-21",
-    "birthDay": "10-21",
+    "dateOfBirth": "1993-01-01",
+    "birthDay": "01-01",
     "birthYear": 1993,
     "birthPlace": "Al-Qamishli",
     "nationality": null,
@@ -398,35 +272,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:30.851494+00:00",
-    "wikidata": {
-      "id": "Q14566703",
-      "label": "Aias Aosman",
-      "description": "Syrian footballer",
-      "dateOfBirth": "1994-10-21",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q212757",
-      "citizenship": [
-        "Q183",
-        "Q858"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "2017-08-11 TuS Koblenz vs. SG Dynamo Dresden (DFB-Pokal) by Sandro Halank–051.jpg"
-    },
-    "matchScore": 20,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:30.851494+00:00"
   },
   {
     "id": "fy-ca8c8676b1f10c7d",
     "name": "Aleksey Mironov",
     "displayName": "Aleksey Mironov",
-    "dateOfBirth": "1924-01-03",
-    "birthDay": "01-03",
+    "dateOfBirth": "2000-01-01",
+    "birthDay": "01-01",
     "birthYear": 2000,
     "birthPlace": "Moscow",
     "nationality": null,
@@ -439,7 +292,7 @@
     ],
     "height": "1.75 m",
     "gender": null,
-    "careerStatus": "deceased",
+    "careerStatus": "unknown",
     "currentClub": null,
     "formerClubs": [],
     "photo": null,
@@ -452,36 +305,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.945146+00:00",
-    "wikidata": {
-      "id": "Q4296037",
-      "label": "Aleksey Mironov",
-      "description": "Soviet and Russian actor (1924–1999)",
-      "dateOfBirth": "1924-01-03",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": "1999-11-16",
-      "dateOfDeathPrecision": "day",
-      "birthPlace": "Q2218169",
-      "citizenship": [
-        "Q15180",
-        "Q159"
-      ],
-      "occupations": [
-        "Q10800557",
-        "Q33999"
-      ],
-      "image": null
-    },
-    "matchScore": 10,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:25.945146+00:00"
   },
   {
     "id": "fy-6b796aeb7690d37b",
     "name": "Alessio Maestrelli",
     "displayName": "Alessio Maestrelli",
     "dateOfBirth": "2003-01-01",
-    "birthDay": null,
+    "birthDay": "01-01",
     "birthYear": 2003,
     "birthPlace": "Rome",
     "nationality": null,
@@ -507,27 +338,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.942649+00:00",
-    "wikidata": {
-      "id": "Q111740073",
-      "label": "Alessio Maestrelli",
-      "description": "Italian football player",
-      "dateOfBirth": "2003-01-01",
-      "dateOfBirthPrecision": "year",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q38"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
+    "lastUpdated": "2026-09-22T12:15:21.942649+00:00"
+  },
+  {
+    "id": "fy-6d20108b6f07c3a1",
+    "name": "Alessio Santese",
+    "displayName": "Alessio Santese",
+    "dateOfBirth": "2001-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2001,
+    "birthPlace": "Rome",
+    "nationality": null,
+    "representedCountry": "Italy",
+    "representedCountries": [
+      "Italy"
+    ],
+    "position": [
+      "Defender"
+    ],
+    "height": "1.83 m",
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/italy/it.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-only",
-    "dateOfBirthPrecision": "year"
+    "lastUpdated": "2026-09-22T12:15:21.946328+00:00"
   },
   {
     "id": "fy-ed5081aab04fa9c7",
@@ -560,27 +404,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.957184+00:00",
-    "wikidata": {
-      "id": "Q1875903",
-      "label": "Alex Cordaz",
-      "description": "Italian association football player",
-      "dateOfBirth": "1983-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q47578",
-      "citizenship": [
-        "Q38"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "2016-17 Serie A - AC Milan v FC Crotone - Alex Cordaz.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.957184+00:00"
   },
   {
     "id": "fy-e48a21f0656c60eb",
@@ -613,27 +437,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.133392+00:00",
-    "wikidata": {
-      "id": "Q66817637",
-      "label": "Ali Karakaya",
-      "description": "Turkish association football player (born 2002)",
-      "dateOfBirth": "2002-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q171031",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.133392+00:00"
   },
   {
     "id": "fy-4dcb788bed98bb94",
@@ -666,27 +470,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:01.965856+00:00",
-    "wikidata": {
-      "id": "Q2836275",
-      "label": "Ali Maâloul",
-      "description": "Egypt association football player",
-      "dateOfBirth": "1990-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q46325",
-      "citizenship": [
-        "Q948"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Ali Maâloul.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:01.965856+00:00"
   },
   {
     "id": "fy-3142621e8b911abf",
@@ -719,27 +503,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131950+00:00",
-    "wikidata": {
-      "id": "Q123182290",
-      "label": "Ali Şahin Yılmaz",
-      "description": "Turkish association football player (born 2004)",
-      "dateOfBirth": "2004-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q764830",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.131950+00:00"
   },
   {
     "id": "fy-7d35e927fd26d488",
@@ -772,27 +536,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.137561+00:00",
-    "wikidata": {
-      "id": "Q17432101",
-      "label": "Alperen Uysal",
-      "description": "Turkish association football player (born 1994)",
-      "dateOfBirth": "1994-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q47117",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Alperen Uysal.JPG"
+    "lastUpdated": "2026-09-22T12:15:28.137561+00:00"
+  },
+  {
+    "id": "fy-eee7817483fea986",
+    "name": "Altay Özkan",
+    "displayName": "Altay Özkan",
+    "dateOfBirth": "2003-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2003,
+    "birthPlace": "Aydın",
+    "nationality": null,
+    "representedCountry": "Turkey",
+    "representedCountries": [
+      "Turkey"
+    ],
+    "position": [
+      "Forward"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/turkey/tr.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.132807+00:00"
   },
   {
     "id": "fy-35aa794524c3edcd",
@@ -825,27 +602,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:00.502117+00:00",
-    "wikidata": {
-      "id": "Q16153407",
-      "label": "Amadou Bakayoko",
-      "description": "Sierra Leonean footballer",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1044",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Amadou Bakayoko.png"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:00.502117+00:00"
   },
   {
     "id": "fy-5cf7ba6951cbe006",
@@ -878,27 +635,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:20.659740+00:00",
-    "wikidata": {
-      "id": "Q257295",
-      "label": "Tasos Avlonitis",
-      "description": "Greek football player born January 1st, 1990",
-      "dateOfBirth": "1990-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q200133",
-      "citizenship": [
-        "Q41"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Tasos Avlonitis (cropped).jpg"
-    },
-    "matchScore": 25,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:20.659740+00:00"
   },
   {
     "id": "fy-7834837bb7dfa5e0",
@@ -932,35 +669,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:16.049789+00:00",
-    "wikidata": {
-      "id": "Q17619350",
-      "label": "Andreas Pereira",
-      "description": "Brazilian-Belgian association football player",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q615109",
-      "citizenship": [
-        "Q31",
-        "Q155"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Manchester United v Brentford, 28 July 2021 (01).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:16.049789+00:00"
   },
   {
     "id": "fy-7148349fc462d4fe",
     "name": "André Biyogo Poko",
     "displayName": "André Biyogo Poko",
-    "dateOfBirth": "1993-03-07",
-    "birthDay": "03-07",
+    "dateOfBirth": "1993-01-01",
+    "birthDay": "01-01",
     "birthYear": 1993,
     "birthPlace": "Bitam",
     "nationality": null,
@@ -986,27 +702,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:55.241012+00:00",
-    "wikidata": {
-      "id": "Q31951",
-      "label": "André Biyogo Poko",
-      "description": "Gabonese footballer",
-      "dateOfBirth": "1993-03-07",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1023124",
-      "citizenship": [
-        "Q1000"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "André Biyogo Poko, 2015 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:55.241012+00:00"
   },
   {
     "id": "fy-df15fa3c84a4fe30",
@@ -1039,34 +735,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.133988+00:00",
-    "wikidata": {
-      "id": "Q61671698",
-      "label": "Arda Akbulut",
-      "description": "Turkish association football player (born 2001)",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q45301",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.133988+00:00"
   },
   {
     "id": "fy-b4364966dafe5ffd",
     "name": "Assane Seck",
     "displayName": "Assane Seck",
-    "dateOfBirth": "1919-02-01",
-    "birthDay": "02-01",
+    "dateOfBirth": "2004-01-01",
+    "birthDay": "01-01",
     "birthYear": 2004,
     "birthPlace": "Dakar",
     "nationality": null,
@@ -1079,7 +755,7 @@
     ],
     "height": "1.75 m",
     "gender": null,
-    "careerStatus": "deceased",
+    "careerStatus": "unknown",
     "currentClub": null,
     "formerClubs": [],
     "photo": null,
@@ -1092,28 +768,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:00.124567+00:00",
-    "wikidata": {
-      "id": "Q2866947",
-      "label": "Assane Seck",
-      "description": "Senegalese politician",
-      "dateOfBirth": "1919-02-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": "2012-11-27",
-      "dateOfDeathPrecision": "day",
-      "birthPlace": "Q1041",
-      "citizenship": [
-        "Q1041"
-      ],
-      "occupations": [
-        "Q82955",
-        "Q83307"
-      ],
-      "image": "Ford A9637 NLGRF photo contact sheet (1976-05-02)(Gerald Ford Library) (cropped).jpg"
-    },
-    "matchScore": 10,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:00.124567+00:00"
   },
   {
     "id": "fy-64787a97889b3199",
@@ -1146,27 +801,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134003+00:00",
-    "wikidata": {
-      "id": "Q84239790",
-      "label": "Atakan Gündüz",
-      "description": "Turkish association football player (born 2001)",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q214670",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.134003+00:00"
   },
   {
     "id": "fy-dea43985593c1ab6",
@@ -1199,28 +834,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.137738+00:00",
-    "wikidata": {
-      "id": "Q4501316",
-      "label": "Aykut Özer",
-      "description": "Turkish association football player (born 1993)",
-      "dateOfBirth": "1993-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3802",
-      "citizenship": [
-        "Q43",
-        "Q183"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Austria U21 vs. Turkey U21 20131114 (091).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.137738+00:00"
   },
   {
     "id": "fy-93af7685f9cdcdc3",
@@ -1253,34 +867,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:16.937219+00:00",
-    "wikidata": {
-      "id": "Q97817607",
-      "label": "Bartol Barišić",
-      "description": "Croatian footballer",
-      "dateOfBirth": "2003-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1435",
-      "citizenship": [
-        "Q224"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:16.937219+00:00"
   },
   {
     "id": "fy-e7d6c7097e4571f9",
     "name": "Bebeto",
     "displayName": "Bebeto",
-    "dateOfBirth": "1964-02-16",
-    "birthDay": "02-16",
+    "dateOfBirth": "1990-01-01",
+    "birthDay": "01-01",
     "birthYear": 1990,
     "birthPlace": "Lagarto",
     "nationality": null,
@@ -1306,30 +900,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:33.239769+00:00",
-    "wikidata": {
-      "id": "Q204825",
-      "label": "Bebeto",
-      "description": "Brazilian association football player (born 1964)",
-      "dateOfBirth": "1964-02-16",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q36947",
-      "citizenship": [
-        "Q155"
-      ],
-      "occupations": [
-        "Q937857",
-        "Q628099",
-        "Q82955",
-        "Q2066131"
-      ],
-      "image": "Bebeto brazil (cropped).jpg"
+    "lastUpdated": "2026-09-22T12:15:33.239769+00:00"
+  },
+  {
+    "id": "fy-fefb6aee0cea8694",
+    "name": "Bedirhan Kahraman",
+    "displayName": "Bedirhan Kahraman",
+    "dateOfBirth": "2003-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2003,
+    "birthPlace": "Şanlıurfa",
+    "nationality": null,
+    "representedCountry": "Turkey",
+    "representedCountries": [
+      "Turkey"
+    ],
+    "position": [
+      "Midfielder"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/turkey/tr.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 20,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.132818+00:00"
   },
   {
     "id": "fy-c4f3a4b3d6e2a07b",
@@ -1362,27 +966,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:20.180234+00:00",
-    "wikidata": {
-      "id": "Q59639978",
-      "label": "Benjamin Goller",
-      "description": "German football player",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3085",
-      "citizenship": [
-        "Q183"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "BenjaminGoller.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:20.180234+00:00"
   },
   {
     "id": "fy-502d7ec24c5578b1",
@@ -1415,27 +999,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134739+00:00",
-    "wikidata": {
-      "id": "Q97351397",
-      "label": "Berk Balaban",
-      "description": "Turkish association football player (born 2000)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1767191",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.134739+00:00"
   },
   {
     "id": "fy-5cdcaede0640b35d",
@@ -1468,27 +1032,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.137058+00:00",
-    "wikidata": {
-      "id": "Q4999443",
-      "label": "Beykan Şimşek",
-      "description": "Turkish association football player (born 1995)",
-      "dateOfBirth": "1995-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q170457",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Beykan Şimşek 20220826.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.137058+00:00"
   },
   {
     "id": "fy-4c02f2420187f814",
@@ -1521,27 +1065,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.275565+00:00",
-    "wikidata": {
-      "id": "Q23907436",
-      "label": "Borja Lasso",
-      "description": "Spanish association football player",
-      "dateOfBirth": "1994-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q8717",
-      "citizenship": [
-        "Q29"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.275565+00:00"
   },
   {
     "id": "fy-ae3f2259f55c3430",
@@ -1574,27 +1098,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:16.938408+00:00",
-    "wikidata": {
-      "id": "Q61910598",
-      "label": "Boško Šutalo",
-      "description": "Croatian association football player (2000-)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q390588",
-      "citizenship": [
-        "Q224"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:16.938408+00:00"
   },
   {
     "id": "fy-268ab82e65a28db0",
@@ -1627,22 +1131,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.267823+00:00",
-    "wikidata": {
-      "id": "Q21285798",
-      "label": "Breno",
-      "description": "male given name",
-      "dateOfBirth": null,
-      "dateOfBirthPrecision": null,
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [],
-      "image": null
-    },
-    "matchScore": 10,
-    "matchMethod": "name-only"
+    "lastUpdated": "2026-09-22T12:15:25.267823+00:00"
   },
   {
     "id": "fy-d89ef4c294618b16",
@@ -1675,27 +1164,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:19.790442+00:00",
-    "wikidata": {
-      "id": "Q36694978",
-      "label": "Brighton Labeau",
-      "description": "Martiniquais footballer",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q205632",
-      "citizenship": [
-        "Q142"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:19.790442+00:00"
   },
   {
     "id": "fy-4c936e27830f7173",
@@ -1728,28 +1197,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:14.008177+00:00",
-    "wikidata": {
-      "id": "Q16300353",
-      "label": "Bryan Róchez",
-      "description": "Honduran footballer",
-      "dateOfBirth": "1995-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3238",
-      "citizenship": [
-        "Q783"
-      ],
-      "occupations": [
-        "Q937857",
-        "Q628099"
-      ],
-      "image": "BryanRochez2017 (2).jpg"
+    "lastUpdated": "2026-09-22T12:15:14.008177+00:00"
+  },
+  {
+    "id": "fy-ba6b09a6a2d28a1d",
+    "name": "Buğra Çağıran",
+    "displayName": "Buğra Çağıran",
+    "dateOfBirth": "1995-01-01",
+    "birthDay": "01-01",
+    "birthYear": 1995,
+    "birthPlace": "Gümüşhane",
+    "nationality": null,
+    "representedCountry": "Turkey",
+    "representedCountries": [
+      "Turkey"
+    ],
+    "position": [
+      "Midfielder"
+    ],
+    "height": "1.78 m",
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/turkey/tr.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.137070+00:00"
   },
   {
     "id": "fy-d79ab51f9b9b77ff",
@@ -1782,28 +1263,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:57.700112+00:00",
-    "wikidata": {
-      "id": "Q23761952",
-      "label": "Charles Traoré",
-      "description": "Malian and French footballer",
-      "dateOfBirth": "1992-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q192773",
-      "citizenship": [
-        "Q142",
-        "Q912"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Charles Traore 2016.png"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:57.700112+00:00"
   },
   {
     "id": "fy-4a08cdeea53fc0cf",
@@ -1836,27 +1296,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:53.912782+00:00",
-    "wikidata": {
-      "id": "Q124733317",
-      "label": "Cheick Mamadou Diabaté",
-      "description": "Ivorian association football player (2004-)",
-      "dateOfBirth": "2004-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1515",
-      "citizenship": [
-        "Q1008"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:53.912782+00:00"
   },
   {
     "id": "fy-c3b59c78d5842d2b",
@@ -1889,34 +1329,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:59.461639+00:00",
-    "wikidata": {
-      "id": "Q22958457",
-      "label": "Chidozie Awaziem",
-      "description": "Nigerian footballer",
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q465022",
-      "citizenship": [
-        "Q1033"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Houston Dynamo vs Colorado Rapids (Chidozie Awaziem - cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:59.461639+00:00"
   },
   {
     "id": "fy-ccd69148b33b91d0",
     "name": "Cian Coleman",
     "displayName": "Cian Coleman",
     "dateOfBirth": "1997-01-01",
-    "birthDay": null,
+    "birthDay": "01-01",
     "birthYear": 1997,
     "birthPlace": "Cork",
     "nationality": null,
@@ -1942,25 +1362,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.448530+00:00",
-    "wikidata": {
-      "id": "Q65930912",
-      "label": "Cian Coleman",
-      "description": "Irish professional footballer born 1997",
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "year",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q36647",
-      "citizenship": [],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-only",
-    "dateOfBirthPrecision": "year"
+    "lastUpdated": "2026-09-22T12:15:21.448530+00:00"
   },
   {
     "id": "fy-9310880136a5c69e",
@@ -1994,28 +1396,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:20.177604+00:00",
-    "wikidata": {
-      "id": "Q96678310",
-      "label": "Conor Noß",
-      "description": "Irish-German association football player",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1718",
-      "citizenship": [
-        "Q183",
-        "Q27"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "U19 Austria vs. Ireland(19. November 2019 ) 23.jpg"
+    "lastUpdated": "2026-09-22T12:15:20.177604+00:00"
+  },
+  {
+    "id": "fy-dd53f38af5fb77c5",
+    "name": "Dawda Dambelleh",
+    "displayName": "Dawda Dambelleh",
+    "dateOfBirth": "2003-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2003,
+    "birthPlace": "Sabadell",
+    "nationality": null,
+    "representedCountry": "Spain",
+    "representedCountries": [
+      "Spain"
+    ],
+    "position": [
+      "Forward"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/spain/es.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.261385+00:00"
   },
   {
     "id": "fy-17f90e716f30680b",
@@ -2048,27 +1462,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131270+00:00",
-    "wikidata": {
-      "id": "Q123182238",
-      "label": "Demir Sarıcalı",
-      "description": "Turkish association football player (born 2005)",
-      "dateOfBirth": "2005-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q739547",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.131270+00:00"
   },
   {
     "id": "fy-9bd521ab9b2adc3f",
@@ -2101,27 +1495,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.415647+00:00",
-    "wikidata": {
-      "id": "Q60677532",
-      "label": "Denys Yanakov",
-      "description": "association football player (1999-)",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q4441897",
-      "citizenship": [
-        "Q212"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Контрольный матч «Динамо» - «Оболонь-Бровар» 5-0. 17 ноября 2019 года — 1035435.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.415647+00:00"
   },
   {
     "id": "fy-c545e295210b9927",
@@ -2154,27 +1528,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.945158+00:00",
-    "wikidata": {
-      "id": "Q111103267",
-      "label": "Dzambolat Tsallagov",
-      "description": "Russian association football player",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q5239",
-      "citizenship": [
-        "Q159"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Dzambolat Tsallagov 2022.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:25.945158+00:00"
   },
   {
     "id": "fy-2d3364e37adc58c2",
@@ -2207,27 +1561,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131280+00:00",
-    "wikidata": {
-      "id": "Q134302454",
-      "label": "Efe Sayhan",
-      "description": "Turkish association football player (born 2005)",
-      "dateOfBirth": "2005-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q932886",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.131280+00:00"
   },
   {
     "id": "fy-ed557075dbd4b28b",
@@ -2260,28 +1594,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:35.135816+00:00",
-    "wikidata": {
-      "id": "Q315674",
-      "label": "Egidio Arévalo Rios",
-      "description": "Uruguayan footballer",
-      "dateOfBirth": "1982-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q309442",
-      "citizenship": [
-        "Q77",
-        "Q96"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Egidio Arevalo Rios URU2011-11.jpg"
-    },
-    "matchScore": 28,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:35.135816+00:00"
   },
   {
     "id": "fy-80ec641b3e212dfc",
@@ -2314,27 +1627,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:18.655786+00:00",
-    "wikidata": {
-      "id": "Q78828832",
-      "label": "Elijah Dixon-Bonner",
-      "description": "English association football player (born 2001)",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q21713095",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Elijah Dixon-Bonner LFC U19 2019.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:18.655786+00:00"
   },
   {
     "id": "fy-b4578a4cc60d5a5e",
@@ -2367,27 +1660,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.133405+00:00",
-    "wikidata": {
-      "id": "Q123182302",
-      "label": "Emir Şenocak",
-      "description": "Turkish association football player (born 2002)",
-      "dateOfBirth": "2002-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.133405+00:00"
   },
   {
     "id": "fy-6547c26f81d4b5b4",
@@ -2420,27 +1693,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:53.913704+00:00",
-    "wikidata": {
-      "id": "Q27062813",
-      "label": "Emmanuel Latte Lath",
-      "description": "Ivorian association football player",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3290197",
-      "citizenship": [
-        "Q1008"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Emmanuel Latte Lath Red Bull Atlanta 5.31.25-068 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:53.913704+00:00"
   },
   {
     "id": "fy-4f7c76e123741e55",
@@ -2473,27 +1726,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:23.938409+00:00",
-    "wikidata": {
-      "id": "Q114000545",
-      "label": "Ennio van der Gouw",
-      "description": "Dutch football player",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q29999"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Ennio van der Gouw (2022).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:23.938409+00:00"
   },
   {
     "id": "fy-2de18db1ffd47671",
@@ -2526,27 +1759,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:02.415058+00:00",
-    "wikidata": {
-      "id": "Q29588856",
-      "label": "Enock Mwepu",
-      "description": "former Zambian association football player",
-      "dateOfBirth": "1998-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3881",
-      "citizenship": [
-        "Q953"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "FC Admira Wacker Mödling vs. FC Red Bull Salzburg 2018-04-15 (077).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:02.415058+00:00"
   },
   {
     "id": "fy-0efce344b6b55d02",
@@ -2579,27 +1792,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.131294+00:00",
-    "wikidata": {
-      "id": "Q123182221",
-      "label": "Eren Durmuş",
-      "description": "Turkish association football player (born 2005)",
-      "dateOfBirth": "2005-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.131294+00:00"
   },
   {
     "id": "fy-a396df4b61bc1946",
@@ -2632,27 +1825,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134752+00:00",
-    "wikidata": {
-      "id": "Q60050428",
-      "label": "Eren Karadağ",
-      "description": "Turkish association football player (born 2000)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q201101",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Eren Karadağ 20220812 2 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.134752+00:00"
   },
   {
     "id": "fy-62c6c8612da961a8",
@@ -2685,27 +1858,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134014+00:00",
-    "wikidata": {
-      "id": "Q60050402",
-      "label": "Ersin Destanoğlu",
-      "description": "Turkish association football player (born 2001)",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q570826",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Ersin Destanoğlu 20231008 1 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.134014+00:00"
   },
   {
     "id": "fy-1b0e75d80003a83f",
@@ -2738,27 +1891,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:51.357108+00:00",
-    "wikidata": {
-      "id": "Q2113669",
-      "label": "Essaïd Belkalem",
-      "description": "Algerian association football player",
-      "dateOfBirth": "1989-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1649145",
-      "citizenship": [
-        "Q262"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Algérie - Arménie - 20140531 - Essaid Belkalem.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:51.357108+00:00"
   },
   {
     "id": "fy-8d7da6fab2a5add4",
@@ -2791,27 +1924,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.132833+00:00",
-    "wikidata": {
-      "id": "Q104777286",
-      "label": "Fatih Yiğit Şanlıtürk",
-      "description": "Turkish association football player (born 2003)",
-      "dateOfBirth": "2003-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q524349",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 28,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.132833+00:00"
   },
   {
     "id": "fy-4200b5d41281903a",
@@ -2844,27 +1957,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:17.637089+00:00",
-    "wikidata": {
-      "id": "Q12008635",
-      "label": "Filip Kaša",
-      "description": "Czech soccer player",
-      "dateOfBirth": "1994-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q8385",
-      "citizenship": [
-        "Q213"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
+    "lastUpdated": "2026-09-22T12:15:17.637089+00:00"
+  },
+  {
+    "id": "fy-4071a57cb86b03fc",
+    "name": "Filippo Cecchini",
+    "displayName": "Filippo Cecchini",
+    "dateOfBirth": "2006-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2006,
+    "birthPlace": "Milan",
+    "nationality": null,
+    "representedCountry": "Italy",
+    "representedCountries": [
+      "Italy"
+    ],
+    "position": [
+      "Goalkeeper"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/italy/it.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.937363+00:00"
   },
   {
     "id": "fy-d9b28537fe0cd7ee",
@@ -2897,27 +2023,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:15.392922+00:00",
-    "wikidata": {
-      "id": "Q25938107",
-      "label": "Florian Fischerauer",
-      "description": "association football player",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q40"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "FC Terek Grozny vs. Admira Wacker Mödling 2016-06-24 (01).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:15.392922+00:00"
   },
   {
     "id": "fy-f848ea3f6cfe9a97",
@@ -2950,27 +2056,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:59.461465+00:00",
-    "wikidata": {
-      "id": "Q56292818",
-      "label": "Frank Onyeka",
-      "description": "Nigerian association football player",
-      "dateOfBirth": "1998-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q221436",
-      "citizenship": [
-        "Q1033"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Frank Onyeka 2025.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:59.461465+00:00"
   },
   {
     "id": "fy-44ee5ed2cf18ed56",
@@ -3003,27 +2089,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:33.235864+00:00",
-    "wikidata": {
-      "id": "Q29043070",
-      "label": "Gabriel Eugénio Souza",
-      "description": "Brazilian association football player",
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q174",
-      "citizenship": [
-        "Q155"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
+    "lastUpdated": "2026-09-22T12:15:33.235864+00:00"
+  },
+  {
+    "id": "fy-aa58a97c56787aa3",
+    "name": "Gabriele Comand",
+    "displayName": "Gabriele Comand",
+    "dateOfBirth": "2004-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2004,
+    "birthPlace": "San Vito al Tagliamento",
+    "nationality": null,
+    "representedCountry": "Italy",
+    "representedCountries": [
+      "Italy"
+    ],
+    "position": [
+      "Defender"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/italy/it.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 28,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.940505+00:00"
   },
   {
     "id": "fy-65bcc29b6b00bc41",
@@ -3056,27 +2155,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.948757+00:00",
-    "wikidata": {
-      "id": "Q22237703",
-      "label": "Gianluca Scamacca",
-      "description": "Italian association football player",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q220",
-      "citizenship": [
-        "Q38"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Scamacca (cropped).jpeg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.948757+00:00"
   },
   {
     "id": "fy-e6fdcfe42735505d",
@@ -3109,27 +2188,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.946341+00:00",
-    "wikidata": {
-      "id": "Q102119122",
-      "label": "Gianluigi Sueva",
-      "description": "Italian footballer",
-      "dateOfBirth": "2001-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q53866",
-      "citizenship": [
-        "Q38"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.946341+00:00"
   },
   {
     "id": "fy-c592acf68bac62e0",
@@ -3162,27 +2221,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:26.146354+00:00",
-    "wikidata": {
-      "id": "Q55500500",
-      "label": "Glenn Middleton",
-      "description": "Scottish footballer (born 2000)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q4093",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "SM-Rangers18 (3).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:26.146354+00:00"
   },
   {
     "id": "fy-ef79968e24a644b2",
@@ -3215,27 +2254,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:32.868694+00:00",
-    "wikidata": {
-      "id": "Q26255087",
-      "label": "Gonzalo Montiel",
-      "description": "Argentinian association football player",
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q6163801",
-      "citizenship": [
-        "Q414"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Gonzalo Montiel Argentina v Spain 19 July 2026-265.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:32.868694+00:00"
   },
   {
     "id": "fy-ffbe3d735466c9ae",
@@ -3268,27 +2287,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.137083+00:00",
-    "wikidata": {
-      "id": "Q1559253",
-      "label": "Gökhan Akkan",
-      "description": "Turkish association football player (born 1995)",
-      "dateOfBirth": "1995-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q210292",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "FC Red Bull Salzburg gegen Çaykur Rizespor (Testspiel) 07.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.137083+00:00"
   },
   {
     "id": "fy-d690dabb704958e6",
@@ -3321,27 +2320,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:53.914303+00:00",
-    "wikidata": {
-      "id": "Q28970899",
-      "label": "Habib Maïga",
-      "description": "Ivorian footballer",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q18592055",
-      "citizenship": [
-        "Q1008"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "RC Lens - FC Metz (14-03-2021) 39 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:53.914303+00:00"
   },
   {
     "id": "fy-85bb55e9cfb0c0c1",
@@ -3374,27 +2353,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.133417+00:00",
-    "wikidata": {
-      "id": "Q97351712",
-      "label": "Hakan Yeşil",
-      "description": "Turkish association football player (born 2002)",
-      "dateOfBirth": "2002-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q945363",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Hakan Yeşil (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.133417+00:00"
   },
   {
     "id": "fy-b1b797f386d75dd2",
@@ -3427,27 +2386,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.134764+00:00",
-    "wikidata": {
-      "id": "Q56175090",
-      "label": "Halil Yeral",
-      "description": "Turkish association football player (born 2000)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q209905",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.134764+00:00"
   },
   {
     "id": "fy-02a2a9597cb58b1a",
@@ -3480,27 +2419,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:18.658675+00:00",
-    "wikidata": {
-      "id": "Q84590521",
-      "label": "Henry Wise",
-      "description": "English footballer (born 2000)",
-      "dateOfBirth": "2000-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q188801",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:18.658675+00:00"
   },
   {
     "id": "fy-42934fa989f7eb86",
@@ -3533,34 +2452,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.546945+00:00",
-    "wikidata": {
-      "id": "Q53846713",
-      "label": "Hugo Andersson",
-      "description": "Swedish association football player (born 1999)",
-      "dateOfBirth": "1999-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q39059",
-      "citizenship": [
-        "Q34"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.546945+00:00"
   },
   {
     "id": "fy-31fde1f3483cd9dc",
     "name": "Héctor Martínez",
     "displayName": "Héctor Martínez",
-    "dateOfBirth": "1967-06-15",
-    "birthDay": "06-15",
+    "dateOfBirth": "1995-01-01",
+    "birthDay": "01-01",
     "birthYear": 1995,
     "birthPlace": "Alcalá de Henares",
     "nationality": null,
@@ -3586,28 +2485,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.274630+00:00",
-    "wikidata": {
-      "id": "Q5964099",
-      "label": "Héctor Martínez Mendieta",
-      "description": "Paraguayan footballer",
-      "dateOfBirth": "1967-06-15",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q733",
-      "citizenship": [
-        "Q733"
-      ],
-      "occupations": [
-        "Q937857",
-        "Q628099"
-      ],
-      "image": null
-    },
-    "matchScore": 16,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.274630+00:00"
   },
   {
     "id": "fy-4009192594dd40d8",
@@ -3640,27 +2518,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.138406+00:00",
-    "wikidata": {
-      "id": "Q1652459",
-      "label": "Hüsamettin Tut",
-      "description": "Turkish association football player (born 1991)",
-      "dateOfBirth": "1991-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q14510650",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.138406+00:00"
   },
   {
     "id": "fy-20f655bfea3eb954",
@@ -3693,27 +2551,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.135807+00:00",
-    "wikidata": {
-      "id": "Q53387877",
-      "label": "Hüseyin Türkmen",
-      "description": "Turkish association football player (born 1998)",
-      "dateOfBirth": "1998-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q424661",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.135807+00:00"
   },
   {
     "id": "fy-b77dfa067e9bd6c7",
@@ -3746,27 +2584,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:56.273716+00:00",
-    "wikidata": {
-      "id": "Q23541212",
-      "label": "Ibrahima Sory Sankhon",
-      "description": "Guinean footballer",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1006",
-      "citizenship": [
-        "Q1006"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:56.273716+00:00"
   },
   {
     "id": "fy-1ac917cfedfb6e76",
@@ -3799,27 +2617,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:56.273828+00:00",
-    "wikidata": {
-      "id": "Q14166912",
-      "label": "Issiaga Sylla",
-      "description": "Guinean footballer",
-      "dateOfBirth": "1994-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3733",
-      "citizenship": [
-        "Q1006"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Issiaga Sylla1.jpg"
+    "lastUpdated": "2026-09-22T12:14:56.273828+00:00"
+  },
+  {
+    "id": "fy-2ebbec544b1945fc",
+    "name": "Ivo Marović",
+    "displayName": "Ivo Marović",
+    "dateOfBirth": "2004-01-01",
+    "birthDay": "01-01",
+    "birthYear": 2004,
+    "birthPlace": "Podgorica",
+    "nationality": null,
+    "representedCountry": "Montenegro",
+    "representedCountries": [
+      "Montenegro"
+    ],
+    "position": [
+      "Goalkeeper"
+    ],
+    "height": "1.93 m",
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/montenegro/me.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:23.733112+00:00"
   },
   {
     "id": "fy-1c9e6f6a1a07abe9",
@@ -3852,28 +2683,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:14.848192+00:00",
-    "wikidata": {
-      "id": "Q972933",
-      "label": "Iván Balliu",
-      "description": "Albanian-Spanish association football player",
-      "dateOfBirth": "1992-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q13064",
-      "citizenship": [
-        "Q29",
-        "Q222"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Ivan Balliu (crop).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:14.848192+00:00"
   },
   {
     "id": "fy-b4d32e36108497b3",
@@ -3906,28 +2716,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:18.678022+00:00",
-    "wikidata": {
-      "id": "Q15199",
-      "label": "Jack Wilshere",
-      "description": "English association football player (born 1992)",
-      "dateOfBirth": "1992-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q19795",
-      "citizenship": [
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857",
-        "Q628099"
-      ],
-      "image": "Jack Wilshere - Hertha BSC vs. West Ham United (20190731).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:18.678022+00:00"
   },
   {
     "id": "fy-1ba7515ebaf43fab",
@@ -3960,32 +2749,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.272448+00:00",
-    "wikidata": {
-      "id": "Q124094890",
-      "label": "Javi Navarro",
-      "description": null,
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 27,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.272448+00:00"
   },
   {
     "id": "fy-e64a83d972e9ea1b",
     "name": "Javier Matilla",
     "displayName": "Javier Matilla",
-    "dateOfBirth": "1988-08-16",
-    "birthDay": "08-16",
+    "dateOfBirth": "1988-01-01",
+    "birthDay": "01-01",
     "birthYear": 1988,
     "birthPlace": "Ciudad Real",
     "nationality": null,
@@ -4011,27 +2782,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.280185+00:00",
-    "wikidata": {
-      "id": "Q2632726",
-      "label": "Javier Matilla",
-      "description": "Spanish footballer",
-      "dateOfBirth": "1988-08-16",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q1769410",
-      "citizenship": [
-        "Q29"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Matilla2013 001.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.280185+00:00"
   },
   {
     "id": "fy-e303393ad0cbb6a6",
@@ -4064,24 +2815,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.263178+00:00",
-    "wikidata": {
-      "id": "Q43743850",
-      "label": "Javier Vicario",
-      "description": "researcher",
-      "dateOfBirth": null,
-      "dateOfBirthPrecision": null,
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [
-        "Q1650915"
-      ],
-      "image": null
-    },
-    "matchScore": 10,
-    "matchMethod": "name-only"
+    "lastUpdated": "2026-09-22T12:15:27.263178+00:00"
   },
   {
     "id": "fy-112d7faee0036b5c",
@@ -4114,35 +2848,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:31.427367+00:00",
-    "wikidata": {
-      "id": "Q19667463",
-      "label": "Jay Chapman",
-      "description": "Canadian soccer player",
-      "dateOfBirth": "1994-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q44198",
-      "citizenship": [
-        "Q16",
-        "Q145"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Jay Chapman 2015.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:31.427367+00:00"
   },
   {
     "id": "fy-e27695ab38bffda0",
     "name": "Jens Toornstra",
     "displayName": "Jens Toornstra",
-    "dateOfBirth": "1989-04-04",
-    "birthDay": "04-04",
+    "dateOfBirth": "1989-01-01",
+    "birthDay": "01-01",
     "birthYear": 1989,
     "birthPlace": "Ter Aar",
     "nationality": null,
@@ -4168,27 +2881,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:23.943933+00:00",
-    "wikidata": {
-      "id": "Q182189",
-      "label": "Jens Toornstra",
-      "description": "Dutch footballer",
-      "dateOfBirth": "1989-04-04",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q213246",
-      "citizenship": [
-        "Q29999"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Jens Toornstra (2012).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:23.943933+00:00"
   },
   {
     "id": "fy-4b9e9052e75304d4",
@@ -4221,34 +2914,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.543602+00:00",
-    "wikidata": {
-      "id": "Q106489320",
-      "label": "Johan Bengtsson",
-      "description": "Swedish association football player",
-      "dateOfBirth": "2004-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q34"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.543602+00:00"
   },
   {
     "id": "fy-4bdbf0d6184cdab4",
     "name": "Jonathan Sowah",
     "displayName": "Jonathan Sowah",
-    "dateOfBirth": "2000-01-09",
-    "birthDay": "01-09",
+    "dateOfBirth": "1999-01-01",
+    "birthDay": "01-01",
     "birthYear": 1999,
     "birthPlace": "Nima",
     "nationality": null,
@@ -4274,32 +2947,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:55.764569+00:00",
-    "wikidata": {
-      "id": "Q124080812",
-      "label": "Jonathan Sowah",
-      "description": "footballer",
-      "dateOfBirth": "2000-01-09",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 20,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:55.764569+00:00"
   },
   {
     "id": "fy-3eb14e4f2246ffec",
     "name": "Jordan Lyden",
     "displayName": "Jordan Lyden",
-    "dateOfBirth": "1996-01-30",
-    "birthDay": "01-30",
+    "dateOfBirth": "1997-01-01",
+    "birthDay": "01-01",
     "birthYear": 1997,
     "birthPlace": "Perth (AUS)",
     "nationality": null,
@@ -4325,27 +2980,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:32.181839+00:00",
-    "wikidata": {
-      "id": "Q22006420",
-      "label": "Jordan Lyden",
-      "description": "Australian association football player",
-      "dateOfBirth": "1996-01-30",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3183",
-      "citizenship": [
-        "Q408"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 20,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:32.181839+00:00"
   },
   {
     "id": "fy-8dd5dcd22b4dddec",
@@ -4378,27 +3013,40 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:20.182692+00:00",
-    "wikidata": {
-      "id": "Q24837881",
-      "label": "Joshua Bitter",
-      "description": "German association football player",
-      "dateOfBirth": "1997-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3886",
-      "citizenship": [
-        "Q183"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Joshua Bitter.jpeg"
+    "lastUpdated": "2026-09-22T12:15:20.182692+00:00"
+  },
+  {
+    "id": "fy-fa7e80532c9282cf",
+    "name": "José Antonio Viguera",
+    "displayName": "José Antonio Viguera",
+    "dateOfBirth": "1998-01-01",
+    "birthDay": "01-01",
+    "birthYear": 1998,
+    "birthPlace": "Logroño",
+    "nationality": null,
+    "representedCountry": "Spain",
+    "representedCountries": [
+      "Spain"
+    ],
+    "position": [
+      "Defender"
+    ],
+    "height": null,
+    "gender": null,
+    "careerStatus": "unknown",
+    "currentClub": null,
+    "formerClubs": [],
+    "photo": null,
+    "aliases": [],
+    "sources": {
+      "openfootball": {
+        "file": "europe/spain/es.players.txt"
+      },
+      "wikidata": null,
+      "sportmonks": null,
+      "apiFootball": null
     },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:27.271044+00:00"
   },
   {
     "id": "fy-91221ddc5321fc4a",
@@ -4431,27 +3079,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:34.748927+00:00",
-    "wikidata": {
-      "id": "Q156802",
-      "label": "Paolo Guerrero",
-      "description": "Peruvian association football player",
-      "dateOfBirth": "1984-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q2868",
-      "citizenship": [
-        "Q419"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Paolo Guerrero, FIFA Club World Cup 2012.jpg"
-    },
-    "matchScore": 28,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:34.748927+00:00"
   },
   {
     "id": "fy-a3afd03bf2441374",
@@ -4484,27 +3112,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:32.870788+00:00",
-    "wikidata": {
-      "id": "Q2066619",
-      "label": "Juan Sánchez Miño",
-      "description": "Argentine footballer (born 1990)",
-      "dateOfBirth": "1990-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q655297",
-      "citizenship": [
-        "Q414"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "DSeMA1gWsAE0Cw8.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:32.870788+00:00"
   },
   {
     "id": "fy-9410cdcdf282c600",
@@ -4537,27 +3145,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.073013+00:00",
-    "wikidata": {
-      "id": "Q125756121",
-      "label": "Kacper Duda",
-      "description": "Polish footballer (born 2004)",
-      "dateOfBirth": "2004-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q276858",
-      "citizenship": [
-        "Q36"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:25.073013+00:00"
   },
   {
     "id": "fy-aacfd2dc95aa16eb",
@@ -4590,24 +3178,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:25.074296+00:00",
-    "wikidata": {
-      "id": "Q59661868",
-      "label": "Kamil Sobczak",
-      "description": "researcher ORCID ID = 0000-0002-9747-8144",
-      "dateOfBirth": null,
-      "dateOfBirthPrecision": null,
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [],
-      "occupations": [
-        "Q1650915"
-      ],
-      "image": null
-    },
-    "matchScore": 10,
-    "matchMethod": "name-only"
+    "lastUpdated": "2026-09-22T12:15:25.074296+00:00"
   },
   {
     "id": "fy-0390e47c48d5de17",
@@ -4640,27 +3211,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.136657+00:00",
-    "wikidata": {
-      "id": "Q65219444",
-      "label": "Yasin Subaşı",
-      "description": "Turkish association football player (born 1996)",
-      "dateOfBirth": "1996-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q83069",
-      "citizenship": [
-        "Q43"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Yasir Subaşı.jpg"
-    },
-    "matchScore": 25,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.136657+00:00"
   },
   {
     "id": "fy-555cfe148e5699c1",
@@ -4693,27 +3244,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:13.641069+00:00",
-    "wikidata": {
-      "id": "Q5959005",
-      "label": "Kendall Waston",
-      "description": "Costa Rican footballer",
-      "dateOfBirth": "1988-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q642644",
-      "citizenship": [
-        "Q800"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Kendall Waston March19.jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:13.641069+00:00"
   },
   {
     "id": "fy-a085803999ed8a1f",
@@ -4746,27 +3277,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:00.124577+00:00",
-    "wikidata": {
-      "id": "Q116896436",
-      "label": "Lamine Camara",
-      "description": "Senegalese footballer (born 2004)",
-      "dateOfBirth": "2004-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": "Q3028823",
-      "citizenship": [
-        "Q1041"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": "Bara Ndiaye France v Senegal 16 June 2026-239 (cropped).jpg"
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:00.124577+00:00"
   },
   {
     "id": "fy-67455ccfad641c98",
@@ -4799,26 +3310,6 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:22.251369+00:00",
-    "wikidata": {
-      "id": "Q136294516",
-      "label": "Lorent Talla",
-      "description": "Kosovan footballer",
-      "dateOfBirth": "2005-01-01",
-      "dateOfBirthPrecision": "day",
-      "dateOfDeath": null,
-      "dateOfDeathPrecision": null,
-      "birthPlace": null,
-      "citizenship": [
-        "Q1246"
-      ],
-      "occupations": [
-        "Q937857"
-      ],
-      "image": null
-    },
-    "matchScore": 32,
-    "matchMethod": "year-to-full-dob",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:22.251369+00:00"
   }
 ]

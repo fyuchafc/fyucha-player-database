@@ -17,7 +17,9 @@
     "matchMethod": "year-conflict",
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Aias Aosman",
+    "searchPass": "primary"
   },
   {
     "id": "fy-ca8c8676b1f10c7d",
@@ -37,7 +39,9 @@
     "matchMethod": "year-conflict",
     "classification": "REVIEW",
     "identityReason": "possible-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Aleksey Mironov",
+    "searchPass": "primary"
   },
   {
     "id": "fy-b4364966dafe5ffd",
@@ -57,7 +61,9 @@
     "matchMethod": "year-conflict",
     "classification": "REVIEW",
     "identityReason": "possible-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Assane Seck",
+    "searchPass": "primary"
   },
   {
     "id": "fy-e7d6c7097e4571f9",
@@ -77,27 +83,9 @@
     "matchMethod": "year-conflict",
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
-  },
-  {
-    "id": "fy-44ee5ed2cf18ed56",
-    "name": "Gabriel Souza",
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "sourceBirthYear": 1997,
-    "wikidataDateOfBirth": "1984-01-02",
-    "wikidataDatePrecision": "day",
-    "wikidataBirthYear": 1984,
-    "wikidataId": "Q19708664",
-    "matchedName": "Gabriel Souza",
-    "matchedAlias": null,
-    "nameMatchMethod": "exact-name",
-    "nameScore": 100,
-    "matchScore": 95,
-    "matchMethod": "year-conflict",
-    "classification": "REVIEW",
-    "identityReason": "possible-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Bebeto",
+    "searchPass": "primary"
   },
   {
     "id": "fy-31fde1f3483cd9dc",
@@ -117,7 +105,9 @@
     "matchMethod": "year-conflict",
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Héctor Martínez",
+    "searchPass": "primary"
   },
   {
     "id": "fy-4bdbf0d6184cdab4",
@@ -137,7 +127,9 @@
     "matchMethod": "year-conflict",
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Jonathan Sowah",
+    "searchPass": "primary"
   },
   {
     "id": "fy-3eb14e4f2246ffec",
@@ -157,6 +149,8 @@
     "matchMethod": "year-conflict",
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
+    "action": "kept-source-dob",
+    "searchQuery": "Jordan Lyden",
+    "searchPass": "primary"
   }
 ]

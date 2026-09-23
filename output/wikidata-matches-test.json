@@ -20,7 +20,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Abdi Sharif",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-fc71fc478c331584",
@@ -43,7 +45,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Abdoulaye Ba",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ca00d30496136027",
@@ -66,7 +70,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Abdoulaye Doucouré",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-357fda8515c1aa72",
@@ -89,7 +95,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Abukar Mohamed",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-acaaf526a76571bd",
@@ -112,7 +120,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Adam Campbell",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-6dfd7d0edede4a8f",
@@ -135,7 +145,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Adrian Przyborek",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b255ba764b823178",
@@ -158,7 +170,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Adrián Pica",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-f6f5f543f4ccfa11",
@@ -181,7 +195,9 @@
     "identityReason": "strong-identity-year-conflict",
     "footballRelated": true,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Aias Aosman",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ca8c8676b1f10c7d",
@@ -204,7 +220,9 @@
     "identityReason": "possible-identity-year-conflict",
     "footballRelated": false,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Aleksey Mironov",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-6b796aeb7690d37b",
@@ -227,7 +245,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Alessio Maestrelli",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ed5081aab04fa9c7",
@@ -250,7 +270,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Alex Cordaz",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e48a21f0656c60eb",
@@ -273,7 +295,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ali Karakaya",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4dcb788bed98bb94",
@@ -296,7 +320,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ali Maâloul",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-3142621e8b911abf",
@@ -319,7 +345,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ali Şahin Yılmaz",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-7d35e927fd26d488",
@@ -342,7 +370,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Alperen Uysal",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-35aa794524c3edcd",
@@ -365,53 +395,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-5cf7ba6951cbe006",
-    "playerName": "Anastasios Avlonitis",
-    "sourceDateOfBirth": "1990-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q257295",
-    "matchedName": "Tasos Avlonitis",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1990-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 95,
-    "nameScore": 70,
-    "nameMatchMethod": "partial-token-overlap",
-    "matchMethod": "same-year-review",
-    "action": "keep-source",
-    "classification": "REVIEW",
-    "identityReason": "partial-name-same-year",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-7834837bb7dfa5e0",
-    "playerName": "Andreas Pereira",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q17619350",
-    "matchedName": "Andreas Pereira",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1996-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Amadou Bakayoko",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-7148349fc462d4fe",
@@ -434,7 +420,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "André Biyogo Poko",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-df15fa3c84a4fe30",
@@ -457,7 +445,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Arda Akbulut",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b4364966dafe5ffd",
@@ -480,7 +470,9 @@
     "identityReason": "possible-identity-year-conflict",
     "footballRelated": false,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Assane Seck",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-64787a97889b3199",
@@ -503,7 +495,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Atakan Gündüz",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-dea43985593c1ab6",
@@ -526,7 +520,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Aykut Özer",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-93af7685f9cdcdc3",
@@ -549,7 +545,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Bartol Barišić",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e7d6c7097e4571f9",
@@ -572,53 +570,9 @@
     "identityReason": "strong-identity-year-conflict",
     "footballRelated": true,
     "sameYear": false,
-    "differentYear": true
-  },
-  {
-    "playerId": "fy-c4f3a4b3d6e2a07b",
-    "playerName": "Benjamin Goller",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q59639978",
-    "matchedName": "Benjamin Goller",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1999-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-502d7ec24c5578b1",
-    "playerName": "Berk Balaban",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q97351397",
-    "matchedName": "Berk Balaban",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2000-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": true,
+    "searchQuery": "Bebeto",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-5cdcaede0640b35d",
@@ -641,7 +595,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Beykan Şimşek",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4c02f2420187f814",
@@ -664,7 +620,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Borja Lasso",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ae3f2259f55c3430",
@@ -687,7 +645,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Boško Šutalo",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-268ab82e65a28db0",
@@ -710,7 +670,9 @@
     "identityReason": "strong-name-insufficient-football-evidence",
     "footballRelated": false,
     "sameYear": false,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Breno",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-d89ef4c294618b16",
@@ -733,7 +695,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Brighton Labeau",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4c936e27830f7173",
@@ -756,30 +720,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-d79ab51f9b9b77ff",
-    "playerName": "Charles Traoré",
-    "sourceDateOfBirth": "1992-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q23761952",
-    "matchedName": "Charles Traoré",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1992-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Bryan Róchez",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4a08cdeea53fc0cf",
@@ -802,7 +745,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Cheick Mamadou Diabaté",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-c3b59c78d5842d2b",
@@ -825,7 +770,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Chidozie Awaziem",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ccd69148b33b91d0",
@@ -848,7 +795,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Cian Coleman",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-9310880136a5c69e",
@@ -871,53 +820,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-17f90e716f30680b",
-    "playerName": "Demir Sarıcalı",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q123182238",
-    "matchedName": "Demir Sarıcalı",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2005-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-9bd521ab9b2adc3f",
-    "playerName": "Denys Yanakov",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q60677532",
-    "matchedName": "Denys Yanakov",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1999-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Conor Noß",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-c545e295210b9927",
@@ -940,7 +845,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Dzambolat Tsallagov",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-2d3364e37adc58c2",
@@ -963,7 +870,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Efe Sayhan",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ed557075dbd4b28b",
@@ -986,7 +895,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Egidio Arévalo",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-80ec641b3e212dfc",
@@ -1009,7 +920,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Elijah Dixon-Bonner",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b4578a4cc60d5a5e",
@@ -1032,7 +945,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Emir Şenocak",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-6547c26f81d4b5b4",
@@ -1055,7 +970,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Emmanuel Latte Lath",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4f7c76e123741e55",
@@ -1078,7 +995,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ennio van der Gouw",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-2de18db1ffd47671",
@@ -1101,53 +1020,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-0efce344b6b55d02",
-    "playerName": "Eren Durmuş",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q123182221",
-    "matchedName": "Eren Durmuş",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2005-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-a396df4b61bc1946",
-    "playerName": "Eren Karadağ",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q60050428",
-    "matchedName": "Eren Karadağ",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2000-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Enock Mwepu",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-62c6c8612da961a8",
@@ -1170,7 +1045,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ersin Destanoğlu",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-1b0e75d80003a83f",
@@ -1193,7 +1070,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Essaïd Belkalem",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-8d7da6fab2a5add4",
@@ -1216,7 +1095,9 @@
     "identityReason": "strong-name-football-same-year",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Fatih Şanlıtürk",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4200b5d41281903a",
@@ -1239,7 +1120,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Filip Kaša",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-d9b28537fe0cd7ee",
@@ -1262,53 +1145,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-f848ea3f6cfe9a97",
-    "playerName": "Frank Onyeka",
-    "sourceDateOfBirth": "1998-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q56292818",
-    "matchedName": "Frank Onyeka",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1998-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-44ee5ed2cf18ed56",
-    "playerName": "Gabriel Souza",
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q19708664",
-    "matchedName": "Gabriel Souza",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1984-01-02",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1997-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 95,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "year-conflict",
-    "action": "conflict",
-    "classification": "REVIEW",
-    "identityReason": "possible-identity-year-conflict",
-    "footballRelated": false,
-    "sameYear": false,
-    "differentYear": true
+    "differentYear": false,
+    "searchQuery": "Florian Fischerauer",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-65bcc29b6b00bc41",
@@ -1331,7 +1170,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Gianluca Scamacca",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e6fdcfe42735505d",
@@ -1354,7 +1195,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Gianluigi Sueva",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-c592acf68bac62e0",
@@ -1377,7 +1220,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Glenn Middleton",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ef79968e24a644b2",
@@ -1400,7 +1245,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Gonzalo Montiel",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-ffbe3d735466c9ae",
@@ -1423,53 +1270,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-d690dabb704958e6",
-    "playerName": "Habib Maïga",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q28970899",
-    "matchedName": "Habib Maïga",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1996-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-85bb55e9cfb0c0c1",
-    "playerName": "Hakan Yeşil",
-    "sourceDateOfBirth": "2002-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q97351712",
-    "matchedName": "Hakan Yeşil",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2002-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Gökhan Akkan",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b1b797f386d75dd2",
@@ -1492,7 +1295,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Halil Yeral",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-02a2a9597cb58b1a",
@@ -1515,7 +1320,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Henry Wise",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-42934fa989f7eb86",
@@ -1538,7 +1345,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Hugo Andersson",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-31fde1f3483cd9dc",
@@ -1561,7 +1370,9 @@
     "identityReason": "strong-identity-year-conflict",
     "footballRelated": true,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Héctor Martínez",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4009192594dd40d8",
@@ -1584,7 +1395,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Hüsamettin Tut",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-20f655bfea3eb954",
@@ -1607,7 +1420,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Hüseyin Türkmen",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b77dfa067e9bd6c7",
@@ -1630,7 +1445,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Ibrahima Sory Sankhon",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-1ac917cfedfb6e76",
@@ -1653,30 +1470,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-1c9e6f6a1a07abe9",
-    "playerName": "Iván Balliu",
-    "sourceDateOfBirth": "1992-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q972933",
-    "matchedName": "Iván Balliu",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1992-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Issiaga Sylla",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-b4d32e36108497b3",
@@ -1699,7 +1495,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Jack Wilshere",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-1ba7515ebaf43fab",
@@ -1722,7 +1520,9 @@
     "identityReason": "strong-name-but-football-relevance-unconfirmed",
     "footballRelated": false,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Javi Navarro",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e64a83d972e9ea1b",
@@ -1745,7 +1545,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Javier Matilla",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e303393ad0cbb6a6",
@@ -1768,7 +1570,9 @@
     "identityReason": "strong-name-insufficient-football-evidence",
     "footballRelated": false,
     "sameYear": false,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Javier Vicario",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-112d7faee0036b5c",
@@ -1791,7 +1595,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Jay Chapman",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-e27695ab38bffda0",
@@ -1814,7 +1620,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Jens Toornstra",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4b9e9052e75304d4",
@@ -1837,7 +1645,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Johan Bengtsson",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-4bdbf0d6184cdab4",
@@ -1860,7 +1670,9 @@
     "identityReason": "strong-identity-year-conflict",
     "footballRelated": true,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Jonathan Sowah",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-3eb14e4f2246ffec",
@@ -1883,7 +1695,9 @@
     "identityReason": "strong-identity-year-conflict",
     "footballRelated": true,
     "sameYear": false,
-    "differentYear": true
+    "differentYear": true,
+    "searchQuery": "Jordan Lyden",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-8dd5dcd22b4dddec",
@@ -1906,30 +1720,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-91221ddc5321fc4a",
-    "playerName": "José Paolo Guerrero",
-    "sourceDateOfBirth": "1984-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q156802",
-    "matchedName": "Paolo Guerrero",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "1984-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "1984-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 95,
-    "nameScore": 70,
-    "nameMatchMethod": "partial-token-overlap",
-    "matchMethod": "same-year-review",
-    "action": "keep-source",
-    "classification": "REVIEW",
-    "identityReason": "partial-name-same-year",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Joshua Bitter",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-a3afd03bf2441374",
@@ -1952,7 +1745,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Juan Sánchez Miño",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-9410cdcdf282c600",
@@ -1975,7 +1770,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Kacper Duda",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-aacfd2dc95aa16eb",
@@ -1998,7 +1795,9 @@
     "identityReason": "strong-name-insufficient-football-evidence",
     "footballRelated": false,
     "sameYear": false,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Kamil Sobczak",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-0390e47c48d5de17",
@@ -2021,7 +1820,9 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Karahan Yasir Subaşı",
+    "searchPass": "primary"
   },
   {
     "playerId": "fy-555cfe148e5699c1",
@@ -2044,52 +1845,8 @@
     "identityReason": "strong-name-football-identity",
     "footballRelated": true,
     "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-a085803999ed8a1f",
-    "playerName": "Lamine Camara",
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q116896436",
-    "matchedName": "Lamine Camara",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2004-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
-  },
-  {
-    "playerId": "fy-67455ccfad641c98",
-    "playerName": "Lorent Talla",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q136294516",
-    "matchedName": "Lorent Talla",
-    "matchedAlias": null,
-    "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "finalDateOfBirth": "2005-01-01",
-    "finalDatePrecision": null,
-    "matchScore": 125,
-    "nameScore": 100,
-    "nameMatchMethod": "exact-name",
-    "matchMethod": "same-date",
-    "action": "keep-source",
-    "classification": "SAFE",
-    "identityReason": "strong-name-football-identity",
-    "footballRelated": true,
-    "sameYear": true,
-    "differentYear": false
+    "differentYear": false,
+    "searchQuery": "Kendall Waston",
+    "searchPass": "primary"
   }
 ]

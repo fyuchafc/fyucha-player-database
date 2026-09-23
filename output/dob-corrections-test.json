@@ -11,7 +11,9 @@
     "nameMatchMethod": "exact-name",
     "wikidataId": "Q130053390",
     "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "reason": "strong-name-football-identity",
+    "searchQuery": "Adrián Pica",
+    "searchPass": "primary"
   },
   {
     "id": "fy-7148349fc462d4fe",
@@ -25,7 +27,9 @@
     "nameMatchMethod": "exact-name",
     "wikidataId": "Q31951",
     "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "reason": "strong-name-football-identity",
+    "searchQuery": "André Biyogo Poko",
+    "searchPass": "primary"
   },
   {
     "id": "fy-e64a83d972e9ea1b",
@@ -39,7 +43,9 @@
     "nameMatchMethod": "exact-name",
     "wikidataId": "Q2632726",
     "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "reason": "strong-name-football-identity",
+    "searchQuery": "Javier Matilla",
+    "searchPass": "primary"
   },
   {
     "id": "fy-e27695ab38bffda0",
@@ -53,6 +59,8 @@
     "nameMatchMethod": "exact-name",
     "wikidataId": "Q182189",
     "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "reason": "strong-name-football-identity",
+    "searchQuery": "Jens Toornstra",
+    "searchPass": "primary"
   }
 ]

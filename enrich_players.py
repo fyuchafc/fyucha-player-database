@@ -8,7 +8,7 @@ import requests
 
 
 # ============================================================
-# Fyucha Player Database - Wikidata V2.2.5
+# Fyucha Player Database - Wikidata V2.2.6
 #
 # Workflow:
 # MATCH -> CLASSIFY -> APPLY
@@ -26,9 +26,12 @@ import requests
 # Important:
 #   YYYY-01-01 + year precision = YEAR ONLY.
 #   It must never be treated as a confirmed January 1 birthday.
+#
+# V2.2.6:
+#   SAFE / REVIEW / REJECT logic preserved from V2.2.5.
 # ============================================================
 
-VERSION = "2.2.5"
+VERSION = "2.2.6"
 
 INPUT_FILE = Path("output/players.json")
 OUTPUT_DIR = Path("output")
@@ -51,7 +54,7 @@ BASE_DELAY = 1.0
 REQUEST_DELAY = 0.10
 
 USER_AGENT = (
-    "FyuchaPlayerDatabase/2.2.5 "
+    "FyuchaPlayerDatabase/2.2.6 "
     "(football player birthday database)"
 )
 
@@ -2539,7 +2542,7 @@ def main():
     print()
     print("=" * 60)
     print(
-        "V2.2.5 TEST COMPLETE"
+        "V2.2.6 TEST COMPLETE"
     )
     print("=" * 60)
 
@@ -2650,7 +2653,7 @@ def main():
     print(
         "Review dob-corrections-test.json and "
         "dob-conflicts-test.json before running "
-        "V2.2.5 against the full database."
+        "V2.2.6 against the full database."
     )
 
 

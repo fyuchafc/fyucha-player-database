@@ -37,10 +37,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2001-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-fc71fc478c331584",
@@ -80,10 +77,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1991-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1991-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ca00d30496136027",
@@ -124,10 +118,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1993-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1993-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-357fda8515c1aa72",
@@ -167,10 +158,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-acaaf526a76571bd",
@@ -210,10 +198,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1995-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-6dfd7d0edede4a8f",
@@ -253,10 +238,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2007-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2007-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b255ba764b823178",
@@ -493,10 +475,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1983-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1983-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e48a21f0656c60eb",
@@ -536,10 +515,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2002-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4dcb788bed98bb94",
@@ -579,10 +555,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1990-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-3142621e8b911abf",
@@ -622,10 +595,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7d35e927fd26d488",
@@ -665,10 +635,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1994-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-eee7817483fea986",
@@ -741,10 +708,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-5cf7ba6951cbe006",
@@ -784,10 +748,7 @@
     "matchScore": 95,
     "footballRelated": true,
     "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1990-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7834837bb7dfa5e0",
@@ -828,16 +789,13 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-7148349fc462d4fe",
     "name": "André Biyogo Poko",
     "displayName": "André Biyogo Poko",
-    "dateOfBirth": "1993-01-01",
+    "dateOfBirth": "1993-03-07",
     "birthDay": "01-01",
     "birthYear": 1993,
     "birthPlace": "Bitam",
@@ -864,7 +822,17 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:55.241012+00:00"
+    "lastUpdated": "2026-09-22T12:14:55.241012+00:00",
+    "wikidataId": "Q31951",
+    "matchedName": "André Biyogo Poko",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1993-03-07",
+    "wikidataDatePrecision": "day",
+    "sourceDateOfBirth": "1993-01-01",
+    "sourceDatePrecision": "year",
+    "dateOfBirthPrecision": "day"
   },
   {
     "id": "fy-df15fa3c84a4fe30",
@@ -996,17 +964,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:28.137738+00:00",
-    "wikidataId": "Q4501316",
-    "matchedName": "Aykut Özer",
-    "nameMatchMethod": "exact-name",
-    "matchScore": 125,
-    "footballRelated": true,
-    "wikidataDateOfBirth": "1993-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1993-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:28.137738+00:00"
   },
   {
     "id": "fy-93af7685f9cdcdc3",
@@ -1046,10 +1004,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2003-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e7d6c7097e4571f9",
@@ -1162,10 +1117,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-502d7ec24c5578b1",
@@ -1205,10 +1157,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-5cdcaede0640b35d",
@@ -1248,10 +1197,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1995-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4c02f2420187f814",
@@ -1291,10 +1237,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1994-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ae3f2259f55c3430",
@@ -1334,10 +1277,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-268ab82e65a28db0",
@@ -1408,7 +1348,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:19.790442+00:00"
+    "lastUpdated": "2026-09-22T12:15:19.790442+00:00",
+    "wikidataId": "Q36694978",
+    "matchedName": "Brighton Labeau",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1996-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4c936e27830f7173",
@@ -1507,17 +1454,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:57.700112+00:00",
-    "wikidataId": "Q23761952",
-    "matchedName": "Charles Traoré",
-    "nameMatchMethod": "exact-name",
-    "matchScore": 125,
-    "footballRelated": true,
-    "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1992-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:57.700112+00:00"
   },
   {
     "id": "fy-4a08cdeea53fc0cf",
@@ -1557,10 +1494,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c3b59c78d5842d2b",
@@ -1600,10 +1534,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ccd69148b33b91d0",
@@ -1684,10 +1615,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2001-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-dd53f38af5fb77c5",
@@ -1760,10 +1688,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-9bd521ab9b2adc3f",
@@ -1803,10 +1728,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c545e295210b9927",
@@ -1846,10 +1768,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-2d3364e37adc58c2",
@@ -1889,10 +1808,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ed557075dbd4b28b",
@@ -1925,7 +1841,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:35.135816+00:00"
+    "lastUpdated": "2026-09-22T12:15:35.135816+00:00",
+    "wikidataId": "Q315674",
+    "matchedName": "Egidio Arévalo Rios",
+    "nameMatchMethod": "alias-exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1982-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-80ec641b3e212dfc",
@@ -2057,17 +1980,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:23.938409+00:00",
-    "wikidataId": "Q114000545",
-    "matchedName": "Ennio van der Gouw",
-    "nameMatchMethod": "exact-name",
-    "matchScore": 125,
-    "footballRelated": true,
-    "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2001-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:23.938409+00:00"
   },
   {
     "id": "fy-2de18db1ffd47671",
@@ -2107,10 +2020,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1998-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-0efce344b6b55d02",
@@ -2150,10 +2060,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a396df4b61bc1946",
@@ -2193,10 +2100,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-62c6c8612da961a8",
@@ -2236,10 +2140,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2001-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-1b0e75d80003a83f",
@@ -2279,10 +2180,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1989-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1989-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-8d7da6fab2a5add4",
@@ -2322,10 +2220,7 @@
     "matchScore": 110,
     "footballRelated": true,
     "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2003-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4200b5d41281903a",
@@ -2365,10 +2260,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1994-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4071a57cb86b03fc",
@@ -2441,10 +2333,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-f848ea3f6cfe9a97",
@@ -2477,7 +2366,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:59.461465+00:00"
+    "lastUpdated": "2026-09-22T12:14:59.461465+00:00",
+    "wikidataId": "Q56292818",
+    "matchedName": "Frank Onyeka",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1998-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-44ee5ed2cf18ed56",
@@ -2576,17 +2472,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:21.948757+00:00",
-    "wikidataId": "Q22237703",
-    "matchedName": "Gianluca Scamacca",
-    "nameMatchMethod": "exact-name",
-    "matchScore": 125,
-    "footballRelated": true,
-    "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:15:21.948757+00:00"
   },
   {
     "id": "fy-e6fdcfe42735505d",
@@ -2626,10 +2512,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2001-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2001-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-c592acf68bac62e0",
@@ -2669,10 +2552,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ef79968e24a644b2",
@@ -2712,10 +2592,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-ffbe3d735466c9ae",
@@ -2755,10 +2632,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1995-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1995-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-d690dabb704958e6",
@@ -2798,10 +2672,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-85bb55e9cfb0c0c1",
@@ -2841,10 +2712,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2002-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2002-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b1b797f386d75dd2",
@@ -2884,10 +2752,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-02a2a9597cb58b1a",
@@ -2927,10 +2792,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-42934fa989f7eb86",
@@ -2970,10 +2832,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1999-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-31fde1f3483cd9dc",
@@ -3006,7 +2865,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.274630+00:00"
+    "lastUpdated": "2026-09-22T12:15:27.274630+00:00",
+    "wikidataId": "Q60735599",
+    "matchedName": "David Martínez",
+    "nameMatchMethod": "alias-exact-name",
+    "matchScore": 110,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "1998-01-21",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4009192594dd40d8",
@@ -3105,17 +2971,7 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:14:56.273716+00:00",
-    "wikidataId": "Q23541212",
-    "matchedName": "Ibrahima Sory Sankhon",
-    "nameMatchMethod": "exact-name",
-    "matchScore": 125,
-    "footballRelated": true,
-    "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "lastUpdated": "2026-09-22T12:14:56.273716+00:00"
   },
   {
     "id": "fy-1ac917cfedfb6e76",
@@ -3155,10 +3011,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1994-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-2ebbec544b1945fc",
@@ -3231,10 +3084,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1992-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-b4d32e36108497b3",
@@ -3274,10 +3124,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1992-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1992-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-1ba7515ebaf43fab",
@@ -3317,10 +3164,7 @@
     "matchScore": 110,
     "footballRelated": false,
     "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e64a83d972e9ea1b",
@@ -3441,10 +3285,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1994-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1994-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-e27695ab38bffda0",
@@ -3520,7 +3361,14 @@
       "sportmonks": null,
       "apiFootball": null
     },
-    "lastUpdated": "2026-09-22T12:15:27.543602+00:00"
+    "lastUpdated": "2026-09-22T12:15:27.543602+00:00",
+    "wikidataId": "Q106489320",
+    "matchedName": "Johan Bengtsson",
+    "nameMatchMethod": "exact-name",
+    "matchScore": 125,
+    "footballRelated": true,
+    "wikidataDateOfBirth": "2004-01-01",
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-4bdbf0d6184cdab4",
@@ -3692,10 +3540,7 @@
     "matchScore": 95,
     "footballRelated": true,
     "wikidataDateOfBirth": "1984-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1984-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a3afd03bf2441374",
@@ -3735,10 +3580,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1990-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-9410cdcdf282c600",
@@ -3778,10 +3620,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-aacfd2dc95aa16eb",
@@ -3859,10 +3698,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-555cfe148e5699c1",
@@ -3902,10 +3738,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "1988-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "1988-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-a085803999ed8a1f",
@@ -3945,10 +3778,7 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   },
   {
     "id": "fy-67455ccfad641c98",
@@ -3988,9 +3818,6 @@
     "matchScore": 125,
     "footballRelated": true,
     "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "dateOfBirthPrecision": "day"
+    "wikidataDatePrecision": "day"
   }
 ]

@@ -73,14 +73,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Alessio Maestrelli",
-    "sourceDateOfBirth": "2003-01-01",
-    "wikidataDateOfBirth": "2003-01-01",
-    "wikidataPrecision": "year",
-    "wikidataId": "Q111740073"
-  },
-  {
-    "playerId": null,
     "playerName": "Alex Cordaz",
     "sourceDateOfBirth": "1983-01-01",
     "wikidataDateOfBirth": "1983-01-01",
@@ -102,14 +94,6 @@
     "wikidataDateOfBirth": "1990-01-01",
     "wikidataPrecision": "day",
     "wikidataId": "Q2836275"
-  },
-  {
-    "playerId": null,
-    "playerName": "Ali Şahin Yılmaz",
-    "sourceDateOfBirth": "2004-01-01",
-    "wikidataDateOfBirth": "2004-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q123182290"
   },
   {
     "playerId": null,
@@ -137,14 +121,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Andreas Pereira",
-    "sourceDateOfBirth": "1996-01-01",
-    "wikidataDateOfBirth": "1996-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q17619350"
-  },
-  {
-    "playerId": null,
     "playerName": "André Biyogo Poko",
     "sourceDateOfBirth": "1993-01-01",
     "wikidataDateOfBirth": "1993-03-07",
@@ -169,6 +145,14 @@
   },
   {
     "playerId": null,
+    "playerName": "Atakan Gündüz",
+    "sourceDateOfBirth": "2001-01-01",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q84239790"
+  },
+  {
+    "playerId": null,
     "playerName": "Aykut Özer",
     "sourceDateOfBirth": "1993-01-01",
     "wikidataDateOfBirth": "1993-01-01",
@@ -185,11 +169,19 @@
   },
   {
     "playerId": null,
-    "playerName": "Bebeto",
-    "sourceDateOfBirth": "1990-01-01",
-    "wikidataDateOfBirth": "1964-02-16",
+    "playerName": "Benjamin Goller",
+    "sourceDateOfBirth": "1999-01-01",
+    "wikidataDateOfBirth": "1999-01-01",
     "wikidataPrecision": "day",
-    "wikidataId": "Q204825"
+    "wikidataId": "Q59639978"
+  },
+  {
+    "playerId": null,
+    "playerName": "Berk Balaban",
+    "sourceDateOfBirth": "2000-01-01",
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q97351397"
   },
   {
     "playerId": null,
@@ -249,14 +241,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Chidozie Awaziem",
-    "sourceDateOfBirth": "1997-01-01",
-    "wikidataDateOfBirth": "1997-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q22958457"
-  },
-  {
-    "playerId": null,
     "playerName": "Conor Noß",
     "sourceDateOfBirth": "2001-01-01",
     "wikidataDateOfBirth": "2001-01-01",
@@ -281,27 +265,19 @@
   },
   {
     "playerId": null,
-    "playerName": "Dzambolat Tsallagov",
-    "sourceDateOfBirth": "2000-01-01",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q111103267"
-  },
-  {
-    "playerId": null,
-    "playerName": "Efe Sayhan",
-    "sourceDateOfBirth": "2005-01-01",
-    "wikidataDateOfBirth": "2005-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q134302454"
-  },
-  {
-    "playerId": null,
     "playerName": "Egidio Arévalo",
     "sourceDateOfBirth": "1982-01-01",
     "wikidataDateOfBirth": "1982-01-01",
     "wikidataPrecision": "day",
     "wikidataId": "Q315674"
+  },
+  {
+    "playerId": null,
+    "playerName": "Elijah Dixon-Bonner",
+    "sourceDateOfBirth": "2001-01-01",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q78828832"
   },
   {
     "playerId": null,
@@ -345,14 +321,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Eren Karadağ",
-    "sourceDateOfBirth": "2000-01-01",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q60050428"
-  },
-  {
-    "playerId": null,
     "playerName": "Ersin Destanoğlu",
     "sourceDateOfBirth": "2001-01-01",
     "wikidataDateOfBirth": "2001-01-01",
@@ -371,9 +339,9 @@
     "playerId": null,
     "playerName": "Fatih Şanlıtürk",
     "sourceDateOfBirth": "2003-01-01",
-    "wikidataDateOfBirth": "1985-07-26",
+    "wikidataDateOfBirth": "2003-01-01",
     "wikidataPrecision": "day",
-    "wikidataId": "Q133454905"
+    "wikidataId": "Q104777286"
   },
   {
     "playerId": null,
@@ -398,14 +366,6 @@
     "wikidataDateOfBirth": "1998-01-01",
     "wikidataPrecision": "day",
     "wikidataId": "Q56292818"
-  },
-  {
-    "playerId": null,
-    "playerName": "Gabriel Souza",
-    "sourceDateOfBirth": "1997-01-01",
-    "wikidataDateOfBirth": "1997-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q29043070"
   },
   {
     "playerId": null,
@@ -465,27 +425,19 @@
   },
   {
     "playerId": null,
-    "playerName": "Halil Yeral",
-    "sourceDateOfBirth": "2000-01-01",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q56175090"
-  },
-  {
-    "playerId": null,
-    "playerName": "Henry Wise",
-    "sourceDateOfBirth": "2000-01-01",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataPrecision": "day",
-    "wikidataId": "Q84590521"
-  },
-  {
-    "playerId": null,
     "playerName": "Hugo Andersson",
     "sourceDateOfBirth": "1999-01-01",
     "wikidataDateOfBirth": "1999-01-01",
     "wikidataPrecision": "day",
     "wikidataId": "Q53846713"
+  },
+  {
+    "playerId": null,
+    "playerName": "Héctor Martínez",
+    "sourceDateOfBirth": "1995-01-01",
+    "wikidataDateOfBirth": "1973-08-16",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q5906278"
   },
   {
     "playerId": null,
@@ -518,6 +470,14 @@
     "wikidataDateOfBirth": "1994-01-01",
     "wikidataPrecision": "day",
     "wikidataId": "Q14166912"
+  },
+  {
+    "playerId": null,
+    "playerName": "Iván Balliu",
+    "sourceDateOfBirth": "1992-01-01",
+    "wikidataDateOfBirth": "1992-01-01",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q972933"
   },
   {
     "playerId": null,
@@ -569,11 +529,11 @@
   },
   {
     "playerId": null,
-    "playerName": "Johan Bengtsson",
-    "sourceDateOfBirth": "2004-01-01",
-    "wikidataDateOfBirth": "2004-01-01",
+    "playerName": "Jonathan Sowah",
+    "sourceDateOfBirth": "1999-01-01",
+    "wikidataDateOfBirth": "2000-01-09",
     "wikidataPrecision": "day",
-    "wikidataId": "Q106489320"
+    "wikidataId": "Q124080812"
   },
   {
     "playerId": null,
@@ -601,11 +561,19 @@
   },
   {
     "playerId": null,
-    "playerName": "Juan Sánchez Miño",
-    "sourceDateOfBirth": "1990-01-01",
-    "wikidataDateOfBirth": "1990-01-01",
+    "playerName": "Kacper Duda",
+    "sourceDateOfBirth": "2004-01-01",
+    "wikidataDateOfBirth": "2004-01-01",
     "wikidataPrecision": "day",
-    "wikidataId": "Q2066619"
+    "wikidataId": "Q125756121"
+  },
+  {
+    "playerId": null,
+    "playerName": "Kamil Sobczak",
+    "sourceDateOfBirth": "2003-01-01",
+    "wikidataDateOfBirth": null,
+    "wikidataPrecision": null,
+    "wikidataId": "Q59661868"
   },
   {
     "playerId": null,
@@ -617,10 +585,18 @@
   },
   {
     "playerId": null,
-    "playerName": "Kendall Waston",
-    "sourceDateOfBirth": "1988-01-01",
-    "wikidataDateOfBirth": "1988-01-01",
+    "playerName": "Lamine Camara",
+    "sourceDateOfBirth": "2004-01-01",
+    "wikidataDateOfBirth": "2004-01-01",
     "wikidataPrecision": "day",
-    "wikidataId": "Q5959005"
+    "wikidataId": "Q116896436"
+  },
+  {
+    "playerId": null,
+    "playerName": "Lorent Talla",
+    "sourceDateOfBirth": "2005-01-01",
+    "wikidataDateOfBirth": "2005-01-01",
+    "wikidataPrecision": "day",
+    "wikidataId": "Q136294516"
   }
 ]

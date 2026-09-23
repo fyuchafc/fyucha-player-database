@@ -31,22 +31,12 @@
   },
   {
     "playerId": null,
-    "playerName": "Bebeto",
-    "sourceDateOfBirth": "1990-01-01",
-    "wikidataDateOfBirth": "1964-02-16",
-    "wikidataId": "Q204825",
-    "matchedName": "Bebeto",
+    "playerName": "Héctor Martínez",
+    "sourceDateOfBirth": "1995-01-01",
+    "wikidataDateOfBirth": "1973-08-16",
+    "wikidataId": "Q5906278",
+    "matchedName": "Héctor Martínez",
     "identityClassification": "SAFE",
-    "reason": "Source year differs from Wikidata year"
-  },
-  {
-    "playerId": null,
-    "playerName": "Fatih Şanlıtürk",
-    "sourceDateOfBirth": "2003-01-01",
-    "wikidataDateOfBirth": "1985-07-26",
-    "wikidataId": "Q133454905",
-    "matchedName": "Fatih Türk",
-    "identityClassification": "REJECT",
     "reason": "Source year differs from Wikidata year"
   },
   {
@@ -56,6 +46,16 @@
     "wikidataDateOfBirth": "1974-02-06",
     "wikidataId": "Q164073",
     "matchedName": "Javi Navarro",
+    "identityClassification": "SAFE",
+    "reason": "Source year differs from Wikidata year"
+  },
+  {
+    "playerId": null,
+    "playerName": "Jonathan Sowah",
+    "sourceDateOfBirth": "1999-01-01",
+    "wikidataDateOfBirth": "2000-01-09",
+    "wikidataId": "Q124080812",
+    "matchedName": "Jonathan Sowah",
     "identityClassification": "SAFE",
     "reason": "Source year differs from Wikidata year"
   },

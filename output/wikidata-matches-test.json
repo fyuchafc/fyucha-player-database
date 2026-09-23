@@ -239,31 +239,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "2003-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q111740073",
-    "matchedName": "Alessio Maestrelli",
-    "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "year",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "KEEP_SOURCE",
-    "dobReason": "No conservative correction condition met",
-    "searchQuery": "Alessio Maestrelli",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Alessio Maestrelli",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "1983-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q1875903",
@@ -332,31 +307,6 @@
     "searchQueriesUsed": [
       {
         "query": "Ali Maâloul",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
-    "sourceDateOfBirth": "2004-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q123182290",
-    "matchedName": "Ali Şahin Yılmaz",
-    "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Ali Şahin Yılmaz",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Ali Şahin Yılmaz",
         "pass": "primary"
       }
     ]
@@ -451,31 +401,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "1996-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q17619350",
-    "matchedName": "Andreas Pereira",
-    "wikidataDateOfBirth": "1996-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Andreas Pereira",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Andreas Pereira",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "1993-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q31951",
@@ -563,6 +488,31 @@
   {
     "playerId": null,
     "playerName": null,
+    "sourceDateOfBirth": "2001-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q84239790",
+    "matchedName": "Atakan Gündüz",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 125,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Atakan Gündüz",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Atakan Gündüz",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
     "sourceDateOfBirth": "1993-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q4501316",
@@ -613,24 +563,49 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "1990-01-01",
+    "sourceDateOfBirth": "1999-01-01",
     "sourceDatePrecision": "year",
-    "wikidataId": "Q204825",
-    "matchedName": "Bebeto",
-    "wikidataDateOfBirth": "1964-02-16",
+    "wikidataId": "Q59639978",
+    "matchedName": "Benjamin Goller",
+    "wikidataDateOfBirth": "1999-01-01",
     "wikidataDatePrecision": "day",
     "nameScore": 100,
-    "identityScore": 110,
+    "identityScore": 125,
     "footballRelated": true,
-    "sameBirthYear": false,
+    "sameBirthYear": true,
     "identityClassification": "SAFE",
-    "dobAction": "CONFLICT",
-    "dobReason": "Source year differs from Wikidata year",
-    "searchQuery": "Bebeto",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Benjamin Goller",
     "searchPass": "primary",
     "searchQueriesUsed": [
       {
-        "query": "Bebeto",
+        "query": "Benjamin Goller",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "2000-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q97351397",
+    "matchedName": "Berk Balaban",
+    "wikidataDateOfBirth": "2000-01-01",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 125,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Berk Balaban",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Berk Balaban",
         "pass": "primary"
       }
     ]
@@ -825,31 +800,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q22958457",
-    "matchedName": "Chidozie Awaziem",
-    "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Chidozie Awaziem",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Chidozie Awaziem",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "2001-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q96678310",
@@ -863,16 +813,12 @@
     "identityClassification": "SAFE",
     "dobAction": "CORRECT",
     "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "conor no",
-    "searchPass": "fallback",
+    "searchQuery": "Conor Noß",
+    "searchPass": "primary",
     "searchQueriesUsed": [
       {
         "query": "Conor Noß",
         "pass": "primary"
-      },
-      {
-        "query": "conor no",
-        "pass": "fallback"
       }
     ]
   },
@@ -929,56 +875,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q111103267",
-    "matchedName": "Dzambolat Tsallagov",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Dzambolat Tsallagov",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Dzambolat Tsallagov",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
-    "sourceDateOfBirth": "2005-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q134302454",
-    "matchedName": "Efe Sayhan",
-    "wikidataDateOfBirth": "2005-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Efe Sayhan",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Efe Sayhan",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "1982-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q315674",
@@ -997,6 +893,31 @@
     "searchQueriesUsed": [
       {
         "query": "Egidio Arévalo",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "2001-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q78828832",
+    "matchedName": "Elijah Dixon-Bonner",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 125,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Elijah Dixon-Bonner",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Elijah Dixon-Bonner",
         "pass": "primary"
       }
     ]
@@ -1129,31 +1050,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q60050428",
-    "matchedName": "Eren Karadağ",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Eren Karadağ",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Eren Karadağ",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "2001-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q60050402",
@@ -1206,43 +1102,23 @@
     "playerName": null,
     "sourceDateOfBirth": "2003-01-01",
     "sourceDatePrecision": "year",
-    "wikidataId": "Q133454905",
-    "matchedName": "Fatih Türk",
-    "wikidataDateOfBirth": "1985-07-26",
+    "wikidataId": "Q104777286",
+    "matchedName": "Fatih Yiğit Şanlıtürk",
+    "wikidataDateOfBirth": "2003-01-01",
     "wikidataDatePrecision": "day",
     "nameScore": 80,
-    "identityScore": 75,
-    "footballRelated": false,
-    "sameBirthYear": false,
-    "identityClassification": "REJECT",
-    "dobAction": "CONFLICT",
-    "dobReason": "Source year differs from Wikidata year",
-    "searchQuery": "fatih turk",
-    "searchPass": "fallback",
+    "identityScore": 105,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Fatih Şanlıtürk",
+    "searchPass": "primary",
     "searchQueriesUsed": [
       {
         "query": "Fatih Şanlıtürk",
         "pass": "primary"
-      },
-      {
-        "query": "fatih sanl turk",
-        "pass": "fallback"
-      },
-      {
-        "query": "Fatih Şanlıtürk footballer",
-        "pass": "fallback"
-      },
-      {
-        "query": "Fatih Şanlıtürk football player",
-        "pass": "fallback"
-      },
-      {
-        "query": "Fatih Şanlıtürk soccer player",
-        "pass": "fallback"
-      },
-      {
-        "query": "fatih turk",
-        "pass": "fallback"
       }
     ]
   },
@@ -1317,31 +1193,6 @@
     "searchQueriesUsed": [
       {
         "query": "Frank Onyeka",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
-    "sourceDateOfBirth": "1997-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q29043070",
-    "matchedName": "Gabriel Eugénio Souza",
-    "wikidataDateOfBirth": "1997-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 80,
-    "identityScore": 105,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Gabriel Souza",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Gabriel Souza",
         "pass": "primary"
       }
     ]
@@ -1524,56 +1375,6 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q56175090",
-    "matchedName": "Halil Yeral",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Halil Yeral",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Halil Yeral",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
-    "sourceDateOfBirth": "2000-01-01",
-    "sourceDatePrecision": "year",
-    "wikidataId": "Q84590521",
-    "matchedName": "Henry Wise",
-    "wikidataDateOfBirth": "2000-01-01",
-    "wikidataDatePrecision": "day",
-    "nameScore": 100,
-    "identityScore": 125,
-    "footballRelated": true,
-    "sameBirthYear": true,
-    "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Henry Wise",
-    "searchPass": "primary",
-    "searchQueriesUsed": [
-      {
-        "query": "Henry Wise",
-        "pass": "primary"
-      }
-    ]
-  },
-  {
-    "playerId": null,
-    "playerName": null,
     "sourceDateOfBirth": "1999-01-01",
     "sourceDatePrecision": "year",
     "wikidataId": "Q53846713",
@@ -1592,6 +1393,31 @@
     "searchQueriesUsed": [
       {
         "query": "Hugo Andersson",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "1995-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q5906278",
+    "matchedName": "Héctor Martínez",
+    "wikidataDateOfBirth": "1973-08-16",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 110,
+    "footballRelated": true,
+    "sameBirthYear": false,
+    "identityClassification": "SAFE",
+    "dobAction": "CONFLICT",
+    "dobReason": "Source year differs from Wikidata year",
+    "searchQuery": "Héctor Martínez",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Héctor Martínez",
         "pass": "primary"
       }
     ]
@@ -1692,6 +1518,31 @@
     "searchQueriesUsed": [
       {
         "query": "Issiaga Sylla",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "1992-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q972933",
+    "matchedName": "Iván Balliu",
+    "wikidataDateOfBirth": "1992-01-01",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 125,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Iván Balliu",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Iván Balliu",
         "pass": "primary"
       }
     ]
@@ -1861,24 +1712,24 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "2004-01-01",
+    "sourceDateOfBirth": "1999-01-01",
     "sourceDatePrecision": "year",
-    "wikidataId": "Q106489320",
-    "matchedName": "Johan Bengtsson",
-    "wikidataDateOfBirth": "2004-01-01",
+    "wikidataId": "Q124080812",
+    "matchedName": "Jonathan Sowah",
+    "wikidataDateOfBirth": "2000-01-09",
     "wikidataDatePrecision": "day",
     "nameScore": 100,
-    "identityScore": 125,
+    "identityScore": 110,
     "footballRelated": true,
-    "sameBirthYear": true,
+    "sameBirthYear": false,
     "identityClassification": "SAFE",
-    "dobAction": "CORRECT",
-    "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Johan Bengtsson",
+    "dobAction": "CONFLICT",
+    "dobReason": "Source year differs from Wikidata year",
+    "searchQuery": "Jonathan Sowah",
     "searchPass": "primary",
     "searchQueriesUsed": [
       {
-        "query": "Johan Bengtsson",
+        "query": "Jonathan Sowah",
         "pass": "primary"
       }
     ]
@@ -1961,11 +1812,11 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "1990-01-01",
+    "sourceDateOfBirth": "2004-01-01",
     "sourceDatePrecision": "year",
-    "wikidataId": "Q2066619",
-    "matchedName": "Juan Sánchez Miño",
-    "wikidataDateOfBirth": "1990-01-01",
+    "wikidataId": "Q125756121",
+    "matchedName": "Kacper Duda",
+    "wikidataDateOfBirth": "2004-01-01",
     "wikidataDatePrecision": "day",
     "nameScore": 100,
     "identityScore": 125,
@@ -1974,12 +1825,49 @@
     "identityClassification": "SAFE",
     "dobAction": "CORRECT",
     "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Juan Sánchez Miño",
+    "searchQuery": "Kacper Duda",
     "searchPass": "primary",
     "searchQueriesUsed": [
       {
-        "query": "Juan Sánchez Miño",
+        "query": "Kacper Duda",
         "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "2003-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q59661868",
+    "matchedName": "Kamil Sobczak",
+    "wikidataDateOfBirth": null,
+    "wikidataDatePrecision": null,
+    "nameScore": 100,
+    "identityScore": 100,
+    "footballRelated": false,
+    "sameBirthYear": false,
+    "identityClassification": "REVIEW",
+    "dobAction": "KEEP_SOURCE",
+    "dobReason": "Wikidata DOB unavailable",
+    "searchQuery": "Kamil Sobczak",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Kamil Sobczak",
+        "pass": "primary"
+      },
+      {
+        "query": "Kamil Sobczak footballer",
+        "pass": "fallback"
+      },
+      {
+        "query": "Kamil Sobczak football player",
+        "pass": "fallback"
+      },
+      {
+        "query": "Kamil Sobczak soccer player",
+        "pass": "fallback"
       }
     ]
   },
@@ -2031,11 +1919,11 @@
   {
     "playerId": null,
     "playerName": null,
-    "sourceDateOfBirth": "1988-01-01",
+    "sourceDateOfBirth": "2004-01-01",
     "sourceDatePrecision": "year",
-    "wikidataId": "Q5959005",
-    "matchedName": "Kendall Waston",
-    "wikidataDateOfBirth": "1988-01-01",
+    "wikidataId": "Q116896436",
+    "matchedName": "Lamine Camara",
+    "wikidataDateOfBirth": "2004-01-01",
     "wikidataDatePrecision": "day",
     "nameScore": 100,
     "identityScore": 125,
@@ -2044,11 +1932,36 @@
     "identityClassification": "SAFE",
     "dobAction": "CORRECT",
     "dobReason": "SAFE identity with precise Wikidata day",
-    "searchQuery": "Kendall Waston",
+    "searchQuery": "Lamine Camara",
     "searchPass": "primary",
     "searchQueriesUsed": [
       {
-        "query": "Kendall Waston",
+        "query": "Lamine Camara",
+        "pass": "primary"
+      }
+    ]
+  },
+  {
+    "playerId": null,
+    "playerName": null,
+    "sourceDateOfBirth": "2005-01-01",
+    "sourceDatePrecision": "year",
+    "wikidataId": "Q136294516",
+    "matchedName": "Lorent Talla",
+    "wikidataDateOfBirth": "2005-01-01",
+    "wikidataDatePrecision": "day",
+    "nameScore": 100,
+    "identityScore": 125,
+    "footballRelated": true,
+    "sameBirthYear": true,
+    "identityClassification": "SAFE",
+    "dobAction": "CORRECT",
+    "dobReason": "SAFE identity with precise Wikidata day",
+    "searchQuery": "Lorent Talla",
+    "searchPass": "primary",
+    "searchQueriesUsed": [
+      {
+        "query": "Lorent Talla",
         "pass": "primary"
       }
     ]

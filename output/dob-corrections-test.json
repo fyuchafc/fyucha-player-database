@@ -101,16 +101,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Ali Şahin Yılmaz",
-    "sourceDateOfBirth": "2004-01-01",
-    "correctedDateOfBirth": "2004-01-01",
-    "wikidataId": "Q123182290",
-    "matchedName": "Ali Şahin Yılmaz",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Alperen Uysal",
     "sourceDateOfBirth": "1994-01-01",
     "correctedDateOfBirth": "1994-01-01",
@@ -126,16 +116,6 @@
     "correctedDateOfBirth": "1996-01-01",
     "wikidataId": "Q16153407",
     "matchedName": "Amadou Bakayoko",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
-    "playerName": "Andreas Pereira",
-    "sourceDateOfBirth": "1996-01-01",
-    "correctedDateOfBirth": "1996-01-01",
-    "wikidataId": "Q17619350",
-    "matchedName": "Andreas Pereira",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
@@ -161,6 +141,16 @@
   },
   {
     "playerId": null,
+    "playerName": "Atakan Gündüz",
+    "sourceDateOfBirth": "2001-01-01",
+    "correctedDateOfBirth": "2001-01-01",
+    "wikidataId": "Q84239790",
+    "matchedName": "Atakan Gündüz",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
     "playerName": "Aykut Özer",
     "sourceDateOfBirth": "1993-01-01",
     "correctedDateOfBirth": "1993-01-01",
@@ -176,6 +166,26 @@
     "correctedDateOfBirth": "2003-01-01",
     "wikidataId": "Q97817607",
     "matchedName": "Bartol Barišić",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
+    "playerName": "Benjamin Goller",
+    "sourceDateOfBirth": "1999-01-01",
+    "correctedDateOfBirth": "1999-01-01",
+    "wikidataId": "Q59639978",
+    "matchedName": "Benjamin Goller",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
+    "playerName": "Berk Balaban",
+    "sourceDateOfBirth": "2000-01-01",
+    "correctedDateOfBirth": "2000-01-01",
+    "wikidataId": "Q97351397",
+    "matchedName": "Berk Balaban",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
@@ -241,16 +251,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Chidozie Awaziem",
-    "sourceDateOfBirth": "1997-01-01",
-    "correctedDateOfBirth": "1997-01-01",
-    "wikidataId": "Q22958457",
-    "matchedName": "Chidozie Awaziem",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Conor Noß",
     "sourceDateOfBirth": "2001-01-01",
     "correctedDateOfBirth": "2001-01-01",
@@ -281,31 +281,21 @@
   },
   {
     "playerId": null,
-    "playerName": "Dzambolat Tsallagov",
-    "sourceDateOfBirth": "2000-01-01",
-    "correctedDateOfBirth": "2000-01-01",
-    "wikidataId": "Q111103267",
-    "matchedName": "Dzambolat Tsallagov",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
-    "playerName": "Efe Sayhan",
-    "sourceDateOfBirth": "2005-01-01",
-    "correctedDateOfBirth": "2005-01-01",
-    "wikidataId": "Q134302454",
-    "matchedName": "Efe Sayhan",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Egidio Arévalo",
     "sourceDateOfBirth": "1982-01-01",
     "correctedDateOfBirth": "1982-01-01",
     "wikidataId": "Q315674",
     "matchedName": "Egidio Arévalo Rios",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
+    "playerName": "Elijah Dixon-Bonner",
+    "sourceDateOfBirth": "2001-01-01",
+    "correctedDateOfBirth": "2001-01-01",
+    "wikidataId": "Q78828832",
+    "matchedName": "Elijah Dixon-Bonner",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
@@ -361,16 +351,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Eren Karadağ",
-    "sourceDateOfBirth": "2000-01-01",
-    "correctedDateOfBirth": "2000-01-01",
-    "wikidataId": "Q60050428",
-    "matchedName": "Eren Karadağ",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Ersin Destanoğlu",
     "sourceDateOfBirth": "2001-01-01",
     "correctedDateOfBirth": "2001-01-01",
@@ -386,6 +366,16 @@
     "correctedDateOfBirth": "1989-01-01",
     "wikidataId": "Q2113669",
     "matchedName": "Essaïd Belkalem",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
+    "playerName": "Fatih Şanlıtürk",
+    "sourceDateOfBirth": "2003-01-01",
+    "correctedDateOfBirth": "2003-01-01",
+    "wikidataId": "Q104777286",
+    "matchedName": "Fatih Yiğit Şanlıtürk",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
@@ -416,16 +406,6 @@
     "correctedDateOfBirth": "1998-01-01",
     "wikidataId": "Q56292818",
     "matchedName": "Frank Onyeka",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
-    "playerName": "Gabriel Souza",
-    "sourceDateOfBirth": "1997-01-01",
-    "correctedDateOfBirth": "1997-01-01",
-    "wikidataId": "Q29043070",
-    "matchedName": "Gabriel Eugénio Souza",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
@@ -501,26 +481,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Halil Yeral",
-    "sourceDateOfBirth": "2000-01-01",
-    "correctedDateOfBirth": "2000-01-01",
-    "wikidataId": "Q56175090",
-    "matchedName": "Halil Yeral",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
-    "playerName": "Henry Wise",
-    "sourceDateOfBirth": "2000-01-01",
-    "correctedDateOfBirth": "2000-01-01",
-    "wikidataId": "Q84590521",
-    "matchedName": "Henry Wise",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Hugo Andersson",
     "sourceDateOfBirth": "1999-01-01",
     "correctedDateOfBirth": "1999-01-01",
@@ -571,6 +531,16 @@
   },
   {
     "playerId": null,
+    "playerName": "Iván Balliu",
+    "sourceDateOfBirth": "1992-01-01",
+    "correctedDateOfBirth": "1992-01-01",
+    "wikidataId": "Q972933",
+    "matchedName": "Iván Balliu",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
     "playerName": "Jack Wilshere",
     "sourceDateOfBirth": "1992-01-01",
     "correctedDateOfBirth": "1992-01-01",
@@ -611,16 +581,6 @@
   },
   {
     "playerId": null,
-    "playerName": "Johan Bengtsson",
-    "sourceDateOfBirth": "2004-01-01",
-    "correctedDateOfBirth": "2004-01-01",
-    "wikidataId": "Q106489320",
-    "matchedName": "Johan Bengtsson",
-    "identityClassification": "SAFE",
-    "reason": "SAFE identity with precise Wikidata day"
-  },
-  {
-    "playerId": null,
     "playerName": "Joshua Bitter",
     "sourceDateOfBirth": "1997-01-01",
     "correctedDateOfBirth": "1997-01-01",
@@ -641,21 +601,31 @@
   },
   {
     "playerId": null,
-    "playerName": "Juan Sánchez Miño",
-    "sourceDateOfBirth": "1990-01-01",
-    "correctedDateOfBirth": "1990-01-01",
-    "wikidataId": "Q2066619",
-    "matchedName": "Juan Sánchez Miño",
+    "playerName": "Kacper Duda",
+    "sourceDateOfBirth": "2004-01-01",
+    "correctedDateOfBirth": "2004-01-01",
+    "wikidataId": "Q125756121",
+    "matchedName": "Kacper Duda",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   },
   {
     "playerId": null,
-    "playerName": "Kendall Waston",
-    "sourceDateOfBirth": "1988-01-01",
-    "correctedDateOfBirth": "1988-01-01",
-    "wikidataId": "Q5959005",
-    "matchedName": "Kendall Waston",
+    "playerName": "Lamine Camara",
+    "sourceDateOfBirth": "2004-01-01",
+    "correctedDateOfBirth": "2004-01-01",
+    "wikidataId": "Q116896436",
+    "matchedName": "Lamine Camara",
+    "identityClassification": "SAFE",
+    "reason": "SAFE identity with precise Wikidata day"
+  },
+  {
+    "playerId": null,
+    "playerName": "Lorent Talla",
+    "sourceDateOfBirth": "2005-01-01",
+    "correctedDateOfBirth": "2005-01-01",
+    "wikidataId": "Q136294516",
+    "matchedName": "Lorent Talla",
     "identityClassification": "SAFE",
     "reason": "SAFE identity with precise Wikidata day"
   }

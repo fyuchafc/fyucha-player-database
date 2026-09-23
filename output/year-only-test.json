@@ -122,12 +122,10 @@
     "name": "Alex Cordaz",
     "dateOfBirth": "1983-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q1875903",
-    "wikidataDateOfBirth": "1983-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-e48a21f0656c60eb",
@@ -228,10 +226,12 @@
     "name": "Arda Akbulut",
     "dateOfBirth": "2001-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q61671698",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-b4364966dafe5ffd",
@@ -268,12 +268,10 @@
     "name": "Bartol Barišić",
     "dateOfBirth": "2003-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q97817607",
-    "wikidataDateOfBirth": "2003-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-e7d6c7097e4571f9",
@@ -386,10 +384,12 @@
     "name": "Bryan Róchez",
     "dateOfBirth": "1995-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q16300353",
+    "wikidataDateOfBirth": "1995-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-ba6b09a6a2d28a1d",
@@ -406,10 +406,12 @@
     "name": "Charles Traoré",
     "dateOfBirth": "1992-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q23761952",
+    "wikidataDateOfBirth": "1992-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-4a08cdeea53fc0cf",
@@ -522,12 +524,10 @@
     "name": "Egidio Arévalo",
     "dateOfBirth": "1982-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q315674",
-    "wikidataDateOfBirth": "1982-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-80ec641b3e212dfc",
@@ -554,20 +554,24 @@
     "name": "Emmanuel Latte Lath",
     "dateOfBirth": "1999-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q27062813",
+    "wikidataDateOfBirth": "1999-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-4f7c76e123741e55",
     "name": "Ennio van der Gouw",
     "dateOfBirth": "2001-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q114000545",
+    "wikidataDateOfBirth": "2001-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-2de18db1ffd47671",
@@ -668,24 +672,20 @@
     "name": "Florian Fischerauer",
     "dateOfBirth": "1999-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q25938107",
-    "wikidataDateOfBirth": "1999-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-f848ea3f6cfe9a97",
     "name": "Frank Onyeka",
     "dateOfBirth": "1998-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q56292818",
-    "wikidataDateOfBirth": "1998-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-44ee5ed2cf18ed56",
@@ -830,12 +830,10 @@
     "name": "Héctor Martínez",
     "dateOfBirth": "1995-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "year-conflict",
-    "wikidataId": "Q60735599",
-    "wikidataDateOfBirth": "1998-01-21",
-    "wikidataDatePrecision": "day",
-    "classification": "REJECT",
-    "reason": "strong-identity-year-conflict"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-4009192594dd40d8",
@@ -862,10 +860,12 @@
     "name": "Ibrahima Sory Sankhon",
     "dateOfBirth": "1996-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": null,
-    "wikidataId": null,
-    "classification": "REVIEW",
-    "reason": "no-suitable-wikidata-match"
+    "matchMethod": "same-date",
+    "wikidataId": "Q23541212",
+    "wikidataDateOfBirth": "1996-01-01",
+    "wikidataDatePrecision": "day",
+    "classification": "SAFE",
+    "reason": "strong-name-football-identity"
   },
   {
     "id": "fy-1ac917cfedfb6e76",
@@ -954,12 +954,10 @@
     "name": "Johan Bengtsson",
     "dateOfBirth": "2004-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q106489320",
-    "wikidataDateOfBirth": "2004-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-4bdbf0d6184cdab4",
@@ -1018,12 +1016,10 @@
     "name": "Juan Sánchez Miño",
     "dateOfBirth": "1990-01-01",
     "dateOfBirthPrecision": "year",
-    "matchMethod": "same-date",
-    "wikidataId": "Q2066619",
-    "wikidataDateOfBirth": "1990-01-01",
-    "wikidataDatePrecision": "day",
-    "classification": "SAFE",
-    "reason": "strong-name-football-identity"
+    "matchMethod": null,
+    "wikidataId": null,
+    "classification": "REVIEW",
+    "reason": "no-suitable-wikidata-match"
   },
   {
     "id": "fy-9410cdcdf282c600",

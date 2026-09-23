@@ -58,25 +58,5 @@
     "classification": "REJECT",
     "identityReason": "strong-identity-year-conflict",
     "action": "kept-source-dob"
-  },
-  {
-    "id": "fy-31fde1f3483cd9dc",
-    "name": "Héctor Martínez",
-    "sourceDateOfBirth": "1995-01-01",
-    "sourceDatePrecision": "year",
-    "sourceBirthYear": 1995,
-    "wikidataDateOfBirth": "1998-01-21",
-    "wikidataDatePrecision": "day",
-    "wikidataBirthYear": 1998,
-    "wikidataId": "Q60735599",
-    "matchedName": "David Martínez",
-    "matchedAlias": "Héctor Martínez",
-    "nameMatchMethod": "alias-exact-name",
-    "nameScore": 100,
-    "matchScore": 110,
-    "matchMethod": "year-conflict",
-    "classification": "REJECT",
-    "identityReason": "strong-identity-year-conflict",
-    "action": "kept-source-dob"
   }
 ]

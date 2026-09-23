@@ -34,8 +34,8 @@
     "wikidataId": "Q125257682",
     "matchedName": "Abdi Sharif",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "2001-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -74,8 +74,8 @@
     "wikidataId": "Q2528624",
     "matchedName": "Abdoulaye Ba",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "1991-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -115,8 +115,11 @@
     "wikidataId": "Q13427925",
     "matchedName": "Abdoulaye Doucouré",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
+    "wikidataAliases": [
+      "Abdoulaye Doucoure"
+    ],
     "wikidataDateOfBirth": "1993-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -155,8 +158,11 @@
     "wikidataId": "Q29350735",
     "matchedName": "Abukar Mohamed",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
+    "wikidataAliases": [
+      "Abdulkadir Abukar Mohamed"
+    ],
     "wikidataDateOfBirth": "1999-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -195,8 +201,8 @@
     "wikidataId": "Q4202937",
     "matchedName": "Adam Campbell",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "1995-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -235,8 +241,8 @@
     "wikidataId": "Q121549185",
     "matchedName": "Adrian Przyborek",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "2007-01-01",
     "wikidataDatePrecision": "day"
   },
@@ -275,8 +281,8 @@
     "wikidataId": "Q130053390",
     "matchedName": "Adrián Pica",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "2002-04-25",
     "wikidataDatePrecision": "day"
   },
@@ -315,8 +321,8 @@
     "wikidataId": "Q14566703",
     "matchedName": "Aias Aosman",
     "nameMatchMethod": "exact-name",
+    "matchScore": 110,
     "footballRelated": true,
-    "matchScore": 70,
     "wikidataDateOfBirth": "1994-10-21",
     "wikidataDatePrecision": "day"
   },
@@ -355,8 +361,11 @@
     "wikidataId": "Q4296037",
     "matchedName": "Aleksey Mironov",
     "nameMatchMethod": "exact-name",
+    "matchScore": 95,
     "footballRelated": false,
-    "matchScore": 50,
+    "wikidataAliases": [
+      "Aleksey Ivanovich Mironov"
+    ],
     "wikidataDateOfBirth": "1924-01-03",
     "wikidataDatePrecision": "day",
     "wikidataDateOfDeath": "1999-11-16T00:00:00Z"
@@ -396,8 +405,8 @@
     "wikidataId": "Q111740073",
     "matchedName": "Alessio Maestrelli",
     "nameMatchMethod": "exact-name",
+    "matchScore": 125,
     "footballRelated": true,
-    "matchScore": 100,
     "wikidataDateOfBirth": "2003",
     "wikidataDatePrecision": "year"
   },

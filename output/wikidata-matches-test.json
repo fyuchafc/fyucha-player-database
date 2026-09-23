@@ -10,9 +10,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "2001-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -26,9 +26,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "1991-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -42,9 +42,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "1993-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -58,9 +58,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "1999-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -74,9 +74,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "1995-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -90,9 +90,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "2007-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "full-date-match",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "full-date-match",
     "footballRelated": true
   },
   {
@@ -106,9 +106,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "2002-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "same-year-dob-disagreement",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "same-year-dob-disagreement",
     "footballRelated": true
   },
   {
@@ -122,9 +122,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "1993-01-01",
     "finalDatePrecision": null,
-    "matchScore": 70,
-    "matchMethod": "year-conflict",
+    "matchScore": 110,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "year-conflict",
     "footballRelated": true
   },
   {
@@ -138,9 +138,9 @@
     "wikidataDatePrecision": "day",
     "finalDateOfBirth": "2000-01-01",
     "finalDatePrecision": null,
-    "matchScore": 50,
-    "matchMethod": "year-conflict",
+    "matchScore": 95,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "year-conflict",
     "footballRelated": false
   },
   {
@@ -154,9 +154,9 @@
     "wikidataDatePrecision": "year",
     "finalDateOfBirth": "2003-01-01",
     "finalDatePrecision": null,
-    "matchScore": 100,
-    "matchMethod": "same-year-dob-disagreement",
+    "matchScore": 125,
     "nameMatchMethod": "exact-name",
+    "matchMethod": "same-year-dob-disagreement",
     "footballRelated": true
   }
 ]

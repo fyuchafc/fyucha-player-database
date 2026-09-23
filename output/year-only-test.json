@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": "fy-f6f5f543f4ccfa11",
+    "name": "Aias Aosman",
+    "dateOfBirth": "1993-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "year-conflict",
+    "wikidataId": "Q14566703"
+  },
+  {
+    "id": "fy-ca8c8676b1f10c7d",
+    "name": "Aleksey Mironov",
+    "dateOfBirth": "2000-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "year-conflict",
+    "wikidataId": "Q4296037"
+  },
+  {
+    "id": "fy-6b796aeb7690d37b",
+    "name": "Alessio Maestrelli",
+    "dateOfBirth": "2003-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "year-only",
+    "wikidataId": "Q111740073"
+  },
+  {
+    "id": "fy-6d20108b6f07c3a1",
+    "name": "Alessio Santese",
+    "dateOfBirth": "2001-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-eee7817483fea986",
+    "name": "Altay Özkan",
+    "dateOfBirth": "2003-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-e7d6c7097e4571f9",
+    "name": "Bebeto",
+    "dateOfBirth": "1990-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "year-conflict",
+    "wikidataId": "Q204825"
+  },
+  {
+    "id": "fy-fefb6aee0cea8694",
+    "name": "Bedirhan Kahraman",
+    "dateOfBirth": "2003-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-268ab82e65a28db0",
+    "name": "Breno",
+    "dateOfBirth": "2000-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "wikidata-dob-unavailable",
+    "wikidataId": "Q21285798"
+  },
+  {
+    "id": "fy-ccd69148b33b91d0",
+    "name": "Cian Coleman",
+    "dateOfBirth": "1997-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "year-only",
+    "wikidataId": "Q65930912"
+  },
+  {
+    "id": "fy-dd53f38af5fb77c5",
+    "name": "Dawda Dambelleh",
+    "dateOfBirth": "2003-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-4071a57cb86b03fc",
+    "name": "Filippo Cecchini",
+    "dateOfBirth": "2006-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-2ebbec544b1945fc",
+    "name": "Ivo Marović",
+    "dateOfBirth": "2004-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-e303393ad0cbb6a6",
+    "name": "Javier Vicario",
+    "dateOfBirth": "2002-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "wikidata-dob-unavailable",
+    "wikidataId": "Q43743850"
+  },
+  {
+    "id": "fy-fa7e80532c9282cf",
+    "name": "José Antonio Viguera",
+    "dateOfBirth": "1998-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": null,
+    "wikidataId": null
+  },
+  {
+    "id": "fy-aacfd2dc95aa16eb",
+    "name": "Kamil Sobczak",
+    "dateOfBirth": "2003-01-01",
+    "dateOfBirthPrecision": "year",
+    "matchMethod": "wikidata-dob-unavailable",
+    "wikidataId": "Q59661868"
+  }
+]

@@ -1,64 +1,110 @@
 import json
-import time
 import re
+import time
 import unicodedata
 from pathlib import Path
-from datetime import datetime
 
 import requests
 
 
 # ============================================================
-# Fyucha Player Database
-# Wikidata Enrichment V2.1 - FULL DATABASE
-# ============================================================
+# Fyucha Player Database - Wikidata V2.3.1
 #
-# PURPOSE
+# Workflow:
 #
-#   Production version of the V2.1 enrichment system.
+#     DISCOVER -> SCORE -> CLASSIFY -> DIAGNOSE -> APPLY
 #
-#   IMPORTANT:
-#   This version deliberately keeps the V2.1 matching logic.
-#   It does NOT use the later V2.3.x candidate/scoring system.
+# V2.3.1 PURPOSE:
 #
-#   The V2.1 test achieved:
+#   V2.2.9 achieved:
+#       91 matched
+#        9 not matched
+#        8 DOB conflicts
 #
-#       100 players tested
-#        77 matched
-#        23 not matched
-#         0 errors
+#   V2.3.1 DOES NOT loosen the SAFE rules.
 #
-#   This production version processes ALL players.
+#   Instead, it explains why the remaining cases fail.
+#
+# NEW DIAGNOSTICS:
+#
+#   1. Every unmatched player receives a detailed diagnosis.
+#   2. Top Wikidata candidates are recorded.
+#   3. Candidate rejection reasons are recorded.
+#   4. Search queries attempted are recorded.
+#   5. DOB conflicts receive a detailed conflict diagnosis.
+#   6. Alternative candidates are retained for audit.
+#   7. Diagnostic summary is written separately.
+#
+# IMPORTANT:
+#
+#   This version is the FINAL PRODUCTION / DIAGNOSTIC version.
+#
+#   It does not automatically relax identity thresholds.
+#   It does not automatically resolve DOB conflicts.
 #
 # ============================================================
 
 
+VERSION = "2.3.1"
+
+
 # ============================================================
-# INPUT / OUTPUT FILES
+# FILES
 # ============================================================
 
 INPUT_FILE = Path(
     "output/players.json"
 )
 
-# ------------------------------------------------------------
-# Production outputs
-# ------------------------------------------------------------
-
-OUTPUT_FILE = Path(
-    "output/enriched-players.json"
+OUTPUT_DIR = Path(
+    "output"
 )
 
-MATCH_OUTPUT_FILE = Path(
-    "output/wikidata-matches.json"
+ENRICHED_FILE = (
+    OUTPUT_DIR
+    / "enriched-players.json"
 )
 
-CORRECTIONS_FILE = Path(
-    "output/dob-corrections.json"
+MATCHES_FILE = (
+    OUTPUT_DIR
+    / "wikidata-matches.json"
 )
 
-YEAR_ONLY_FILE = Path(
-    "output/year-only.json"
+CORRECTIONS_FILE = (
+    OUTPUT_DIR
+    / "dob-corrections.json"
+)
+
+CONFLICTS_FILE = (
+    OUTPUT_DIR
+    / "dob-conflicts.json"
+)
+
+YEAR_ONLY_FILE = (
+    OUTPUT_DIR
+    / "year-only.json"
+)
+
+ERRORS_FILE = (
+    OUTPUT_DIR
+    / "wikidata-errors.json"
+)
+
+# NEW V2.3.1 FILES
+
+UNMATCHED_DIAGNOSTICS_FILE = (
+    OUTPUT_DIR
+    / "unmatched-diagnostics.json"
+)
+
+CONFLICT_DIAGNOSTICS_FILE = (
+    OUTPUT_DIR
+    / "conflict-diagnostics.json"
+)
+
+DIAGNOSTICS_SUMMARY_FILE = (
+    OUTPUT_DIR
+    / "diagnostics-summary.json"
 )
 
 
@@ -66,58 +112,59 @@ YEAR_ONLY_FILE = Path(
 # SETTINGS
 # ============================================================
 
-# None = process every player.
-#
-# Set this to a number temporarily if you ever want to run
-# another limited test.
-#
 TEST_LIMIT = None
 
+SEARCH_LIMIT = 10
 
-WIKIDATA_API = (
+MAX_RETRIES = 4
+
+BASE_DELAY = 1.0
+
+REQUEST_DELAY = 0.10
+
+# Number of candidates to preserve in diagnostics.
+DIAGNOSTIC_TOP_CANDIDATES = 5
+
+
+USER_AGENT = (
+    "FyuchaPlayerDatabase/2.3.1 "
+    "(football player birthday database)"
+)
+
+
+SEARCH_URL = (
     "https://www.wikidata.org/w/api.php"
 )
 
 
-USER_AGENT = (
-    "FyuchaPlayerDatabase/2.1 "
-    "(https://github.com/fyucha/fyucha-player-database)"
+ENTITY_URL = (
+    "https://www.wikidata.org/wiki/"
+    "Special:EntityData/{}.json"
 )
 
 
-# Delay between Wikidata requests.
-#
-# V2.1 used 0.5 seconds and we are keeping that behaviour.
-REQUEST_DELAY = 0.5
-
-
-# Maximum number of attempts for failed requests.
-MAX_RETRIES = 5
-
-
 # ============================================================
-# HTTP SESSION
+# SESSION
 # ============================================================
 
 session = requests.Session()
 
 session.headers.update({
-    "User-Agent": USER_AGENT
+    "User-Agent": USER_AGENT,
+    "Accept": "application/json"
 })
 
 
 # ============================================================
-# NORMALIZATION
+# NAME NORMALIZATION
 # ============================================================
 
-def normalize_text(value):
+def normalize_name(value):
 
     if not value:
         return ""
 
-    value = str(
-        value
-    )
+    value = str(value)
 
     value = unicodedata.normalize(
         "NFKD",
@@ -125,20 +172,25 @@ def normalize_text(value):
     )
 
     value = "".join(
-        char
-        for char in value
-        if not unicodedata.combining(char)
+        c
+        for c in value
+        if not unicodedata.combining(c)
     )
 
     value = value.lower()
 
     value = value.replace(
-        "-",
-        " "
+        "’",
+        "'"
     )
 
     value = value.replace(
-        "_",
+        "'",
+        ""
+    )
+
+    value = value.replace(
+        "-",
         " "
     )
 
@@ -152,68 +204,189 @@ def normalize_text(value):
         r"\s+",
         " ",
         value
-    ).strip()
+    )
 
-    return value
+    return value.strip()
 
 
-def normalize_name(value):
+def compact_name(value):
 
-    return normalize_text(
+    return normalize_name(
         value
+    ).replace(
+        " ",
+        ""
+    )
+
+
+def name_tokens(value):
+
+    value = normalize_name(
+        value
+    )
+
+    if not value:
+        return set()
+
+    return set(
+        value.split()
     )
 
 
 # ============================================================
-# DATE HELPERS
+# SEARCH QUERY BUILDER
 # ============================================================
 
-def is_valid_date(value):
+def build_search_queries(name):
 
-    if not value:
-        return False
+    if not name:
+        return []
 
-    try:
+    normalized = normalize_name(
+        name
+    )
 
-        datetime.strptime(
-            value,
-            "%Y-%m-%d"
+    if not normalized:
+        return []
+
+    queries = []
+
+    def add_query(query):
+
+        query = str(
+            query
+        ).strip()
+
+        if not query:
+            return
+
+        normalized_query = normalize_name(
+            query
         )
 
-        return True
+        if not normalized_query:
+            return
 
-    except ValueError:
+        existing = {
+            normalize_name(q)
+            for q in queries
+        }
 
-        return False
+        if normalized_query not in existing:
+
+            queries.append(
+                query
+            )
+
+    # --------------------------------------------------------
+    # ORIGINAL
+    # --------------------------------------------------------
+
+    add_query(
+        name
+    )
+
+    # --------------------------------------------------------
+    # NORMALIZED
+    # --------------------------------------------------------
+
+    if str(name).strip() != normalized:
+
+        add_query(
+            normalized
+        )
+
+    # --------------------------------------------------------
+    # FOOTBALL
+    # --------------------------------------------------------
+
+    add_query(
+        f"{normalized} footballer"
+    )
+
+    add_query(
+        f"{normalized} football player"
+    )
+
+    add_query(
+        f"{normalized} soccer player"
+    )
+
+    # --------------------------------------------------------
+    # FIRST NAME + SURNAME
+    # --------------------------------------------------------
+
+    tokens = normalized.split()
+
+    if len(tokens) >= 3:
+
+        first_name = tokens[0]
+
+        surname = tokens[-1]
+
+        if (
+            first_name
+            and surname
+            and first_name != surname
+        ):
+
+            add_query(
+                f"{first_name} {surname}"
+            )
+
+            add_query(
+                f"{first_name} {surname} footballer"
+            )
+
+    return queries
 
 
-def get_date_precision(value):
-    """
-    OpenFootball currently represents some
-    year-only dates as YYYY-01-01.
+# ============================================================
+# DOB PRECISION
+# ============================================================
 
-    V2.1 treats these as year-only records.
-    """
+def get_source_precision(player):
 
-    if not value:
+    explicit = player.get(
+        "dateOfBirthPrecision"
+    )
+
+    if explicit in (
+        "year",
+        "month",
+        "day"
+    ):
+
+        return explicit
+
+    date = player.get(
+        "dateOfBirth"
+    )
+
+    if not date:
         return None
 
+    date = str(
+        date
+    )
+
     if re.fullmatch(
-        r"\d{4}-01-01",
-        value
+        r"\d{4}",
+        date
     ):
 
         return "year"
 
     if re.fullmatch(
-        r"\d{4}-\d{2}-01",
-        value
+        r"\d{4}-\d{2}",
+        date
     ):
 
         return "month"
 
-    if is_valid_date(
-        value
+    if re.fullmatch(
+        r"\d{4}-\d{2}-\d{2}",
+        date
     ):
 
         return "day"
@@ -221,1133 +394,2150 @@ def get_date_precision(value):
     return None
 
 
-def extract_year(value):
+def get_year(date):
 
-    if not value:
+    if not date:
         return None
 
     match = re.match(
         r"^(\d{4})",
-        str(value)
+        str(date)
     )
 
-    if match:
+    if not match:
+        return None
 
-        return int(
-            match.group(1)
-        )
+    return int(
+        match.group(1)
+    )
 
-    return None
+
+# ============================================================
+# YEAR PLACEHOLDER
+# ============================================================
+
+def is_likely_year_placeholder(player):
+
+    date = player.get(
+        "dateOfBirth"
+    )
+
+    if not date:
+        return False
+
+    date = str(
+        date
+    )
+
+    if not re.fullmatch(
+        r"\d{4}-01-01",
+        date
+    ):
+
+        return False
+
+    precision = player.get(
+        "dateOfBirthPrecision"
+    )
+
+    if precision == "year":
+        return True
+
+    if not precision:
+        return True
+
+    return False
+
+
+def effective_source_precision(player):
+
+    if is_likely_year_placeholder(
+        player
+    ):
+
+        return "year"
+
+    return get_source_precision(
+        player
+    )
+
+
+# ============================================================
+# HTTP
+# ============================================================
+
+def request_json(
+    url,
+    params=None
+):
+
+    last_error = None
+
+    for attempt in range(
+        1,
+        MAX_RETRIES + 1
+    ):
+
+        try:
+
+            response = session.get(
+                url,
+                params=params,
+                timeout=30
+            )
+
+            if response.status_code == 429:
+
+                wait = (
+                    BASE_DELAY
+                    * (2 ** (attempt - 1))
+                )
+
+                print(
+                    "    Rate limited. "
+                    f"Retrying in {wait:.1f}s..."
+                )
+
+                time.sleep(
+                    wait
+                )
+
+                continue
+
+            if response.status_code >= 500:
+
+                wait = (
+                    BASE_DELAY
+                    * (2 ** (attempt - 1))
+                )
+
+                print(
+                    "    Wikidata server error "
+                    f"{response.status_code}. "
+                    f"Retrying in {wait:.1f}s..."
+                )
+
+                time.sleep(
+                    wait
+                )
+
+                continue
+
+            response.raise_for_status()
+
+            return response.json(), None
+
+        except Exception as exc:
+
+            last_error = str(
+                exc
+            )
+
+            if attempt < MAX_RETRIES:
+
+                wait = (
+                    BASE_DELAY
+                    * (2 ** (attempt - 1))
+                )
+
+                time.sleep(
+                    wait
+                )
+
+    return None, last_error
 
 
 # ============================================================
 # WIKIDATA SEARCH
 # ============================================================
 
-def wikidata_search(name):
+def search_wikidata(query):
+
+    if not query:
+        return [], None
 
     params = {
         "action": "wbsearchentities",
-        "search": name,
+        "search": query,
         "language": "en",
+        "uselang": "en",
         "format": "json",
-        "limit": 10,
-        "type": "item"
+        "limit": SEARCH_LIMIT
     }
 
-    for attempt in range(
-        MAX_RETRIES
+    data, error = request_json(
+        SEARCH_URL,
+        params
+    )
+
+    if error:
+        return None, error
+
+    if not isinstance(
+        data,
+        dict
     ):
 
-        try:
+        return [], None
 
-            response = session.get(
-                WIKIDATA_API,
-                params=params,
-                timeout=30
-            )
+    results = data.get(
+        "search",
+        []
+    )
 
-            # ------------------------------------------------
-            # RATE LIMIT
-            # ------------------------------------------------
-
-            if response.status_code == 429:
-
-                wait = 2 ** attempt
-
-                print(
-                    f"Wikidata rate limit. "
-                    f"Waiting {wait}s..."
-                )
-
-                time.sleep(
-                    wait
-                )
-
-                continue
-
-            # ------------------------------------------------
-            # SERVER ERROR
-            # ------------------------------------------------
-
-            if response.status_code >= 500:
-
-                wait = 2 ** attempt
-
-                print(
-                    f"Wikidata server error "
-                    f"{response.status_code}. "
-                    f"Waiting {wait}s..."
-                )
-
-                time.sleep(
-                    wait
-                )
-
-                continue
-
-            response.raise_for_status()
-
-            data = response.json()
-
-            return data.get(
-                "search",
-                []
-            )
-
-        except requests.RequestException as exc:
-
-            wait = 2 ** attempt
-
-            print(
-                f"Wikidata search error: "
-                f"{exc}. "
-                f"Waiting {wait}s..."
-            )
-
-            time.sleep(
-                wait
-            )
-
-    return []
-
-
-# ============================================================
-# WIKIDATA ENTITY
-# ============================================================
-
-def get_entity(entity_id):
-
-    params = {
-        "action": "wbgetentities",
-        "ids": entity_id,
-        "format": "json",
-        "languages": "en",
-        "props": "claims|descriptions|labels"
-    }
-
-    for attempt in range(
-        MAX_RETRIES
+    if not isinstance(
+        results,
+        list
     ):
 
-        try:
+        return [], None
 
-            response = session.get(
-                WIKIDATA_API,
-                params=params,
-                timeout=30
-            )
-
-            # ------------------------------------------------
-            # RATE LIMIT
-            # ------------------------------------------------
-
-            if response.status_code == 429:
-
-                wait = 2 ** attempt
-
-                print(
-                    f"Wikidata rate limit. "
-                    f"Waiting {wait}s..."
-                )
-
-                time.sleep(
-                    wait
-                )
-
-                continue
-
-            # ------------------------------------------------
-            # SERVER ERROR
-            # ------------------------------------------------
-
-            if response.status_code >= 500:
-
-                wait = 2 ** attempt
-
-                print(
-                    f"Wikidata server error "
-                    f"{response.status_code}. "
-                    f"Waiting {wait}s..."
-                )
-
-                time.sleep(
-                    wait
-                )
-
-                continue
-
-            response.raise_for_status()
-
-            data = response.json()
-
-            return (
-                data
-                .get(
-                    "entities",
-                    {}
-                )
-                .get(
-                    entity_id
-                )
-            )
-
-        except requests.RequestException as exc:
-
-            wait = 2 ** attempt
-
-            print(
-                f"Wikidata entity error: "
-                f"{exc}. "
-                f"Waiting {wait}s..."
-            )
-
-            time.sleep(
-                wait
-            )
-
-    return None
+    return results, None
 
 
 # ============================================================
-# CLAIM HELPERS
+# ENTITY
 # ============================================================
 
-def get_claim_time(
-    entity,
-    property_id
-):
+def get_entity(qid):
 
-    claims = (
-        entity
-        .get(
-            "claims",
-            {}
-        )
-        .get(
-            property_id,
-            []
-        )
+    if not qid:
+        return None, None
+
+    data, error = request_json(
+        ENTITY_URL.format(qid)
     )
 
-    if not claims:
-        return None
+    if error:
+        return None, error
 
-    claim = claims[0]
+    if not isinstance(
+        data,
+        dict
+    ):
 
-    mainsnak = claim.get(
-        "mainsnak",
-        {}
-    )
+        return None, None
 
-    datavalue = mainsnak.get(
-        "datavalue",
-        {}
-    )
-
-    value = datavalue.get(
-        "value",
+    entities = data.get(
+        "entities",
         {}
     )
 
     if not isinstance(
-        value,
+        entities,
         dict
     ):
 
-        return None
+        return None, None
 
-    time_value = value.get(
-        "time"
+    return (
+        entities.get(qid),
+        None
     )
 
-    if not time_value:
-        return None
 
-    # Example:
-    #
-    # +1993-09-05T00:00:00Z
+# ============================================================
+# ENTITY TEXT
+# ============================================================
 
-    match = re.match(
-        r"^\+(\d{4})-(\d{2})-(\d{2})",
-        time_value
-    )
+def entity_label(entity):
 
-    if not match:
-        return None
-
-    year = match.group(1)
-    month = match.group(2)
-    day = match.group(3)
-
-    precision = value.get(
-        "precision"
-    )
-
-    # Wikidata precision 9 = year
-    if precision == 9:
-
-        return {
-            "date": f"{year}-01-01",
-            "precision": "year"
-        }
-
-    # Wikidata precision 10 = month
-    if precision == 10:
-
-        return {
-            "date": f"{year}-{month}-01",
-            "precision": "month"
-        }
-
-    # Wikidata precision 11 = day
-    if precision == 11:
-
-        return {
-            "date": f"{year}-{month}-{day}",
-            "precision": "day"
-        }
-
-    return {
-        "date": f"{year}-{month}-{day}",
-        "precision": "unknown"
-    }
-
-
-def get_claim_string(
-    entity,
-    property_id
-):
-
-    claims = (
-        entity
-        .get(
-            "claims",
-            {}
-        )
-        .get(
-            property_id,
-            []
-        )
-    )
-
-    if not claims:
-        return None
-
-    claim = claims[0]
-
-    mainsnak = claim.get(
-        "mainsnak",
-        {}
-    )
-
-    datavalue = mainsnak.get(
-        "datavalue",
-        {}
-    )
-
-    value = datavalue.get(
-        "value"
-    )
-
-    if isinstance(
-        value,
-        str
-    ):
-
-        return value
-
-    if isinstance(
-        value,
+    if not isinstance(
+        entity,
         dict
     ):
 
-        return value.get(
-            "id"
-        )
+        return ""
 
-    return None
-
-
-def get_claim_ids(
-    entity,
-    property_id
-):
-
-    claims = (
-        entity
-        .get(
-            "claims",
-            {}
-        )
-        .get(
-            property_id,
-            []
-        )
+    labels = entity.get(
+        "labels",
+        {}
     )
+
+    if not isinstance(
+        labels,
+        dict
+    ):
+
+        return ""
+
+    entry = labels.get(
+        "en",
+        {}
+    )
+
+    if not isinstance(
+        entry,
+        dict
+    ):
+
+        return ""
+
+    return entry.get(
+        "value",
+        ""
+    )
+
+
+def entity_aliases(entity):
+
+    if not isinstance(
+        entity,
+        dict
+    ):
+
+        return []
+
+    aliases = entity.get(
+        "aliases",
+        {}
+    )
+
+    if not isinstance(
+        aliases,
+        dict
+    ):
+
+        return []
 
     result = []
 
-    for claim in claims:
+    for item in aliases.get(
+        "en",
+        []
+    ):
+
+        if not isinstance(
+            item,
+            dict
+        ):
+
+            continue
+
+        value = item.get(
+            "value"
+        )
+
+        if value:
+
+            result.append(
+                value
+            )
+
+    return result
+
+
+def entity_description(entity):
+
+    if not isinstance(
+        entity,
+        dict
+    ):
+
+        return ""
+
+    descriptions = entity.get(
+        "descriptions",
+        {}
+    )
+
+    if not isinstance(
+        descriptions,
+        dict
+    ):
+
+        return ""
+
+    entry = descriptions.get(
+        "en",
+        {}
+    )
+
+    if not isinstance(
+        entry,
+        dict
+    ):
+
+        return ""
+
+    return entry.get(
+        "value",
+        ""
+    )
+
+
+# ============================================================
+# NAME SCORE
+# ============================================================
+
+def score_name(
+    source,
+    candidate
+):
+
+    source_normalized = normalize_name(
+        source
+    )
+
+    candidate_normalized = normalize_name(
+        candidate
+    )
+
+    if not source_normalized:
+        return 0, "no-match"
+
+    if not candidate_normalized:
+        return 0, "no-match"
+
+    if (
+        source_normalized
+        == candidate_normalized
+    ):
+
+        return 100, "exact-name"
+
+    if (
+        compact_name(source)
+        == compact_name(candidate)
+    ):
+
+        return 96, "compact-name"
+
+    source_tokens = name_tokens(
+        source
+    )
+
+    candidate_tokens = name_tokens(
+        candidate
+    )
+
+    if (
+        source_tokens
+        == candidate_tokens
+    ):
+
+        return 94, "same-token-set"
+
+    common = (
+        source_tokens
+        & candidate_tokens
+    )
+
+    if common:
+
+        ratio = (
+            len(common)
+            / max(
+                len(source_tokens),
+                len(candidate_tokens)
+            )
+        )
+
+        if ratio >= 0.75:
+
+            return (
+                85,
+                "strong-token-overlap"
+            )
+
+        if ratio >= 0.50:
+
+            return (
+                70,
+                "partial-token-overlap"
+            )
+
+    return 0, "no-match"
+
+
+# ============================================================
+# DOB EXTRACTION
+# ============================================================
+
+def extract_dob(entity):
+
+    claims = entity.get(
+        "claims",
+        {}
+    )
+
+    if not isinstance(
+        claims,
+        dict
+    ):
+
+        return {
+            "date": None,
+            "precision": None,
+            "year": None,
+            "rank": 0,
+            "precisionNumber": None
+        }
+
+    dob_claims = claims.get(
+        "P569",
+        []
+    )
+
+    if not isinstance(
+        dob_claims,
+        list
+    ):
+
+        dob_claims = []
+
+    best = None
+
+    precision_rank = {
+        "year": 1,
+        "month": 2,
+        "day": 3
+    }
+
+    for claim in dob_claims:
+
+        if not isinstance(
+            claim,
+            dict
+        ):
+
+            continue
 
         mainsnak = claim.get(
             "mainsnak",
             {}
         )
 
+        if not isinstance(
+            mainsnak,
+            dict
+        ):
+
+            continue
+
         datavalue = mainsnak.get(
-            "datavalue",
+            "datavalue"
+        )
+
+        if not isinstance(
+            datavalue,
+            dict
+        ):
+
+            continue
+
+        value = datavalue.get(
+            "value",
             {}
         )
 
-        value = datavalue.get(
-            "value"
-        )
-
-        if isinstance(
+        if not isinstance(
             value,
             dict
         ):
 
-            entity_id = value.get(
-                "id"
+            continue
+
+        raw_time = value.get(
+            "time"
+        )
+
+        precision_number = value.get(
+            "precision"
+        )
+
+        if not raw_time:
+            continue
+
+        raw_time = str(
+            raw_time
+        ).lstrip(
+            "+"
+        )
+
+        match = re.match(
+            r"(\d{4})-(\d{2})-(\d{2})",
+            raw_time
+        )
+
+        if not match:
+            continue
+
+        year = match.group(1)
+        month = match.group(2)
+        day = match.group(3)
+
+        try:
+
+            precision_number = int(
+                precision_number
             )
 
-            if entity_id:
+        except (
+            TypeError,
+            ValueError
+        ):
 
-                result.append(
-                    entity_id
+            precision_number = None
+
+        if precision_number == 11:
+
+            if (
+                month == "00"
+                or day == "00"
+            ):
+
+                continue
+
+            date = (
+                f"{year}-{month}-{day}"
+            )
+
+            precision = "day"
+
+        elif precision_number == 10:
+
+            if month == "00":
+
+                date = year
+                precision = "year"
+
+            else:
+
+                date = (
+                    f"{year}-{month}"
                 )
 
-    return result
+                precision = "month"
 
+        elif precision_number == 9:
 
-# ============================================================
-# WIKIDATA INFORMATION
-# ============================================================
+            date = year
+            precision = "year"
 
-def extract_wikidata_info(
-    entity
-):
+        else:
 
-    if not entity:
-        return None
+            if (
+                month != "00"
+                and day != "00"
+            ):
 
-    label = (
-        entity
-        .get(
-            "labels",
-            {}
+                date = (
+                    f"{year}-{month}-{day}"
+                )
+
+                precision = "review"
+
+            elif month != "00":
+
+                date = (
+                    f"{year}-{month}"
+                )
+
+                precision = "review"
+
+            else:
+
+                date = year
+                precision = "year"
+
+        rank = precision_rank.get(
+            precision,
+            0
         )
-        .get(
-            "en",
-            {}
-        )
-        .get(
-            "value"
-        )
-    )
 
-    description = (
-        entity
-        .get(
-            "descriptions",
-            {}
-        )
-        .get(
-            "en",
-            {}
-        )
-        .get(
-            "value"
-        )
-    )
+        if (
+            best is None
+            or rank > best["rank"]
+        ):
 
-    dob = get_claim_time(
-        entity,
-        "P569"
-    )
+            best = {
+                "date": date,
+                "precision": precision,
+                "year": int(year),
+                "rank": rank,
+                "precisionNumber": (
+                    precision_number
+                )
+            }
 
-    dod = get_claim_time(
-        entity,
-        "P570"
-    )
-
-    birth_place = get_claim_string(
-        entity,
-        "P19"
-    )
-
-    citizenship = get_claim_ids(
-        entity,
-        "P27"
-    )
-
-    occupations = get_claim_ids(
-        entity,
-        "P106"
-    )
-
-    image = get_claim_string(
-        entity,
-        "P18"
-    )
+    if best:
+        return best
 
     return {
-        "wikidataId": entity.get(
-            "id"
-        ),
-        "label": label,
-        "description": description,
-        "dateOfBirth": dob,
-        "dateOfDeath": dod,
-        "birthPlace": birth_place,
-        "citizenship": citizenship,
-        "occupations": occupations,
-        "image": image
+        "date": None,
+        "precision": None,
+        "year": None,
+        "rank": 0,
+        "precisionNumber": None
     }
+
+
+# ============================================================
+# DEATH DATE
+# ============================================================
+
+def extract_death_date(entity):
+
+    claims = entity.get(
+        "claims",
+        {}
+    )
+
+    if not isinstance(
+        claims,
+        dict
+    ):
+
+        return None
+
+    for claim in claims.get(
+        "P570",
+        []
+    ):
+
+        if not isinstance(
+            claim,
+            dict
+        ):
+
+            continue
+
+        mainsnak = claim.get(
+            "mainsnak",
+            {}
+        )
+
+        if not isinstance(
+            mainsnak,
+            dict
+        ):
+
+            continue
+
+        datavalue = mainsnak.get(
+            "datavalue"
+        )
+
+        if not isinstance(
+            datavalue,
+            dict
+        ):
+
+            continue
+
+        value = datavalue.get(
+            "value",
+            {}
+        )
+
+        if not isinstance(
+            value,
+            dict
+        ):
+
+            continue
+
+        raw_time = value.get(
+            "time"
+        )
+
+        if raw_time:
+
+            return str(
+                raw_time
+            ).lstrip(
+                "+"
+            )
+
+    return None
 
 
 # ============================================================
 # FOOTBALL RELEVANCE
 # ============================================================
 
-FOOTBALL_OCCUPATIONS = {
-    "Q937857",
-    "Q10833314",
-    "Q4610556",
-    "Q628099",
-}
+FOOTBALL_TERMS = (
+    "footballer",
+    "football player",
+    "soccer player",
+    "football goalkeeper",
+    "football midfielder",
+    "football defender",
+    "football forward",
+    "football striker",
+    "football manager",
+    "football coach",
+    "soccer manager",
+    "soccer coach"
+)
 
 
 def football_relevance(
-    info
+    description
 ):
 
-    score = 0
-
-    occupations = set(
-        info.get(
-            "occupations",
-            []
-        )
+    text = normalize_name(
+        description
     )
 
-    if occupations.intersection(
-        FOOTBALL_OCCUPATIONS
+    for term in FOOTBALL_TERMS:
+
+        if (
+            normalize_name(term)
+            in text
+        ):
+
+            return True
+
+    return False
+
+
+# ============================================================
+# CANDIDATE BUILDER
+# ============================================================
+
+def build_candidate_from_entity(
+    player,
+    entity
+):
+
+    if not isinstance(
+        entity,
+        dict
     ):
 
-        score += 5
+        return None, None
 
-    description = (
-        info.get(
-            "description"
-        )
+    qid = entity.get(
+        "id"
+    )
+
+    if not qid:
+        return None, None
+
+    source_name = (
+        player.get("displayName")
+        or player.get("name")
         or ""
-    ).lower()
+    )
 
-    football_terms = [
-        "footballer",
-        "football player",
-        "soccer player",
-        "football manager",
-        "football coach",
-        "soccer player",
-    ]
+    label = entity_label(
+        entity
+    )
 
-    for term in football_terms:
+    aliases = entity_aliases(
+        entity
+    )
 
-        if term in description:
+    description = entity_description(
+        entity
+    )
 
-            score += 5
+    # --------------------------------------------------------
+    # NAME
+    # --------------------------------------------------------
 
-            break
+    name_score, name_method = (
+        score_name(
+            source_name,
+            label
+        )
+    )
 
-    return score
+    matched_alias = None
+
+    for alias in aliases:
+
+        alias_score, alias_method = (
+            score_name(
+                source_name,
+                alias
+            )
+        )
+
+        if alias_score > name_score:
+
+            name_score = alias_score
+
+            name_method = (
+                f"alias-{alias_method}"
+            )
+
+            matched_alias = alias
+
+    # --------------------------------------------------------
+    # DOB
+    # --------------------------------------------------------
+
+    dob = extract_dob(
+        entity
+    )
+
+    source_year = get_year(
+        player.get(
+            "dateOfBirth"
+        )
+    )
+
+    same_year = (
+        source_year is not None
+        and dob["year"] is not None
+        and source_year == dob["year"]
+    )
+
+    different_year = (
+        source_year is not None
+        and dob["year"] is not None
+        and source_year != dob["year"]
+    )
+
+    football = football_relevance(
+        description
+    )
+
+    # --------------------------------------------------------
+    # IDENTITY SCORE
+    # --------------------------------------------------------
+
+    identity_score = name_score
+
+    if football:
+
+        identity_score += 15
+
+    if same_year:
+
+        identity_score += 10
+
+    if different_year:
+
+        identity_score -= 5
+
+    return {
+        "qid": qid,
+        "label": label,
+        "aliases": aliases,
+        "matchedAlias": matched_alias,
+        "description": description,
+        "nameScore": name_score,
+        "nameMatchMethod": name_method,
+        "footballRelated": football,
+        "dob": dob,
+        "sourceYear": source_year,
+        "sameYear": same_year,
+        "differentYear": different_year,
+        "identityScore": identity_score,
+        "deathDate": extract_death_date(
+            entity
+        )
+    }, None
 
 
 # ============================================================
-# MATCH SCORING
+# CANDIDATE DIAGNOSTIC REASON
 # ============================================================
 
-def calculate_match_score(
+def candidate_failure_reasons(
     player,
-    info
+    candidate
 ):
 
-    player_name = normalize_name(
-        player.get("name")
-        or player.get("displayName")
-    )
+    reasons = []
 
-    wiki_name = normalize_name(
-        info.get("label")
-    )
+    if not candidate:
 
-    score = 0
-
-    # --------------------------------------------------------
-    # EXACT NORMALIZED NAME
-    # --------------------------------------------------------
-
-    if (
-        player_name
-        and wiki_name == player_name
-    ):
-
-        score += 10
-
-    # --------------------------------------------------------
-    # PARTIAL NAME SIMILARITY
-    # --------------------------------------------------------
-
-    elif (
-        player_name
-        and wiki_name
-    ):
-
-        player_parts = set(
-            player_name.split()
+        reasons.append(
+            "no-candidate"
         )
 
-        wiki_parts = set(
-            wiki_name.split()
+        return reasons
+
+    name_score = candidate.get(
+        "nameScore",
+        0
+    )
+
+    football = candidate.get(
+        "footballRelated",
+        False
+    )
+
+    same_year = candidate.get(
+        "sameYear",
+        False
+    )
+
+    different_year = candidate.get(
+        "differentYear",
+        False
+    )
+
+    dob = candidate.get(
+        "dob",
+        {}
+    )
+
+    wikidata_precision = dob.get(
+        "precision"
+    )
+
+    source_precision = effective_source_precision(
+        player
+    )
+
+    if name_score < 65:
+
+        reasons.append(
+            "name-score-below-65"
         )
 
-        overlap = (
-            player_parts
-            .intersection(
-                wiki_parts
-            )
+    elif name_score < 78:
+
+        reasons.append(
+            "name-score-between-65-and-77"
         )
 
-        if overlap:
+    elif name_score < 94:
 
-            score += min(
-                6,
-                len(overlap) * 3
-            )
-
-    # --------------------------------------------------------
-    # DOB MATCHING
-    # --------------------------------------------------------
-
-    source_dob = player.get(
-        "dateOfBirth"
-    )
-
-    source_precision = (
-        get_date_precision(
-            source_dob
+        reasons.append(
+            "name-score-between-78-and-93"
         )
-    )
 
-    wiki_dob = info.get(
-        "dateOfBirth"
-    )
+    if not football:
 
-    if (
-        source_dob
-        and wiki_dob
-    ):
-
-        # Full date source
-        if source_precision == "day":
-
-            if (
-                wiki_dob["precision"]
-                == "day"
-            ):
-
-                if (
-                    source_dob
-                    == wiki_dob["date"]
-                ):
-
-                    score += 20
-
-                else:
-
-                    # Do not accept
-                    # conflicting full dates.
-
-                    score -= 20
-
-        # Year-only source
-        elif source_precision == "year":
-
-            source_year = extract_year(
-                source_dob
-            )
-
-            wiki_year = extract_year(
-                wiki_dob["date"]
-            )
-
-            if (
-                source_year
-                == wiki_year
-            ):
-
-                score += 12
-
-    # --------------------------------------------------------
-    # FOOTBALL RELEVANCE
-    # --------------------------------------------------------
-
-    score += football_relevance(
-        info
-    )
-
-    return score
-
-
-# ============================================================
-# MATCH METHOD
-# ============================================================
-
-def determine_match_method(
-    player,
-    info
-):
-
-    source_dob = player.get(
-        "dateOfBirth"
-    )
-
-    wiki_dob = info.get(
-        "dateOfBirth"
-    )
-
-    source_precision = (
-        get_date_precision(
-            source_dob
+        reasons.append(
+            "football-relevance-not-confirmed"
         )
-    )
 
-    if (
-        not source_dob
-        or not wiki_dob
-    ):
+    if different_year:
 
-        return "name-only"
+        reasons.append(
+            "birth-year-conflict"
+        )
+
+    if not same_year:
+
+        reasons.append(
+            "birth-year-not-confirmed"
+        )
+
+    if not dob.get("date"):
+
+        reasons.append(
+            "wikidata-dob-unavailable"
+        )
+
+    elif wikidata_precision == "review":
+
+        reasons.append(
+            "wikidata-dob-precision-uncertain"
+        )
 
     if source_precision == "year":
 
-        if (
-            wiki_dob["precision"]
-            == "day"
-        ):
+        if wikidata_precision == "year":
 
-            return "year-to-full-dob"
+            reasons.append(
+                "both-source-and-wikidata-are-year-only"
+            )
 
-        if (
-            wiki_dob["precision"]
-            == "month"
-        ):
+        elif wikidata_precision == "month":
 
-            return "year-to-month-dob"
+            if same_year:
 
-        return "year-only"
+                reasons.append(
+                    "month-precision-available"
+                )
+
+        elif wikidata_precision == "day":
+
+            if same_year:
+
+                reasons.append(
+                    "full-day-precision-available"
+                )
 
     if source_precision == "day":
 
         if (
-            wiki_dob["precision"]
-            == "day"
+            dob.get("date")
+            and player.get("dateOfBirth")
+            != dob.get("date")
+            and same_year
         ):
 
-            if (
-                source_dob
-                == wiki_dob["date"]
-            ):
-
-                return "full-dob-exact"
-
-            return "name-conflict-dob"
-
-        return "full-dob-to-lower-precision"
-
-    return "unknown"
-
-
-# ============================================================
-# ENRICH PLAYER
-# ============================================================
-
-def enrich_player(
-    player
-):
-
-    name = (
-        player.get("name")
-        or player.get("displayName")
-    )
-
-    print(
-        f"Searching Wikidata: {name}"
-    )
-
-    candidates = wikidata_search(
-        name
-    )
-
-    time.sleep(
-        REQUEST_DELAY
-    )
-
-    if not candidates:
-
-        return None, {
-            "name": name,
-            "status": "not-found"
-        }
-
-    best = None
-
-    best_score = -999
-
-    candidate_debug = []
-
-    # --------------------------------------------------------
-    # EVALUATE TOP 10 WIKIDATA RESULTS
-    # --------------------------------------------------------
-
-    for candidate in candidates[:10]:
-
-        entity_id = candidate.get(
-            "id"
-        )
-
-        if not entity_id:
-            continue
-
-        entity = get_entity(
-            entity_id
-        )
-
-        time.sleep(
-            REQUEST_DELAY
-        )
-
-        if not entity:
-            continue
-
-        info = extract_wikidata_info(
-            entity
-        )
-
-        if not info:
-            continue
-
-        score = calculate_match_score(
-            player,
-            info
-        )
-
-        candidate_debug.append({
-
-            "wikidataId": entity_id,
-
-            "label": info.get(
-                "label"
-            ),
-
-            "description": info.get(
-                "description"
-            ),
-
-            "score": score
-
-        })
-
-        if score > best_score:
-
-            best_score = score
-
-            best = info
-
-    # --------------------------------------------------------
-    # CONSERVATIVE THRESHOLD
-    # --------------------------------------------------------
-
-    if (
-        not best
-        or best_score < 10
-    ):
-
-        return None, {
-
-            "name": name,
-
-            "status": (
-                "no-confident-match"
-            ),
-
-            "bestScore": best_score,
-
-            "candidates": (
-                candidate_debug
+            reasons.append(
+                "same-year-full-dob-disagreement"
             )
 
-        }
+    return reasons
 
-    method = determine_match_method(
-        player,
-        best
+
+# ============================================================
+# IDENTITY CLASSIFICATION
+# ============================================================
+
+def classify_identity(
+    candidate
+):
+
+    if not candidate:
+
+        return (
+            "REJECT",
+            "no-candidate"
+        )
+
+    name_score = candidate.get(
+        "nameScore",
+        0
     )
 
-    result = dict(
-        player
+    football = candidate.get(
+        "footballRelated",
+        False
     )
 
-    source_dob = player.get(
-        "dateOfBirth"
+    same_year = candidate.get(
+        "sameYear",
+        False
     )
 
-    wiki_dob = best.get(
+    different_year = candidate.get(
+        "differentYear",
+        False
+    )
+
+    if name_score < 65:
+
+        return (
+            "REJECT",
+            "weak-name-match"
+        )
+
+    if name_score >= 94:
+
+        if football:
+
+            return (
+                "SAFE",
+                "strong-name-football-identity"
+            )
+
+        if same_year:
+
+            return (
+                "REVIEW",
+                "strong-name-but-football-relevance-unconfirmed"
+            )
+
+        if different_year:
+
+            return (
+                "REVIEW",
+                "strong-name-but-year-conflict"
+            )
+
+        return (
+            "REVIEW",
+            "strong-name-insufficient-football-evidence"
+        )
+
+    if (
+        name_score >= 78
+        and football
+    ):
+
+        if same_year:
+
+            return (
+                "SAFE",
+                "strong-name-football-same-year"
+            )
+
+        if different_year:
+
+            return (
+                "REVIEW",
+                "strong-name-football-year-conflict"
+            )
+
+        return (
+            "REVIEW",
+            "strong-name-football-year-unconfirmed"
+        )
+
+    if (
+        name_score >= 65
+        and same_year
+    ):
+
+        return (
+            "REVIEW",
+            "partial-name-same-year"
+        )
+
+    return (
+        "REVIEW",
+        "identity-needs-review"
+    )
+
+
+# ============================================================
+# DOB DECISION
+# ============================================================
+
+def evaluate_dob(
+    player,
+    candidate
+):
+
+    source_date = player.get(
         "dateOfBirth"
     )
 
     source_precision = (
-        get_date_precision(
-            source_dob
+        effective_source_precision(
+            player
         )
     )
 
-    # ========================================================
-    # WIKIDATA METADATA
-    # ========================================================
+    source_year = get_year(
+        source_date
+    )
 
-    result["wikidata"] = {
+    wikidata_date = (
+        candidate.get("dob", {})
+        .get("date")
+    )
 
-        "id": best.get(
-            "wikidataId"
-        ),
+    wikidata_precision = (
+        candidate.get("dob", {})
+        .get("precision")
+    )
 
-        "label": best.get(
-            "label"
-        ),
+    wikidata_year = (
+        candidate.get("dob", {})
+        .get("year")
+    )
 
-        "description": best.get(
-            "description"
-        ),
-
-        "dateOfBirth": (
-            best["dateOfBirth"]["date"]
-            if best.get(
-                "dateOfBirth"
-            )
-            else None
-        ),
-
-        "dateOfBirthPrecision": (
-            best["dateOfBirth"]["precision"]
-            if best.get(
-                "dateOfBirth"
-            )
-            else None
-        ),
-
-        "dateOfDeath": (
-            best["dateOfDeath"]["date"]
-            if best.get(
-                "dateOfDeath"
-            )
-            else None
-        ),
-
-        "dateOfDeathPrecision": (
-            best["dateOfDeath"]["precision"]
-            if best.get(
-                "dateOfDeath"
-            )
-            else None
-        ),
-
-        "birthPlace": best.get(
-            "birthPlace"
-        ),
-
-        "citizenship": best.get(
-            "citizenship",
-            []
-        ),
-
-        "occupations": best.get(
-            "occupations",
-            []
-        ),
-
-        "image": best.get(
-            "image"
+    identity_classification, identity_reason = (
+        classify_identity(
+            candidate
         )
+    )
 
+    base = {
+        "classification": (
+            identity_classification
+        ),
+        "identityReason": (
+            identity_reason
+        ),
+        "action": "keep-source",
+        "method": "no-change"
     }
 
-    result["matchScore"] = (
-        best_score
-    )
+    # --------------------------------------------------------
+    # NO WIKIDATA DOB
+    # --------------------------------------------------------
 
-    result["matchMethod"] = (
-        method
-    )
+    if not wikidata_date:
 
-    # ========================================================
-    # DOB PRECISION HANDLING
-    # ========================================================
+        base["method"] = (
+            "wikidata-dob-unavailable"
+        )
 
-    if wiki_dob:
+        return base
 
-        wiki_date = wiki_dob[
-            "date"
-        ]
+    # --------------------------------------------------------
+    # YEAR CONFLICT
+    # --------------------------------------------------------
 
-        wiki_precision = wiki_dob[
-            "precision"
-        ]
+    if (
+        source_year is not None
+        and wikidata_year is not None
+        and source_year != wikidata_year
+    ):
 
-        # ----------------------------------------------------
-        # YEAR-ONLY SOURCE
-        # ----------------------------------------------------
+        if (
+            candidate.get("nameScore", 0)
+            >= 94
+            and candidate.get(
+                "footballRelated",
+                False
+            )
+        ):
 
-        if source_precision == "year":
+            base["classification"] = (
+                "REJECT"
+            )
 
-            # Wikidata has full DOB
-            if wiki_precision == "day":
-
-                result["dateOfBirth"] = (
-                    wiki_date
-                )
-
-                result[
-                    "dateOfBirthPrecision"
-                ] = "day"
-
-                result["birthDay"] = (
-                    wiki_date[5:]
-                )
-
-            # Wikidata has month
-            elif wiki_precision == "month":
-
-                result["dateOfBirth"] = (
-                    wiki_date
-                )
-
-                result[
-                    "dateOfBirthPrecision"
-                ] = "month"
-
-                result["birthDay"] = None
-
-            # Wikidata also only has year
-            else:
-
-                result[
-                    "dateOfBirthPrecision"
-                ] = "year"
-
-                result["birthDay"] = None
-
-        # ----------------------------------------------------
-        # FULL SOURCE DATE
-        # ----------------------------------------------------
+            base["identityReason"] = (
+                "strong-identity-year-conflict"
+            )
 
         else:
 
-            result[
-                "dateOfBirthPrecision"
-            ] = source_precision
+            base["classification"] = (
+                "REVIEW"
+            )
 
-            if source_precision == "day":
+            base["identityReason"] = (
+                "possible-identity-year-conflict"
+            )
 
-                result["birthDay"] = (
-                    source_dob[5:]
+        base["action"] = (
+            "conflict"
+        )
+
+        base["method"] = (
+            "year-conflict"
+        )
+
+        return base
+
+    # --------------------------------------------------------
+    # SOURCE YEAR
+    # --------------------------------------------------------
+
+    if source_precision == "year":
+
+        if (
+            identity_classification
+            != "SAFE"
+        ):
+
+            if wikidata_year == source_year:
+
+                base["method"] = (
+                    "same-year-review"
                 )
 
-    # ========================================================
-    # DECEASED STATUS
-    # ========================================================
+            else:
 
-    if best.get(
-        "dateOfDeath"
+                base["method"] = (
+                    "year-only"
+                )
+
+            return base
+
+        if (
+            wikidata_year == source_year
+            and wikidata_precision == "day"
+        ):
+
+            if wikidata_date != source_date:
+
+                base["action"] = (
+                    "correct"
+                )
+
+                base["method"] = (
+                    "year-to-full-dob"
+                )
+
+                return base
+
+            base["method"] = (
+                "same-date"
+            )
+
+            return base
+
+        if (
+            wikidata_year == source_year
+            and wikidata_precision == "month"
+        ):
+
+            base["action"] = (
+                "correct-month"
+            )
+
+            base["method"] = (
+                "year-to-month"
+            )
+
+            return base
+
+        base["method"] = (
+            "year-only"
+        )
+
+        return base
+
+    # --------------------------------------------------------
+    # SOURCE MONTH
+    # --------------------------------------------------------
+
+    if source_precision == "month":
+
+        source_month = str(
+            source_date
+        )[:7]
+
+        if (
+            wikidata_precision == "day"
+            and wikidata_date.startswith(
+                source_month
+            )
+        ):
+
+            if wikidata_date != source_date:
+
+                base["action"] = (
+                    "correct"
+                )
+
+                base["method"] = (
+                    "month-to-full-dob"
+                )
+
+                return base
+
+        if (
+            wikidata_precision == "month"
+            and wikidata_date == source_month
+        ):
+
+            base["method"] = (
+                "month-match"
+            )
+
+            return base
+
+        base["method"] = (
+            "month-review"
+        )
+
+        return base
+
+    # --------------------------------------------------------
+    # SOURCE DAY
+    # --------------------------------------------------------
+
+    if source_precision == "day":
+
+        if source_date == wikidata_date:
+
+            base["method"] = (
+                "full-date-match"
+            )
+
+            return base
+
+        if (
+            source_year is not None
+            and wikidata_year is not None
+            and source_year == wikidata_year
+        ):
+
+            base["action"] = (
+                "dob-disagreement"
+            )
+
+            base["method"] = (
+                "same-year-dob-disagreement"
+            )
+
+            if identity_classification == "SAFE":
+
+                base["classification"] = (
+                    "REVIEW"
+                )
+
+            return base
+
+        base["action"] = (
+            "conflict"
+        )
+
+        base["method"] = (
+            "year-conflict"
+        )
+
+        base["classification"] = (
+            "REJECT"
+        )
+
+        return base
+
+    # --------------------------------------------------------
+    # UNKNOWN
+    # --------------------------------------------------------
+
+    base["classification"] = (
+        "REVIEW"
+    )
+
+    base["identityReason"] = (
+        "source-dob-precision-unknown"
+    )
+
+    base["method"] = (
+        "precision-unknown"
+    )
+
+    return base
+
+
+# ============================================================
+# CANDIDATE SORTING
+# ============================================================
+
+def sort_candidates(
+    candidates
+):
+
+    valid = [
+        c
+        for c in candidates
+        if isinstance(c, dict)
+    ]
+
+    valid.sort(
+        key=lambda c: (
+            c.get(
+                "identityScore",
+                0
+            ),
+            c.get(
+                "nameScore",
+                0
+            ),
+            c.get(
+                "sameYear",
+                False
+            ),
+            c.get(
+                "footballRelated",
+                False
+            )
+        ),
+        reverse=True
+    )
+
+    return valid
+
+
+# ============================================================
+# SELECT BEST MATCH
+# ============================================================
+
+def select_best_match(
+    candidates
+):
+
+    valid = sort_candidates(
+        candidates
+    )
+
+    if not valid:
+        return None
+
+    best = valid[0]
+
+    name_score = best.get(
+        "nameScore",
+        0
+    )
+
+    football = best.get(
+        "footballRelated",
+        False
+    )
+
+    same_year = best.get(
+        "sameYear",
+        False
+    )
+
+    if name_score >= 94:
+
+        return best
+
+    if (
+        name_score >= 78
+        and football
     ):
 
-        result[
-            "careerStatus"
-        ] = "deceased"
+        return best
 
-    # ========================================================
-    # MATCH INFORMATION
-    # ========================================================
+    if (
+        name_score >= 65
+        and same_year
+    ):
 
-    return result, {
+        return best
 
-        "name": name,
+    return None
 
-        "status": "matched",
 
-        "wikidataId": best.get(
-            "wikidataId"
+# ============================================================
+# DIAGNOSTIC CANDIDATE RECORD
+# ============================================================
+
+def diagnostic_candidate(
+    player,
+    candidate
+):
+
+    classification, reason = (
+        classify_identity(
+            candidate
+        )
+    )
+
+    return {
+
+        "wikidataId": candidate.get(
+            "qid"
         ),
 
-        "wikidataLabel": best.get(
+        "matchedName": candidate.get(
             "label"
         ),
 
-        "matchScore": best_score,
+        "matchedAlias": candidate.get(
+            "matchedAlias"
+        ),
 
-        "matchMethod": method,
+        "description": candidate.get(
+            "description"
+        ),
 
-        "sourceDateOfBirth": (
-            source_dob
+        "nameScore": candidate.get(
+            "nameScore"
+        ),
+
+        "nameMatchMethod": candidate.get(
+            "nameMatchMethod"
+        ),
+
+        "identityScore": candidate.get(
+            "identityScore"
+        ),
+
+        "footballRelated": candidate.get(
+            "footballRelated"
+        ),
+
+        "sourceBirthYear": candidate.get(
+            "sourceYear"
+        ),
+
+        "wikidataBirthYear": (
+            candidate.get(
+                "dob",
+                {}
+            ).get(
+                "year"
+            )
+        ),
+
+        "sourceDateOfBirth": player.get(
+            "dateOfBirth"
+        ),
+
+        "wikidataDateOfBirth": (
+            candidate.get(
+                "dob",
+                {}
+            ).get(
+                "date"
+            )
+        ),
+
+        "wikidataDatePrecision": (
+            candidate.get(
+                "dob",
+                {}
+            ).get(
+                "precision"
+            )
+        ),
+
+        "sameYear": candidate.get(
+            "sameYear"
+        ),
+
+        "differentYear": candidate.get(
+            "differentYear"
+        ),
+
+        "classification": classification,
+
+        "classificationReason": reason,
+
+        "failureReasons": (
+            candidate_failure_reasons(
+                player,
+                candidate
+            )
+        ),
+
+        "deathDate": candidate.get(
+            "deathDate"
+        ),
+
+        "searchQuery": candidate.get(
+            "searchQuery"
+        ),
+
+        "searchPass": candidate.get(
+            "searchPass"
+        )
+    }
+
+
+# ============================================================
+# UNMATCHED DIAGNOSIS
+# ============================================================
+
+def diagnose_unmatched(
+    player,
+    name,
+    candidates,
+    search_queries,
+    search_errors,
+    search_stage_details=None,
+    search_stop_reason=None
+):
+
+    ranked = sort_candidates(
+        candidates
+    )
+
+    top = ranked[
+        :DIAGNOSTIC_TOP_CANDIDATES
+    ]
+
+    if not ranked:
+
+        if search_errors and not search_queries:
+
+            primary_reason = (
+                "search-stage-error"
+            )
+
+        elif search_errors and len(search_errors) >= len(search_queries):
+
+            primary_reason = (
+                "search-stage-errors"
+            )
+
+        elif search_queries:
+
+            primary_reason = (
+                "no-wikidata-candidates-found"
+            )
+
+        else:
+
+            primary_reason = (
+                "no-search-query-generated"
+            )
+
+    else:
+
+        best = ranked[0]
+
+        reasons = candidate_failure_reasons(
+            player,
+            best
+        )
+
+        if reasons:
+
+            primary_reason = (
+                reasons[0]
+            )
+
+        else:
+
+            primary_reason = (
+                "candidate-found-but-selection-failed"
+            )
+
+    return {
+
+        "id": player.get(
+            "id"
+        ),
+
+        "name": name,
+
+        "sourceDateOfBirth": player.get(
+            "dateOfBirth"
+        ),
+
+        "sourceDatePrecision": (
+            effective_source_precision(
+                player
+            )
+        ),
+
+        "sourceBirthYear": get_year(
+            player.get(
+                "dateOfBirth"
+            )
+        ),
+
+        "primaryFailureReason": (
+            primary_reason
+        ),
+
+        "candidateCount": len(
+            candidates
+        ),
+
+        "searchQueries": search_queries,
+
+        "searchQueriesAttempted": len(
+            search_queries
+        ),
+
+        "searchErrors": search_errors,
+
+        "searchStages": search_stage_details or [],
+
+        "searchStopReason": search_stop_reason,
+
+        "topCandidates": [
+            diagnostic_candidate(
+                player,
+                c
+            )
+            for c in top
+        ]
+    }
+
+
+# ============================================================
+# CONFLICT DIAGNOSIS
+# ============================================================
+
+def diagnose_conflict(
+    player,
+    name,
+    match,
+    dob_result,
+    candidates
+):
+
+    source_date = player.get(
+        "dateOfBirth"
+    )
+
+    source_year = get_year(
+        source_date
+    )
+
+    wikidata_date = (
+        match.get(
+            "dob",
+            {}
+        ).get(
+            "date"
+        )
+    )
+
+    wikidata_year = (
+        match.get(
+            "dob",
+            {}
+        ).get(
+            "year"
+        )
+    )
+
+    wikidata_precision = (
+        match.get(
+            "dob",
+            {}
+        ).get(
+            "precision"
+        )
+    )
+
+    if (
+        source_year is not None
+        and wikidata_year is not None
+        and source_year != wikidata_year
+    ):
+
+        conflict_type = (
+            "birth-year-conflict"
+        )
+
+    elif (
+        source_date
+        and wikidata_date
+        and source_date != wikidata_date
+    ):
+
+        conflict_type = (
+            "same-year-dob-disagreement"
+        )
+
+    else:
+
+        conflict_type = (
+            "other-dob-conflict"
+        )
+
+    ranked = sort_candidates(
+        candidates
+    )
+
+    alternative_candidates = []
+
+    for candidate in ranked:
+
+        if (
+            candidate.get("qid")
+            == match.get("qid")
+        ):
+
+            continue
+
+        alternative_candidates.append(
+            diagnostic_candidate(
+                player,
+                candidate
+            )
+        )
+
+        if len(
+            alternative_candidates
+        ) >= DIAGNOSTIC_TOP_CANDIDATES:
+
+            break
+
+    return {
+
+        "id": player.get(
+            "id"
+        ),
+
+        "name": name,
+
+        "conflictType": conflict_type,
+
+        "sourceDateOfBirth": source_date,
+
+        "sourceDatePrecision": (
+            effective_source_precision(
+                player
+            )
+        ),
+
+        "sourceBirthYear": source_year,
+
+        "wikidataId": match.get(
+            "qid"
+        ),
+
+        "matchedName": match.get(
+            "label"
+        ),
+
+        "matchedAlias": match.get(
+            "matchedAlias"
+        ),
+
+        "nameScore": match.get(
+            "nameScore"
+        ),
+
+        "identityScore": match.get(
+            "identityScore"
+        ),
+
+        "nameMatchMethod": match.get(
+            "nameMatchMethod"
+        ),
+
+        "footballRelated": match.get(
+            "footballRelated"
+        ),
+
+        "wikidataDateOfBirth": (
+            wikidata_date
+        ),
+
+        "wikidataDatePrecision": (
+            wikidata_precision
+        ),
+
+        "wikidataBirthYear": (
+            wikidata_year
+        ),
+
+        "sameYear": match.get(
+            "sameYear"
+        ),
+
+        "differentYear": match.get(
+            "differentYear"
+        ),
+
+        "classification": (
+            dob_result.get(
+                "classification"
+            )
+        ),
+
+        "identityReason": (
+            dob_result.get(
+                "identityReason"
+            )
+        ),
+
+        "action": dob_result.get(
+            "action"
+        ),
+
+        "method": dob_result.get(
+            "method"
+        ),
+
+        "diagnosticExplanation": (
+            candidate_failure_reasons(
+                player,
+                match
+            )
+        ),
+
+        "searchQuery": match.get(
+            "searchQuery"
+        ),
+
+        "searchPass": match.get(
+            "searchPass"
+        ),
+
+        "alternativeCandidates": (
+            alternative_candidates
+        )
+    }
+
+
+# ============================================================
+# MATCH AUDIT
+# ============================================================
+
+def build_match_audit(
+    player,
+    name,
+    match,
+    result,
+    dob_result,
+    source_precision
+):
+
+    return {
+
+        "playerId": player.get(
+            "id"
+        ),
+
+        "playerName": name,
+
+        "sourceDateOfBirth": player.get(
+            "dateOfBirth"
         ),
 
         "sourceDatePrecision": (
             source_precision
         ),
 
+        "wikidataId": match.get(
+            "qid"
+        ),
+
+        "matchedName": match.get(
+            "label"
+        ),
+
+        "matchedAlias": match.get(
+            "matchedAlias"
+        ),
+
         "wikidataDateOfBirth": (
-
-            wiki_dob["date"]
-
-            if wiki_dob
-
-            else None
-
+            match.get(
+                "dob",
+                {}
+            ).get(
+                "date"
+            )
         ),
 
         "wikidataDatePrecision": (
+            match.get(
+                "dob",
+                {}
+            ).get(
+                "precision"
+            )
+        ),
 
-            wiki_dob["precision"]
+        "finalDateOfBirth": result.get(
+            "dateOfBirth"
+        ),
 
-            if wiki_dob
+        "finalDatePrecision": result.get(
+            "dateOfBirthPrecision"
+        ),
 
-            else None
+        "matchScore": match.get(
+            "identityScore"
+        ),
 
+        "nameScore": match.get(
+            "nameScore"
+        ),
+
+        "nameMatchMethod": match.get(
+            "nameMatchMethod"
+        ),
+
+        "matchMethod": dob_result.get(
+            "method"
+        ),
+
+        "action": dob_result.get(
+            "action"
+        ),
+
+        "classification": dob_result.get(
+            "classification"
+        ),
+
+        "identityReason": dob_result.get(
+            "identityReason"
+        ),
+
+        "footballRelated": match.get(
+            "footballRelated"
+        ),
+
+        "sameYear": match.get(
+            "sameYear"
+        ),
+
+        "differentYear": match.get(
+            "differentYear"
+        ),
+
+        "searchQuery": match.get(
+            "searchQuery"
+        ),
+
+        "searchPass": match.get(
+            "searchPass"
         )
-
     }
 
 
@@ -1358,37 +2548,26 @@ def enrich_player(
 def main():
 
     print()
+
     print(
-        "=============================================="
+        "=" * 60
     )
 
     print(
-        "Fyucha Player Database - Wikidata V2.1"
+        f"Fyucha Player Database - Wikidata V{VERSION}"
     )
 
     print(
-        "FULL DATABASE RUN"
-    )
-
-    print(
-        "=============================================="
+        "=" * 60
     )
 
     print()
 
-    # ========================================================
-    # CHECK INPUT
-    # ========================================================
-
     if not INPUT_FILE.exists():
 
         raise FileNotFoundError(
-            f"Input file not found: {INPUT_FILE}"
+            f"Missing input file: {INPUT_FILE}"
         )
-
-    # ========================================================
-    # LOAD PLAYERS
-    # ========================================================
 
     with open(
         INPUT_FILE,
@@ -1406,58 +2585,54 @@ def main():
     ):
 
         raise ValueError(
-            "output/players.json "
-            "must contain a JSON array."
+            "output/players.json must contain a JSON array."
         )
 
-    # ========================================================
-    # DETERMINE RUN SIZE
-    # ========================================================
+    print(
+        f"Loaded {len(players):,} total players."
+    )
 
     if TEST_LIMIT is None:
-
         test_players = players
-
         print(
-            f"Loaded {len(players):,} total players."
+            f"Processing all {len(test_players):,} players."
         )
-
-        print(
-            "Mode: FULL DATABASE"
-        )
-
     else:
-
-        test_players = players[
-            :TEST_LIMIT
-        ]
-
+        test_players = players[:TEST_LIMIT]
         print(
-            f"Loaded {len(players):,} total players."
-        )
-
-        print(
-            f"Mode: LIMITED TEST "
-            f"({len(test_players)} players)"
+            f"Processing first {len(test_players):,} players (TEST_LIMIT={TEST_LIMIT})."
         )
 
     print()
 
-    # ========================================================
+    OUTPUT_DIR.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    # --------------------------------------------------------
     # OUTPUT COLLECTIONS
-    # ========================================================
+    # --------------------------------------------------------
 
-    enriched_players = []
+    enriched = []
 
-    match_records = []
+    matches = []
 
-    correction_records = []
+    corrections = []
 
-    year_only_records = []
+    conflicts = []
 
-    # ========================================================
+    year_only = []
+
+    api_errors = []
+
+    unmatched_diagnostics = []
+
+    conflict_diagnostics = []
+
+    # --------------------------------------------------------
     # COUNTERS
-    # ========================================================
+    # --------------------------------------------------------
 
     matched = 0
 
@@ -1465,305 +2640,812 @@ def main():
 
     errors = 0
 
-    full_dates = 0
+    full_dob_records = 0
 
-    month_dates = 0
+    month_precision_records = 0
 
-    year_dates = 0
+    year_precision_records = 0
 
     corrected_dates = 0
 
+    conflict_records = 0
+
     deceased_records = 0
 
-    # ========================================================
-    # PROCESS PLAYERS
-    # ========================================================
+    safe_records = 0
 
-    total_players = len(
-        test_players
-    )
+    review_records = 0
+
+    reject_records = 0
+
+    api_error_count = 0
+
+    # --------------------------------------------------------
+    # DISCOVERY
+    # --------------------------------------------------------
+
+    primary_search_matches = 0
+
+    fallback_search_matches = 0
+
+    fallback_queries_used = 0
+
+    total_search_queries = 0
+
+    primary_queries_attempted = 0
+
+    fallback_queries_attempted = 0
+
+    queries_with_results = 0
+
+    queries_without_results = 0
+
+    query_errors = 0
+
+    search_candidates_discovered = 0
+
+    search_candidates_rejected_duplicate = 0
+
+    search_entities_loaded = 0
+
+    search_entities_missing = 0
+
+    search_candidates_built = 0
+
+    search_early_stops = 0
+
+    # --------------------------------------------------------
+    # API DIAGNOSTICS
+    # --------------------------------------------------------
+
+    total_api_requests = 0
+
+    successful_requests = 0
+
+    retry_count = 0
+
+    transient_errors = 0
+
+    rate_limit_errors = 0
+
+    server_errors = 0
+
+    client_errors = 0
+
+    timeout_errors = 0
+
+    connection_errors = 0
+
+    http_status_codes = {}
+
+    # --------------------------------------------------------
+    # CACHE
+    # --------------------------------------------------------
+
+    search_cache = {}
+
+    entity_cache = {}
+
+    search_cache_hits = 0
+
+    search_cache_misses = 0
+
+    entity_cache_hits = 0
+
+    entity_cache_misses = 0
+
+    # --------------------------------------------------------
+    # WRAP REQUEST FOR METRICS
+    # --------------------------------------------------------
+
+    def tracked_request(
+        url,
+        params=None
+    ):
+
+        nonlocal total_api_requests
+        nonlocal successful_requests
+        nonlocal retry_count
+        nonlocal transient_errors
+        nonlocal rate_limit_errors
+        nonlocal server_errors
+        nonlocal client_errors
+        nonlocal timeout_errors
+        nonlocal connection_errors
+
+        last_error = None
+
+        for attempt in range(
+            1,
+            MAX_RETRIES + 1
+        ):
+
+            total_api_requests += 1
+
+            try:
+
+                response = session.get(
+                    url,
+                    params=params,
+                    timeout=30
+                )
+
+                status = response.status_code
+
+                http_status_codes[
+                    str(status)
+                ] = (
+                    http_status_codes.get(
+                        str(status),
+                        0
+                    ) + 1
+                )
+
+                if status == 429:
+
+                    rate_limit_errors += 1
+
+                    transient_errors += 1
+
+                    if attempt < MAX_RETRIES:
+
+                        retry_count += 1
+
+                        wait = (
+                            BASE_DELAY
+                            * (2 ** (attempt - 1))
+                        )
+
+                        time.sleep(
+                            wait
+                        )
+
+                        continue
+
+                    last_error = (
+                        "HTTP 429 rate limit"
+                    )
+
+                    break
+
+                if status >= 500:
+
+                    server_errors += 1
+
+                    transient_errors += 1
+
+                    if attempt < MAX_RETRIES:
+
+                        retry_count += 1
+
+                        wait = (
+                            BASE_DELAY
+                            * (2 ** (attempt - 1))
+                        )
+
+                        time.sleep(
+                            wait
+                        )
+
+                        continue
+
+                    last_error = (
+                        f"HTTP {status}"
+                    )
+
+                    break
+
+                if 400 <= status < 500:
+
+                    client_errors += 1
+
+                    last_error = (
+                        f"HTTP {status}"
+                    )
+
+                    break
+
+                response.raise_for_status()
+
+                successful_requests += 1
+
+                return response.json(), None
+
+            except requests.Timeout as exc:
+
+                timeout_errors += 1
+
+                transient_errors += 1
+
+                last_error = str(
+                    exc
+                )
+
+                if attempt < MAX_RETRIES:
+
+                    retry_count += 1
+
+                    wait = (
+                        BASE_DELAY
+                        * (2 ** (attempt - 1))
+                    )
+
+                    time.sleep(
+                        wait
+                    )
+
+                    continue
+
+            except requests.ConnectionError as exc:
+
+                connection_errors += 1
+
+                transient_errors += 1
+
+                last_error = str(
+                    exc
+                )
+
+                if attempt < MAX_RETRIES:
+
+                    retry_count += 1
+
+                    wait = (
+                        BASE_DELAY
+                        * (2 ** (attempt - 1))
+                    )
+
+                    time.sleep(
+                        wait
+                    )
+
+                    continue
+
+            except Exception as exc:
+
+                last_error = str(
+                    exc
+                )
+
+                if attempt < MAX_RETRIES:
+
+                    retry_count += 1
+
+                    wait = (
+                        BASE_DELAY
+                        * (2 ** (attempt - 1))
+                    )
+
+                    time.sleep(
+                        wait
+                    )
+
+                    continue
+
+        return None, last_error
+
+    # --------------------------------------------------------
+    # CACHED SEARCH
+    # --------------------------------------------------------
+
+    def cached_search(
+        query
+    ):
+
+        nonlocal search_cache_hits
+        nonlocal search_cache_misses
+
+        normalized_query = normalize_name(
+            query
+        )
+
+        if (
+            normalized_query
+            in search_cache
+        ):
+
+            search_cache_hits += 1
+
+            return search_cache[
+                normalized_query
+            ]
+
+        search_cache_misses += 1
+
+        result = tracked_request(
+            SEARCH_URL,
+            {
+                "action": "wbsearchentities",
+                "search": query,
+                "language": "en",
+                "uselang": "en",
+                "format": "json",
+                "limit": SEARCH_LIMIT
+            }
+        )
+
+        data, error = result
+
+        if error:
+
+            search_cache[
+                normalized_query
+            ] = (
+                None,
+                error
+            )
+
+            return (
+                None,
+                error
+            )
+
+        if not isinstance(
+            data,
+            dict
+        ):
+
+            data = {}
+
+        results = data.get(
+            "search",
+            []
+        )
+
+        if not isinstance(
+            results,
+            list
+        ):
+
+            results = []
+
+        search_cache[
+            normalized_query
+        ] = (
+            results,
+            None
+        )
+
+        return (
+            results,
+            None
+        )
+
+    # --------------------------------------------------------
+    # CACHED ENTITY
+    # --------------------------------------------------------
+
+    def cached_entity(
+        qid
+    ):
+
+        nonlocal entity_cache_hits
+        nonlocal entity_cache_misses
+
+        if qid in entity_cache:
+
+            entity_cache_hits += 1
+
+            return (
+                entity_cache[qid],
+                None
+            )
+
+        entity_cache_misses += 1
+
+        data, error = tracked_request(
+            ENTITY_URL.format(qid)
+        )
+
+        if error:
+
+            return (
+                None,
+                error
+            )
+
+        if not isinstance(
+            data,
+            dict
+        ):
+
+            return (
+                None,
+                None
+            )
+
+        entities = data.get(
+            "entities",
+            {}
+        )
+
+        if not isinstance(
+            entities,
+            dict
+        ):
+
+            return (
+                None,
+                None
+            )
+
+        entity = entities.get(
+            qid
+        )
+
+        if entity is not None:
+
+            entity_cache[
+                qid
+            ] = entity
+
+        return (
+            entity,
+            None
+        )
+
+    # ========================================================
+    # PROCESS
+    # ========================================================
 
     for index, player in enumerate(
         test_players,
         start=1
     ):
 
-        print()
-        print(
-            "----------------------------------------------"
+        name = (
+            player.get("displayName")
+            or player.get("name")
+            or ""
         )
 
         print(
-            f"[{index}/{total_players}]"
+            f"[{index}/{len(test_players)}] {name}"
         )
 
-        print(
-            f"Player ID: "
-            f"{player.get('id', '')}"
-        )
-
-        print(
-            f"Name: "
-            f"{player.get('name') or player.get('displayName')}"
+        original = dict(
+            player
         )
 
         try:
 
-            enriched, match_info = (
-                enrich_player(
-                    player
+            # ------------------------------------------------
+            # BUILD SEARCH QUERIES
+            # ------------------------------------------------
+
+            search_queries = (
+                build_search_queries(
+                    name
                 )
             )
 
-            # =================================================
-            # SUCCESSFUL MATCH
-            # =================================================
+            candidates = []
 
-            if enriched:
+            candidate_qids = set()
 
-                enriched_players.append(
-                    enriched
+            search_errors = []
+
+            search_stage_details = []
+
+            search_stop_reason = "all-search-stages-exhausted"
+
+            # ------------------------------------------------
+            # SEARCH
+            # ------------------------------------------------
+
+            for query_index, query in enumerate(
+                search_queries,
+                start=1
+            ):
+
+                is_primary = (
+                    query_index == 1
                 )
 
-                matched += 1
+                if not is_primary:
 
-                precision = (
-                    enriched.get(
-                        "dateOfBirthPrecision"
+                    fallback_queries_used += 1
+
+                    fallback_queries_attempted += 1
+
+                else:
+
+                    primary_queries_attempted += 1
+
+                total_search_queries += 1
+
+                stage_detail = {
+                    "queryIndex": query_index,
+                    "query": query,
+                    "searchPass": (
+                        "primary"
+                        if is_primary
+                        else "fallback"
+                    ),
+                    "resultCount": 0,
+                    "uniqueQids": 0,
+                    "entitiesLoaded": 0,
+                    "entitiesMissing": 0,
+                    "candidatesBuilt": 0,
+                    "duplicateQidsSkipped": 0,
+                    "error": None,
+                    "stopReason": None
+                }
+
+                search_stage_details.append(
+                    stage_detail
+                )
+
+                search_results, search_error = (
+                    cached_search(
+                        query
                     )
                 )
 
-                if precision == "day":
+                if search_error:
 
-                    full_dates += 1
+                    api_error_count += 1
 
-                elif precision == "month":
+                    query_errors += 1
 
-                    month_dates += 1
+                    stage_detail["error"] = search_error
 
-                elif precision == "year":
-
-                    year_dates += 1
-
-                # ---------------------------------------------
-                # DOB CORRECTION
-                # ---------------------------------------------
-
-                source_dob = (
-                    match_info.get(
-                        "sourceDateOfBirth"
-                    )
-                )
-
-                wiki_dob = (
-                    match_info.get(
-                        "wikidataDateOfBirth"
-                    )
-                )
-
-                method = (
-                    match_info.get(
-                        "matchMethod"
-                    )
-                )
-
-                if (
-                    source_dob
-                    and wiki_dob
-                    and source_dob != wiki_dob
-                    and method in {
-                        "year-to-full-dob",
-                        "year-to-month-dob"
-                    }
-                ):
-
-                    corrected_dates += 1
-
-                    correction_records.append({
-
-                        "id": enriched.get(
-                            "id"
-                        ),
-
-                        "name": enriched.get(
-                            "name"
-                        ),
-
-                        "displayName": (
-                            enriched.get(
-                                "displayName"
-                            )
-                        ),
-
-                        "sourceDateOfBirth": (
-                            source_dob
-                        ),
-
-                        "sourceDatePrecision": (
-                            match_info.get(
-                                "sourceDatePrecision"
-                            )
-                        ),
-
-                        "correctedDateOfBirth": (
-                            wiki_dob
-                        ),
-
-                        "correctedDatePrecision": (
-                            match_info.get(
-                                "wikidataDatePrecision"
-                            )
-                        ),
-
-                        "matchMethod": method,
-
-                        "matchScore": (
-                            match_info.get(
-                                "matchScore"
-                            )
-                        ),
-
-                        "wikidataId": (
-                            match_info.get(
-                                "wikidataId"
-                            )
-                        )
-
+                    search_errors.append({
+                        "query": query,
+                        "error": search_error
                     })
 
-                # ---------------------------------------------
-                # YEAR-ONLY RECORDS
-                # ---------------------------------------------
+                    api_errors.append({
 
-                if (
-                    enriched.get(
-                        "dateOfBirthPrecision"
-                    )
-                    == "year"
-                ):
-
-                    year_only_records.append({
-
-                        "id": enriched.get(
+                        "playerId": player.get(
                             "id"
                         ),
 
-                        "name": enriched.get(
-                            "name"
+                        "playerName": name,
+
+                        "stage": "search",
+
+                        "searchQuery": query,
+
+                        "searchPass": (
+                            "primary"
+                            if is_primary
+                            else "fallback"
                         ),
 
-                        "dateOfBirth": (
-                            enriched.get(
-                                "dateOfBirth"
-                            )
-                        ),
+                        "error": search_error
+                    })
 
-                        "dateOfBirthPrecision": (
-                            enriched.get(
-                                "dateOfBirthPrecision"
-                            )
-                        ),
+                    continue
 
-                        "matchMethod": (
-                            enriched.get(
-                                "matchMethod"
-                            )
-                        ),
+                stage_detail["resultCount"] = len(
+                    search_results or []
+                )
 
-                        "wikidataId": (
+                if stage_detail["resultCount"]:
 
-                            enriched
-                            .get(
-                                "wikidata",
-                                {}
-                            )
-                            .get(
+                    queries_with_results += 1
+
+                else:
+
+                    queries_without_results += 1
+
+                for search_result in (
+                    search_results or []
+                ):
+
+                    if not isinstance(
+                        search_result,
+                        dict
+                    ):
+
+                        continue
+
+                    qid = search_result.get(
+                        "id"
+                    )
+
+                    if not qid:
+                        continue
+
+                    if qid in candidate_qids:
+
+                        search_candidates_rejected_duplicate += 1
+
+                        stage_detail["duplicateQidsSkipped"] += 1
+
+                        continue
+
+                    candidate_qids.add(
+                        qid
+                    )
+
+                    stage_detail["uniqueQids"] += 1
+
+                    entity, entity_error = (
+                        cached_entity(
+                            qid
+                        )
+                    )
+
+                    if entity_error:
+
+                        api_error_count += 1
+
+                        api_errors.append({
+
+                            "playerId": player.get(
                                 "id"
-                            )
+                            ),
 
+                            "playerName": name,
+
+                            "stage": "entity",
+
+                            "wikidataId": qid,
+
+                            "searchQuery": query,
+
+                            "error": entity_error
+                        })
+
+                        continue
+
+                    if not entity:
+
+                        search_entities_missing += 1
+
+                        stage_detail["entitiesMissing"] += 1
+
+                        continue
+
+                    search_entities_loaded += 1
+
+                    stage_detail["entitiesLoaded"] += 1
+
+                    candidate, build_error = (
+                        build_candidate_from_entity(
+                            player,
+                            entity
+                        )
+                    )
+
+                    if build_error:
+
+                        errors += 1
+
+                        api_errors.append({
+
+                            "playerId": player.get(
+                                "id"
+                            ),
+
+                            "playerName": name,
+
+                            "stage": "candidate",
+
+                            "wikidataId": qid,
+
+                            "searchQuery": query,
+
+                            "error": build_error
+                        })
+
+                        continue
+
+                    if candidate:
+
+                        search_candidates_discovered += 1
+
+                        search_candidates_built += 1
+
+                        stage_detail["candidatesBuilt"] += 1
+
+                        candidate[
+                            "searchQuery"
+                        ] = query
+
+                        candidate[
+                            "searchPass"
+                        ] = (
+                            "primary"
+                            if is_primary
+                            else "fallback"
                         )
 
-                    })
+                        candidates.append(
+                            candidate
+                        )
 
-                # ---------------------------------------------
-                # DECEASED
-                # ---------------------------------------------
-
-                if (
-                    enriched.get(
-                        "careerStatus"
+                    time.sleep(
+                        REQUEST_DELAY
                     )
-                    == "deceased"
-                ):
-
-                    deceased_records += 1
 
                 print(
-                    "RESULT: MATCHED"
+                    "    SEARCH "
+                    f"{query_index}/{len(search_queries)} "
+                    f"{stage_detail['searchPass']} | "
+                    f"results={stage_detail['resultCount']} | "
+                    f"uniqueQIDs={stage_detail['uniqueQids']} | "
+                    f"entities={stage_detail['entitiesLoaded']} | "
+                    f"candidates={stage_detail['candidatesBuilt']}"
+                    + (
+                        f" | error={stage_detail['error']}"
+                        if stage_detail['error']
+                        else ""
+                    )
                 )
 
-                print(
-                    f"Wikidata ID: "
-                    f"{match_info.get('wikidataId')}"
+                # ------------------------------------------------
+                # SAFE EARLY STOP
+                # ------------------------------------------------
+                # Do not stop merely because a weak/REVIEW candidate
+                # exists. Continue searching unless the best candidate
+                # has strong name identity AND football relevance.
+                # This preserves V2.1/V2.2 matching strength while
+                # reducing false early selections from ambiguous names.
+
+                preliminary = select_best_match(candidates)
+
+                strong_preliminary = (
+                    preliminary is not None
+                    and preliminary.get("nameScore", 0) >= 94
+                    and preliminary.get("footballRelated", False)
                 )
 
-                print(
-                    f"Match score: "
-                    f"{match_info.get('matchScore')}"
-                )
+                if strong_preliminary:
 
-                print(
-                    f"Match method: "
-                    f"{match_info.get('matchMethod')}"
-                )
+                    stop_label = (
+                        "strong-match-found-in-primary"
+                        if is_primary
+                        else "strong-match-found-in-fallback"
+                    )
 
-                print(
-                    f"Source DOB: "
-                    f"{source_dob}"
-                )
+                    stage_detail["stopReason"] = stop_label
+                    search_stop_reason = stop_label
+                    search_early_stops += 1
+                    break
 
-                print(
-                    f"Wikidata DOB: "
-                    f"{wiki_dob}"
-                )
+            # ------------------------------------------------
+            # FINAL MATCH
+            # ------------------------------------------------
+
+            match = select_best_match(
+                candidates
+            )
 
             # =================================================
-            # NOT MATCHED
+            # NO MATCH
             # =================================================
 
-            else:
+            if not match:
 
                 not_matched += 1
 
-                # ---------------------------------------------
-                # Keep unmatched year-only records
-                # ---------------------------------------------
-
-                source_dob = player.get(
-                    "dateOfBirth"
+                enriched.append(
+                    original
                 )
 
-                if (
-                    get_date_precision(
-                        source_dob
+                source_precision = (
+                    effective_source_precision(
+                        player
                     )
-                    == "year"
-                ):
+                )
 
-                    year_only_records.append({
+                if source_precision == "year":
+
+                    year_precision_records += 1
+
+                    year_only.append({
 
                         "id": player.get(
                             "id"
                         ),
 
-                        "name": (
-                            player.get(
-                                "name"
-                            )
-                        ),
+                        "name": name,
 
-                        "dateOfBirth": (
-                            source_dob
+                        "dateOfBirth": player.get(
+                            "dateOfBirth"
                         ),
 
                         "dateOfBirthPrecision": (
@@ -1772,34 +3454,626 @@ def main():
 
                         "matchMethod": None,
 
-                        "wikidataId": None
+                        "wikidataId": None,
 
+                        "classification": (
+                            "REVIEW"
+                        ),
+
+                        "reason": (
+                            "no-suitable-wikidata-match"
+                        )
                     })
 
-                print(
-                    "RESULT: NOT MATCHED"
+                # ------------------------------------------------
+                # V2.3.1 DIAGNOSTIC
+                # ------------------------------------------------
+
+                diagnosis = diagnose_unmatched(
+                    player,
+                    name,
+                    candidates,
+                    search_queries,
+                    search_errors,
+                    search_stage_details,
+                    search_stop_reason
+                )
+
+                unmatched_diagnostics.append(
+                    diagnosis
                 )
 
                 print(
-                    f"Reason: "
-                    f"{match_info.get('status')}"
+                    "    DIAGNOSIS: "
+                    + diagnosis[
+                        "primaryFailureReason"
+                    ]
                 )
 
-                if match_info.get(
-                    "bestScore"
-                ) is not None:
+                continue
 
-                    print(
-                        f"Best score: "
-                        f"{match_info.get('bestScore')}"
+            matched += 1
+
+            # ------------------------------------------------
+            # DISCOVERY
+            # ------------------------------------------------
+
+            if (
+                match.get(
+                    "searchPass"
+                )
+                == "primary"
+            ):
+
+                primary_search_matches += 1
+
+            else:
+
+                fallback_search_matches += 1
+
+            # ------------------------------------------------
+            # RESULT
+            # ------------------------------------------------
+
+            result = dict(
+                player
+            )
+
+            result[
+                "wikidataId"
+            ] = match.get(
+                "qid"
+            )
+
+            result[
+                "matchedName"
+            ] = match.get(
+                "label"
+            )
+
+            result[
+                "nameMatchMethod"
+            ] = match.get(
+                "nameMatchMethod"
+            )
+
+            result[
+                "matchScore"
+            ] = match.get(
+                "identityScore"
+            )
+
+            result[
+                "footballRelated"
+            ] = match.get(
+                "footballRelated"
+            )
+
+            if match.get(
+                "dob",
+                {}
+            ).get(
+                "date"
+            ):
+
+                result[
+                    "wikidataDateOfBirth"
+                ] = match[
+                    "dob"
+                ].get(
+                    "date"
+                )
+
+                result[
+                    "wikidataDatePrecision"
+                ] = match[
+                    "dob"
+                ].get(
+                    "precision"
+                )
+
+            # ------------------------------------------------
+            # DOB DECISION
+            # ------------------------------------------------
+
+            dob_result = evaluate_dob(
+                player,
+                match
+            )
+
+            action = dob_result.get(
+                "action"
+            )
+
+            method = dob_result.get(
+                "method"
+            )
+
+            classification = (
+                dob_result.get(
+                    "classification"
+                )
+            )
+
+            source_precision = (
+                effective_source_precision(
+                    player
+                )
+            )
+
+            # ------------------------------------------------
+            # CLASSIFICATION
+            # ------------------------------------------------
+
+            if classification == "SAFE":
+
+                safe_records += 1
+
+            elif classification == "REVIEW":
+
+                review_records += 1
+
+            elif classification == "REJECT":
+
+                reject_records += 1
+
+            # ------------------------------------------------
+            # FULL DOB CORRECTION
+            # ------------------------------------------------
+
+            if (
+                action == "correct"
+                and classification == "SAFE"
+            ):
+
+                source_date = player.get(
+                    "dateOfBirth"
+                )
+
+                new_date = (
+                    match.get(
+                        "dob",
+                        {}
+                    ).get(
+                        "date"
                     )
+                )
 
-            # =================================================
-            # SAVE MATCH RECORD
-            # =================================================
+                if (
+                    new_date
+                    and new_date != source_date
+                ):
 
-            match_records.append(
-                match_info
+                    result[
+                        "sourceDateOfBirth"
+                    ] = source_date
+
+                    result[
+                        "sourceDatePrecision"
+                    ] = source_precision
+
+                    result[
+                        "dateOfBirth"
+                    ] = new_date
+
+                    result[
+                        "dateOfBirthPrecision"
+                    ] = "day"
+
+                    corrected_dates += 1
+
+                    corrections.append({
+
+                        "id": player.get(
+                            "id"
+                        ),
+
+                        "name": name,
+
+                        "sourceDateOfBirth": (
+                            source_date
+                        ),
+
+                        "sourceDatePrecision": (
+                            source_precision
+                        ),
+
+                        "correctedDateOfBirth": (
+                            new_date
+                        ),
+
+                        "correctedDatePrecision": (
+                            "day"
+                        ),
+
+                        "matchMethod": method,
+
+                        "matchScore": match.get(
+                            "identityScore"
+                        ),
+
+                        "nameMatchMethod": match.get(
+                            "nameMatchMethod"
+                        ),
+
+                        "wikidataId": match.get(
+                            "qid"
+                        ),
+
+                        "classification": (
+                            "SAFE"
+                        ),
+
+                        "reason": (
+                            dob_result.get(
+                                "identityReason"
+                            )
+                        ),
+
+                        "searchQuery": match.get(
+                            "searchQuery"
+                        ),
+
+                        "searchPass": match.get(
+                            "searchPass"
+                        )
+                    })
+
+            # ------------------------------------------------
+            # MONTH CORRECTION
+            # ------------------------------------------------
+
+            elif (
+                action == "correct-month"
+                and classification == "SAFE"
+            ):
+
+                source_date = player.get(
+                    "dateOfBirth"
+                )
+
+                new_date = (
+                    match.get(
+                        "dob",
+                        {}
+                    ).get(
+                        "date"
+                    )
+                )
+
+                if (
+                    new_date
+                    and new_date != source_date
+                ):
+
+                    result[
+                        "sourceDateOfBirth"
+                    ] = source_date
+
+                    result[
+                        "sourceDatePrecision"
+                    ] = source_precision
+
+                    result[
+                        "dateOfBirth"
+                    ] = new_date
+
+                    result[
+                        "dateOfBirthPrecision"
+                    ] = "month"
+
+                    corrected_dates += 1
+
+                    month_precision_records += 1
+
+                    corrections.append({
+
+                        "id": player.get(
+                            "id"
+                        ),
+
+                        "name": name,
+
+                        "sourceDateOfBirth": (
+                            source_date
+                        ),
+
+                        "sourceDatePrecision": (
+                            source_precision
+                        ),
+
+                        "correctedDateOfBirth": (
+                            new_date
+                        ),
+
+                        "correctedDatePrecision": (
+                            "month"
+                        ),
+
+                        "matchMethod": method,
+
+                        "matchScore": match.get(
+                            "identityScore"
+                        ),
+
+                        "nameMatchMethod": match.get(
+                            "nameMatchMethod"
+                        ),
+
+                        "wikidataId": match.get(
+                            "qid"
+                        ),
+
+                        "classification": (
+                            "SAFE"
+                        ),
+
+                        "reason": (
+                            dob_result.get(
+                                "identityReason"
+                            )
+                        ),
+
+                        "searchQuery": match.get(
+                            "searchQuery"
+                        ),
+
+                        "searchPass": match.get(
+                            "searchPass"
+                        )
+                    })
+
+            # ------------------------------------------------
+            # CONFLICT
+            # ------------------------------------------------
+
+            elif action in (
+                "conflict",
+                "dob-disagreement"
+            ):
+
+                conflict_records += 1
+
+                conflicts.append({
+
+                    "id": player.get(
+                        "id"
+                    ),
+
+                    "name": name,
+
+                    "sourceDateOfBirth": (
+                        player.get(
+                            "dateOfBirth"
+                        )
+                    ),
+
+                    "sourceDatePrecision": (
+                        source_precision
+                    ),
+
+                    "sourceBirthYear": (
+                        get_year(
+                            player.get(
+                                "dateOfBirth"
+                            )
+                        )
+                    ),
+
+                    "wikidataDateOfBirth": (
+                        match.get(
+                            "dob",
+                            {}
+                        ).get(
+                            "date"
+                        )
+                    ),
+
+                    "wikidataDatePrecision": (
+                        match.get(
+                            "dob",
+                            {}
+                        ).get(
+                            "precision"
+                        )
+                    ),
+
+                    "wikidataBirthYear": (
+                        match.get(
+                            "dob",
+                            {}
+                        ).get(
+                            "year"
+                        )
+                    ),
+
+                    "wikidataId": match.get(
+                        "qid"
+                    ),
+
+                    "matchedName": match.get(
+                        "label"
+                    ),
+
+                    "matchedAlias": match.get(
+                        "matchedAlias"
+                    ),
+
+                    "nameMatchMethod": match.get(
+                        "nameMatchMethod"
+                    ),
+
+                    "nameScore": match.get(
+                        "nameScore"
+                    ),
+
+                    "matchScore": match.get(
+                        "identityScore"
+                    ),
+
+                    "matchMethod": method,
+
+                    "classification": (
+                        classification
+                    ),
+
+                    "identityReason": (
+                        dob_result.get(
+                            "identityReason"
+                        )
+                    ),
+
+                    "action": (
+                        "kept-source-dob"
+                    ),
+
+                    "searchQuery": match.get(
+                        "searchQuery"
+                    ),
+
+                    "searchPass": match.get(
+                        "searchPass"
+                    )
+                })
+
+                # ------------------------------------------------
+                # V2.3.1 CONFLICT DIAGNOSTIC
+                # ------------------------------------------------
+
+                conflict_diagnostics.append(
+                    diagnose_conflict(
+                        player,
+                        name,
+                        match,
+                        dob_result,
+                        candidates
+                    )
+                )
+
+            # ------------------------------------------------
+            # YEAR ONLY
+            # ------------------------------------------------
+
+            if (
+                effective_source_precision(
+                    player
+                ) == "year"
+                and action not in (
+                    "correct",
+                    "correct-month"
+                )
+            ):
+
+                year_precision_records += 1
+
+                year_only.append({
+
+                    "id": player.get(
+                        "id"
+                    ),
+
+                    "name": name,
+
+                    "dateOfBirth": player.get(
+                        "dateOfBirth"
+                    ),
+
+                    "dateOfBirthPrecision": (
+                        "year"
+                    ),
+
+                    "matchMethod": method,
+
+                    "wikidataId": match.get(
+                        "qid"
+                    ),
+
+                    "wikidataDateOfBirth": (
+                        match.get(
+                            "dob",
+                            {}
+                        ).get(
+                            "date"
+                        )
+                    ),
+
+                    "wikidataDatePrecision": (
+                        match.get(
+                            "dob",
+                            {}
+                        ).get(
+                            "precision"
+                        )
+                    ),
+
+                    "classification": (
+                        classification
+                    ),
+
+                    "reason": (
+                        dob_result.get(
+                            "identityReason"
+                        )
+                    ),
+
+                    "searchQuery": match.get(
+                        "searchQuery"
+                    ),
+
+                    "searchPass": match.get(
+                        "searchPass"
+                    )
+                })
+
+            # ------------------------------------------------
+            # FULL DOB RECORDS
+            # ------------------------------------------------
+
+            if (
+                action not in (
+                    "correct",
+                    "correct-month"
+                )
+                and effective_source_precision(
+                    player
+                ) == "day"
+            ):
+
+                full_dob_records += 1
+
+            # ------------------------------------------------
+            # DECEASED
+            # ------------------------------------------------
+
+            if match.get(
+                "deathDate"
+            ):
+
+                deceased_records += 1
+
+                result[
+                    "wikidataDateOfDeath"
+                ] = match[
+                    "deathDate"
+                ]
+
+            # ------------------------------------------------
+            # MATCH AUDIT
+            # ------------------------------------------------
+
+            matches.append(
+                build_match_audit(
+                    player,
+                    name,
+                    match,
+                    result,
+                    dob_result,
+                    source_precision
+                )
+            )
+
+            enriched.append(
+                result
             )
 
         except Exception as exc:
@@ -1807,214 +4081,722 @@ def main():
             errors += 1
 
             print(
-                "RESULT: ERROR"
+                "    ERROR: "
+                f"{type(exc).__name__}: {exc}"
             )
 
-            print(
-                f"ERROR: {exc}"
+            enriched.append(
+                original
             )
 
-            match_records.append({
+            api_errors.append({
 
-                "name": (
-                    player.get(
-                        "name"
-                    )
+                "playerId": player.get(
+                    "id"
                 ),
 
-                "status": "error",
+                "playerName": name,
+
+                "stage": (
+                    "player-processing"
+                ),
+
+                "errorType": type(
+                    exc
+                ).__name__,
 
                 "error": str(
                     exc
                 )
-
             })
 
     # ========================================================
-    # MAKE SURE OUTPUT DIRECTORY EXISTS
+    # WRITE JSON
     # ========================================================
 
-    OUTPUT_FILE.parent.mkdir(
-        parents=True,
-        exist_ok=True
+    def write_json(
+        path,
+        data
+    ):
+
+        with open(
+            path,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                data,
+                f,
+                ensure_ascii=False,
+                indent=2
+            )
+
+    write_json(
+        ENRICHED_FILE,
+        enriched
     )
 
-    # ========================================================
-    # SAVE ENRICHED PLAYERS
-    # ========================================================
+    write_json(
+        MATCHES_FILE,
+        matches
+    )
 
-    with open(
-        OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            enriched_players,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    # ========================================================
-    # SAVE MATCH LOG
-    # ========================================================
-
-    with open(
-        MATCH_OUTPUT_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
-
-        json.dump(
-            match_records,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    # ========================================================
-    # SAVE DOB CORRECTIONS
-    # ========================================================
-
-    with open(
+    write_json(
         CORRECTIONS_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+        corrections
+    )
 
-        json.dump(
-            correction_records,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+    write_json(
+        CONFLICTS_FILE,
+        conflicts
+    )
 
-    # ========================================================
-    # SAVE YEAR-ONLY RECORDS
-    # ========================================================
-
-    with open(
+    write_json(
         YEAR_ONLY_FILE,
-        "w",
-        encoding="utf-8"
-    ) as f:
+        year_only
+    )
 
-        json.dump(
-            year_only_records,
-            f,
-            ensure_ascii=False,
-            indent=2
-        )
+    write_json(
+        ERRORS_FILE,
+        api_errors
+    )
+
+    write_json(
+        UNMATCHED_DIAGNOSTICS_FILE,
+        unmatched_diagnostics
+    )
+
+    write_json(
+        CONFLICT_DIAGNOSTICS_FILE,
+        conflict_diagnostics
+    )
 
     # ========================================================
-    # FINAL SUMMARY
+    # DIAGNOSTIC SUMMARY
+    # ========================================================
+
+    unmatched_reason_counts = {}
+
+    for item in unmatched_diagnostics:
+
+        reason = item.get(
+            "primaryFailureReason",
+            "unknown"
+        )
+
+        unmatched_reason_counts[
+            reason
+        ] = (
+            unmatched_reason_counts.get(
+                reason,
+                0
+            ) + 1
+        )
+
+    conflict_type_counts = {}
+
+    for item in conflict_diagnostics:
+
+        conflict_type = item.get(
+            "conflictType",
+            "unknown"
+        )
+
+        conflict_type_counts[
+            conflict_type
+        ] = (
+            conflict_type_counts.get(
+                conflict_type,
+                0
+            ) + 1
+        )
+
+    diagnostics_summary = {
+
+        "version": VERSION,
+
+        "playersTested": len(
+            test_players
+        ),
+
+        "matched": matched,
+
+        "notMatched": not_matched,
+
+        "matchRate": (
+            round(
+                (
+                    matched
+                    / len(test_players)
+                    * 100
+                ),
+                1
+            )
+            if test_players
+            else 0
+        ),
+
+        "safeMatches": safe_records,
+
+        "reviewMatches": review_records,
+
+        "rejectMatches": reject_records,
+
+        "dobCorrections": corrected_dates,
+
+        "dobConflicts": conflict_records,
+
+        "deceasedRecords": deceased_records,
+
+        "unmatchedDiagnostics": len(
+            unmatched_diagnostics
+        ),
+
+        "conflictDiagnostics": len(
+            conflict_diagnostics
+        ),
+
+        "unmatchedFailureReasons": (
+            unmatched_reason_counts
+        ),
+
+        "conflictTypes": (
+            conflict_type_counts
+        ),
+
+        "discovery": {
+
+            "primarySearchMatches": (
+                primary_search_matches
+            ),
+
+            "fallbackSearchMatches": (
+                fallback_search_matches
+            ),
+
+            "fallbackQueriesUsed": (
+                fallback_queries_used
+            ),
+
+            "totalSearchQueries": (
+                total_search_queries
+            ),
+
+            "primaryQueriesAttempted": (
+                primary_queries_attempted
+            ),
+
+            "fallbackQueriesAttempted": (
+                fallback_queries_attempted
+            ),
+
+            "queriesWithResults": (
+                queries_with_results
+            ),
+
+            "queriesWithoutResults": (
+                queries_without_results
+            ),
+
+            "queryErrors": query_errors,
+
+            "uniqueCandidatesDiscovered": (
+                search_candidates_discovered
+            ),
+
+            "duplicateQidsSkipped": (
+                search_candidates_rejected_duplicate
+            ),
+
+            "entitiesLoaded": search_entities_loaded,
+
+            "entitiesMissing": search_entities_missing,
+
+            "candidatesBuilt": search_candidates_built,
+
+            "earlyStops": search_early_stops
+        },
+
+        "apiDiagnostics": {
+
+            "totalApiRequests": (
+                total_api_requests
+            ),
+
+            "successfulRequests": (
+                successful_requests
+            ),
+
+            "retries": retry_count,
+
+            "transientErrors": (
+                transient_errors
+            ),
+
+            "rateLimitErrors": (
+                rate_limit_errors
+            ),
+
+            "serverErrors": (
+                server_errors
+            ),
+
+            "clientErrors": (
+                client_errors
+            ),
+
+            "timeoutErrors": (
+                timeout_errors
+            ),
+
+            "connectionErrors": (
+                connection_errors
+            )
+        },
+
+        "httpStatusCodes": (
+            http_status_codes
+        ),
+
+        "searchCache": {
+
+            "uniqueQueries": len(
+                search_cache
+            ),
+
+            "cacheHits": (
+                search_cache_hits
+            ),
+
+            "cacheMisses": (
+                search_cache_misses
+            )
+        },
+
+        "entityCache": {
+
+            "cachedEntities": len(
+                entity_cache
+            ),
+
+            "cacheHits": (
+                entity_cache_hits
+            ),
+
+            "cacheMisses": (
+                entity_cache_misses
+            )
+        }
+    }
+
+    write_json(
+        DIAGNOSTICS_SUMMARY_FILE,
+        diagnostics_summary
+    )
+
+    # ========================================================
+    # REPORT
     # ========================================================
 
     print()
+
+    print(
+        "=" * 60
+    )
+
+    print(
+        "V2.3.1 FINAL COMPLETE"
+    )
+
+    print(
+        "=" * 60
+    )
+
+    print(
+        f"Players tested:        {len(test_players)}"
+    )
+
+    print(
+        f"Matched:               {matched}"
+    )
+
+    print(
+        f"Not matched:           {not_matched}"
+    )
+
+    print(
+        f"Errors:                {errors}"
+    )
+
+    print(
+        f"API errors:            {api_error_count}"
+    )
+
+    print(
+        f"SAFE matches:          {safe_records}"
+    )
+
+    print(
+        f"REVIEW matches:        {review_records}"
+    )
+
+    print(
+        f"REJECT matches:        {reject_records}"
+    )
+
+    print(
+        f"Full DOB records:      {full_dob_records}"
+    )
+
+    print(
+        f"Month precision:       {month_precision_records}"
+    )
+
+    print(
+        f"Year precision:        {year_precision_records}"
+    )
+
+    print(
+        f"DOB corrections:       {corrected_dates}"
+    )
+
+    print(
+        f"DOB conflicts:         {conflict_records}"
+    )
+
+    print(
+        f"Deceased records:      {deceased_records}"
+    )
+
     print()
+
     print(
-        "=============================================="
+        "DIAGNOSTICS:"
     )
 
     print(
-        "V2.1 FULL DATABASE RUN COMPLETE"
+        f"Unmatched diagnosed:    "
+        f"{len(unmatched_diagnostics)}"
     )
 
     print(
-        "=============================================="
+        f"Conflicts diagnosed:    "
+        f"{len(conflict_diagnostics)}"
+    )
+
+    print()
+
+    print(
+        "DISCOVERY:"
     )
 
     print(
-        f"Players in source:     {len(players):,}"
+        f"Primary-search matches:   "
+        f"{primary_search_matches}"
     )
 
     print(
-        f"Players processed:     {len(test_players):,}"
+        f"Fallback-search matches:  "
+        f"{fallback_search_matches}"
     )
 
     print(
-        f"Matched:               {matched:,}"
+        f"Fallback queries used:    "
+        f"{fallback_queries_used}"
     )
 
     print(
-        f"Not matched:           {not_matched:,}"
+        f"Total search queries:     "
+        f"{total_search_queries}"
+    )
+
+    print()
+
+    print(
+        "SEARCH STAGES:"
     )
 
     print(
-        f"Errors:                {errors:,}"
+        f"Primary queries attempted:  {primary_queries_attempted}"
     )
 
-    if len(test_players) > 0:
+    print(
+        f"Fallback queries attempted: {fallback_queries_attempted}"
+    )
 
-        match_rate = (
-            matched
-            / len(test_players)
-            * 100
+    print(
+        f"Queries with results:        {queries_with_results}"
+    )
+
+    print(
+        f"Queries without results:     {queries_without_results}"
+    )
+
+    print(
+        f"Query errors:                {query_errors}"
+    )
+
+    print(
+        f"Unique candidates found:     {search_candidates_discovered}"
+    )
+
+    print(
+        f"Duplicate QIDs skipped:      {search_candidates_rejected_duplicate}"
+    )
+
+    print(
+        f"Entities loaded:              {search_entities_loaded}"
+    )
+
+    print(
+        f"Entities missing:             {search_entities_missing}"
+    )
+
+    print(
+        f"Candidates built:             {search_candidates_built}"
+    )
+
+    print(
+        f"Early search stops:           {search_early_stops}"
+    )
+
+    print()
+
+    print(
+        "API DIAGNOSTICS:"
+    )
+
+    print(
+        f"Total API requests:       "
+        f"{total_api_requests}"
+    )
+
+    print(
+        f"Successful requests:      "
+        f"{successful_requests}"
+    )
+
+    print(
+        f"Retries:                  "
+        f"{retry_count}"
+    )
+
+    print(
+        f"Transient errors:         "
+        f"{transient_errors}"
+    )
+
+    print(
+        f"Rate-limit errors:        "
+        f"{rate_limit_errors}"
+    )
+
+    print(
+        f"Server errors:            "
+        f"{server_errors}"
+    )
+
+    print(
+        f"Client errors:            "
+        f"{client_errors}"
+    )
+
+    print(
+        f"Timeout errors:           "
+        f"{timeout_errors}"
+    )
+
+    print(
+        f"Connection errors:       "
+        f"{connection_errors}"
+    )
+
+    print()
+
+    print(
+        "HTTP STATUS CODES:"
+    )
+
+    for status, count in sorted(
+        http_status_codes.items()
+    ):
+
+        print(
+            f"  HTTP {status}: {count}"
         )
+
+    print()
+
+    print(
+        "SEARCH CACHE:"
+    )
+
+    print(
+        f"Unique queries:           "
+        f"{len(search_cache)}"
+    )
+
+    print(
+        f"Cache hits:               "
+        f"{search_cache_hits}"
+    )
+
+    print(
+        f"Cache misses:             "
+        f"{search_cache_misses}"
+    )
+
+    print()
+
+    print(
+        "ENTITY CACHE:"
+    )
+
+    print(
+        f"Cached entities:          "
+        f"{len(entity_cache)}"
+    )
+
+    print(
+        f"Cache hits:               "
+        f"{entity_cache_hits}"
+    )
+
+    print(
+        f"Cache misses:             "
+        f"{entity_cache_misses}"
+    )
+
+    print()
+
+    print(
+        "UNMATCHED FAILURE REASONS:"
+    )
+
+    if unmatched_reason_counts:
+
+        for reason, count in sorted(
+            unmatched_reason_counts.items(),
+            key=lambda item: (
+                -item[1],
+                item[0]
+            )
+        ):
+
+            print(
+                f"  {reason}: {count}"
+            )
 
     else:
 
-        match_rate = 0
+        print(
+            "  None"
+        )
+
+    print()
 
     print(
-        f"Match rate:            {match_rate:.2f}%"
+        "DOB CONFLICT TYPES:"
+    )
+
+    if conflict_type_counts:
+
+        for conflict_type, count in sorted(
+            conflict_type_counts.items(),
+            key=lambda item: (
+                -item[1],
+                item[0]
+            )
+        ):
+
+            print(
+                f"  {conflict_type}: {count}"
+            )
+
+    else:
+
+        print(
+            "  None"
+        )
+
+    print()
+
+    print(
+        "OUTPUT FILES:"
     )
 
     print(
-        f"Full DOB records:      {full_dates:,}"
+        f"  {ENRICHED_FILE}"
     )
 
     print(
-        f"Month precision:       {month_dates:,}"
+        f"  {MATCHES_FILE}"
     )
 
     print(
-        f"Year precision:        {year_dates:,}"
+        f"  {CORRECTIONS_FILE}"
     )
 
     print(
-        f"DOB corrections:       {corrected_dates:,}"
+        f"  {CONFLICTS_FILE}"
     )
 
     print(
-        f"Year-only records:     "
-        f"{len(year_only_records):,}"
+        f"  {YEAR_ONLY_FILE}"
     )
 
     print(
-        f"Deceased records:      {deceased_records:,}"
+        f"  {ERRORS_FILE}"
     )
 
     print()
 
     print(
-        "Files created:"
+        "NEW V2.3.1 DIAGNOSTIC FILES:"
     )
 
     print(
-        f" - {OUTPUT_FILE}"
+        f"  {UNMATCHED_DIAGNOSTICS_FILE}"
     )
 
     print(
-        f" - {MATCH_OUTPUT_FILE}"
+        f"  {CONFLICT_DIAGNOSTICS_FILE}"
     )
 
     print(
-        f" - {CORRECTIONS_FILE}"
+        f"  {DIAGNOSTICS_SUMMARY_FILE}"
+    )
+
+    print()
+
+    print(
+        "=" * 60
     )
 
     print(
-        f" - {YEAR_ONLY_FILE}"
+        "NEXT STEP:"
     )
 
     print(
-        "=============================================="
+        "Review unmatched-diagnostics.json "
+        "and conflict-diagnostics.json."
     )
+
+    print(
+        "Do NOT loosen SAFE rules until the "
+        "diagnostic cases have been reviewed."
+    )
+
+    print(
+        "=" * 60
+    )
+
+    print()
 
 
 # ============================================================
-# ENTRY POINT
+# RUN
 # ============================================================
 
 if __name__ == "__main__":

@@ -45,7 +45,7 @@ import requests
 # ============================================================
 
 
-VERSION = "2.3.1"
+VERSION = "2.4"
 
 
 # ============================================================
@@ -114,20 +114,33 @@ DIAGNOSTICS_SUMMARY_FILE = (
 
 TEST_LIMIT = None
 
+# Maximum results requested from each Wikidata search.
 SEARCH_LIMIT = 10
 
-MAX_RETRIES = 4
+# Keep retries low so a temporary Wikidata problem cannot stall
+# the entire GitHub Actions workflow for hours.
+MAX_RETRIES = 2
 
 BASE_DELAY = 1.0
 
-REQUEST_DELAY = 0.10
+# Small pause between entity requests. Search requests themselves
+# are not artificially delayed.
+REQUEST_DELAY = 0.05
+
+# V2.4 performance control: normally load only the most promising
+# search results instead of fetching every returned Wikidata entity.
+ENTITY_LOAD_LIMIT = 3
+
+# If a search result is an exact/near-exact name match, load it even
+# when it falls outside the normal top-N entity window.
+STRONG_NAME_SCORE = 94
 
 # Number of candidates to preserve in diagnostics.
 DIAGNOSTIC_TOP_CANDIDATES = 5
 
 
 USER_AGENT = (
-    "FyuchaPlayerDatabase/2.3.1 "
+    "FyuchaPlayerDatabase/2.4 "
     "(football player birthday database)"
 )
 
@@ -3012,6 +3025,137 @@ def main():
         )
 
     # --------------------------------------------------------
+    # FAST SEARCH-RESULT RANKING
+    # --------------------------------------------------------
+
+    def quick_search_result_score(
+        player_name,
+        search_result
+    ):
+
+        if not isinstance(search_result, dict):
+            return 0
+
+        label = search_result.get("label") or ""
+        aliases = search_result.get("aliases") or []
+        description = (
+            search_result.get("description") or ""
+        ).lower()
+
+        best_name_score = score_name(
+            player_name,
+            label
+        )[0]
+
+        if isinstance(aliases, list):
+            for alias in aliases:
+                if isinstance(alias, dict):
+                    alias = alias.get("value") or ""
+                if alias:
+                    best_name_score = max(
+                        best_name_score,
+                        score_name(player_name, alias)[0]
+                    )
+
+        football_bonus = 0
+
+        football_terms = (
+            "football",
+            "soccer",
+            "footballer",
+            "association football",
+            "men's football",
+            "women's football"
+        )
+
+        if any(
+            term in description
+            for term in football_terms
+        ):
+            football_bonus = 25
+
+        return best_name_score + football_bonus
+
+    def prioritize_search_results(
+        player_name,
+        search_results
+    ):
+
+        ranked = []
+
+        for position, item in enumerate(
+            search_results or []
+        ):
+            if not isinstance(item, dict):
+                continue
+
+            ranked.append((
+                quick_search_result_score(
+                    player_name,
+                    item
+                ),
+                position,
+                item
+            ))
+
+        ranked.sort(
+            key=lambda row: (
+                row[0],
+                -row[1]
+            ),
+            reverse=True
+        )
+
+        selected = []
+        selected_qids = set()
+
+        # Always include strong name matches first.
+        for quick_score, _, item in ranked:
+            qid = item.get("id")
+            if not qid or qid in selected_qids:
+                continue
+
+            name_score = quick_search_result_score(
+                player_name,
+                {
+                    "label": item.get("label", ""),
+                    "aliases": item.get("aliases", [])
+                }
+            )
+
+            # quick score without football bonus is not directly
+            # available above, so score label/aliases explicitly.
+            best_name = score_name(
+                player_name,
+                item.get("label", "")
+            )[0]
+
+            for alias in item.get("aliases", []) or []:
+                if isinstance(alias, dict):
+                    alias = alias.get("value") or ""
+                if alias:
+                    best_name = max(
+                        best_name,
+                        score_name(player_name, alias)[0]
+                    )
+
+            if best_name >= STRONG_NAME_SCORE:
+                selected.append(item)
+                selected_qids.add(qid)
+
+        # Fill the remainder with the best search results.
+        for _, _, item in ranked:
+            qid = item.get("id")
+            if not qid or qid in selected_qids:
+                continue
+            if len(selected) >= ENTITY_LOAD_LIMIT:
+                break
+            selected.append(item)
+            selected_qids.add(qid)
+
+        return selected, ranked
+
+    # --------------------------------------------------------
     # CACHED ENTITY
     # --------------------------------------------------------
 
@@ -3230,15 +3374,32 @@ def main():
 
                     queries_without_results += 1
 
-                for search_result in (
-                    search_results or []
-                ):
+                prioritized_results, ranked_results = (
+                    prioritize_search_results(
+                        name,
+                        search_results
+                    )
+                )
+
+                stage_detail["entityLoadLimit"] = ENTITY_LOAD_LIMIT
+                stage_detail["searchResultsRanked"] = len(
+                    ranked_results
+                )
+                stage_detail["selectedForEntityLoad"] = len(
+                    prioritized_results
+                )
+                stage_detail["entityCandidatesSkipped"] = max(
+                    0,
+                    len(ranked_results)
+                    - len(prioritized_results)
+                )
+
+                for search_result in prioritized_results:
 
                     if not isinstance(
                         search_result,
                         dict
                     ):
-
                         continue
 
                     qid = search_result.get(
@@ -3256,9 +3417,7 @@ def main():
 
                         continue
 
-                    candidate_qids.add(
-                        qid
-                    )
+                    candidate_qids.add(qid)
 
                     stage_detail["uniqueQids"] += 1
 
@@ -3357,9 +3516,10 @@ def main():
                             candidate
                         )
 
-                    time.sleep(
-                        REQUEST_DELAY
-                    )
+                    if REQUEST_DELAY > 0:
+                        time.sleep(
+                            REQUEST_DELAY
+                        )
 
                 print(
                     "    SEARCH "
@@ -3368,7 +3528,8 @@ def main():
                     f"results={stage_detail['resultCount']} | "
                     f"uniqueQIDs={stage_detail['uniqueQids']} | "
                     f"entities={stage_detail['entitiesLoaded']} | "
-                    f"candidates={stage_detail['candidatesBuilt']}"
+                    f"candidates={stage_detail['candidatesBuilt']} | "
+                    f"skipped={stage_detail.get('entityCandidatesSkipped', 0)}"
                     + (
                         f" | error={stage_detail['error']}"
                         if stage_detail['error']
@@ -3489,6 +3650,15 @@ def main():
                         "primaryFailureReason"
                     ]
                 )
+
+                if index % 25 == 0:
+                    print(
+                        f"    PROGRESS: {index:,}/{len(test_players):,} "
+                        f"| matched={matched:,} "
+                        f"| unmatched={not_matched:,} "
+                        f"| API requests={total_api_requests:,} "
+                        f"| entities loaded={search_entities_loaded:,}"
+                    )
 
                 continue
 
@@ -4076,6 +4246,15 @@ def main():
                 result
             )
 
+            if index % 25 == 0:
+                print(
+                    f"    PROGRESS: {index:,}/{len(test_players):,} "
+                    f"| matched={matched:,} "
+                    f"| unmatched={not_matched:,} "
+                    f"| API requests={total_api_requests:,} "
+                    f"| entities loaded={search_entities_loaded:,}"
+                )
+
         except Exception as exc:
 
             errors += 1
@@ -4215,6 +4394,14 @@ def main():
     diagnostics_summary = {
 
         "version": VERSION,
+
+        "performanceSettings": {
+            "searchLimit": SEARCH_LIMIT,
+            "entityLoadLimit": ENTITY_LOAD_LIMIT,
+            "maxRetries": MAX_RETRIES,
+            "requestDelay": REQUEST_DELAY,
+            "strongNameScore": STRONG_NAME_SCORE
+        },
 
         "playersTested": len(
             test_players

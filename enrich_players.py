@@ -1,29 +1,3 @@
-# ============================================================
-# FYUCHA PLAYER DATABASE
-# BASELINE WIKIDATA ENRICHMENT
-#
-# Version: BASELINE 1.0
-#
-# Purpose:
-#   Enrich football player records with Wikidata IDs and DOB.
-#
-# Design:
-#   - Simple
-#   - Conservative
-#   - Resumable
-#   - Transparent diagnostics
-#   - No external API keys
-#   - No SPARQL dependency
-#
-# Wikidata API:
-#   https://www.wikidata.org/w/api.php
-#
-# Main API operations:
-#   wbsearchentities
-#   wbgetentities
-#
-# ============================================================
-
 import argparse
 import csv
 import json
@@ -40,8 +14,34 @@ import requests
 
 
 # ============================================================
+# FYUCHA PLAYER DATABASE
+# GITHUB BASELINE WIKIDATA ENRICHMENT
+#
+# Version: BASELINE-GITHUB-1.0
+#
+# Purpose:
+#   Enrich football player records using Wikidata.
+#
+# Features:
+#   - Wikidata search
+#   - Name matching
+#   - Date-of-birth matching
+#   - Football occupation detection
+#   - Conservative candidate selection
+#   - Diagnostics
+#   - Checkpoints
+#   - Resume support
+#   - GitHub Actions compatible
+#
+# No API key required.
+# ============================================================
+
+
+# ============================================================
 # CONFIGURATION
 # ============================================================
+
+WIKIDATA_API = "https://www.wikidata.org/w/api.php"
 
 DEFAULT_INPUT = "players.json"
 DEFAULT_OUTPUT = "enriched_players.json"
@@ -50,26 +50,14 @@ DEFAULT_DIAGNOSTICS = "enrichment_diagnostics.csv"
 
 CHECKPOINT_EVERY = 100
 
-# Delay between Wikidata API requests.
-# Keep this conservative.
 REQUEST_DELAY = 0.25
 
-# Number of search candidates to request.
 SEARCH_LIMIT = 10
-
-# Maximum candidates to inspect in detail.
 MAX_CANDIDATES = 10
 
-# Minimum name similarity for a potential match.
 MIN_NAME_SCORE = 0.72
-
-# Strong name score.
 STRONG_NAME_SCORE = 0.90
 
-# If DOB matches exactly, this is considered very strong.
-DOB_EXACT_BONUS = 100
-
-# Football-related terms used in descriptions/occupations.
 FOOTBALL_TERMS = {
     "footballer",
     "football player",
@@ -91,16 +79,18 @@ FOOTBALL_TERMS = {
     "winger",
 }
 
-# Occupation QIDs frequently associated with football.
+
+# Common football-related Wikidata occupations.
 FOOTBALL_OCCUPATION_QIDS = {
-    "Q937857",     # association football player
-    "Q10833314",   # football player
-    "Q461057",     # football manager
-    "Q628099",     # coach
+    "Q937857",
+    "Q10833314",
+    "Q461057",
+    "Q628099",
 }
 
+
 # ============================================================
-# SESSION
+# HTTP SESSION
 # ============================================================
 
 session = requests.Session()
@@ -109,36 +99,27 @@ session.headers.update(
     {
         "User-Agent": (
             "FyuchaPlayerDatabase/1.0 "
-            "(football player database enrichment; "
-            "contact via Wikimedia API)"
+            "(football player database enrichment)"
         ),
         "Accept": "application/json",
     }
 )
 
-WIKIDATA_API = "https://www.wikidata.org/w/api.php"
-
 
 # ============================================================
-# GENERAL HELPERS
+# TEXT NORMALIZATION
 # ============================================================
 
 def normalize_text(value):
-    """
-    Normalize text for comparison.
-
-    Examples:
-        José Mourinho -> jose mourinho
-        Kylian Mbappé -> kylian mbappe
-        Ronaldinho Gaúcho -> ronaldinho gaucho
-    """
-
     if value is None:
         return ""
 
     value = str(value)
 
-    value = unicodedata.normalize("NFKD", value)
+    value = unicodedata.normalize(
+        "NFKD",
+        value
+    )
 
     value = "".join(
         char
@@ -150,11 +131,19 @@ def normalize_text(value):
 
     value = value.replace("&", " and ")
 
-    value = re.sub(r"[^\w\s]", " ", value)
+    value = re.sub(
+        r"[^\w\s]",
+        " ",
+        value
+    )
 
-    value = re.sub(r"\s+", " ", value).strip()
+    value = re.sub(
+        r"\s+",
+        " ",
+        value
+    )
 
-    return value
+    return value.strip()
 
 
 def tokenize(value):
@@ -163,58 +152,61 @@ def tokenize(value):
     if not normalized:
         return set()
 
-    return set(normalized.split())
+    return set(
+        normalized.split()
+    )
 
 
 def name_similarity(a, b):
-    """
-    Return a 0-1 similarity score.
-    """
+    a = normalize_text(a)
+    b = normalize_text(b)
 
-    a_norm = normalize_text(a)
-    b_norm = normalize_text(b)
-
-    if not a_norm or not b_norm:
+    if not a or not b:
         return 0.0
 
-    if a_norm == b_norm:
+    if a == b:
         return 1.0
 
     sequence_score = SequenceMatcher(
         None,
-        a_norm,
-        b_norm,
+        a,
+        b
     ).ratio()
 
     a_tokens = tokenize(a)
     b_tokens = tokenize(b)
 
     if a_tokens and b_tokens:
-        intersection = len(a_tokens & b_tokens)
-        union = len(a_tokens | b_tokens)
 
-        jaccard = intersection / union if union else 0.0
+        intersection = len(
+            a_tokens & b_tokens
+        )
+
+        union = len(
+            a_tokens | b_tokens
+        )
+
+        token_score = (
+            intersection / union
+            if union
+            else 0.0
+        )
+
     else:
-        jaccard = 0.0
+        token_score = 0.0
 
-    # Give token similarity significant importance.
-    score = (
+    return round(
         sequence_score * 0.55
-        + jaccard * 0.45
+        + token_score * 0.45,
+        4
     )
 
-    return round(score, 4)
 
+# ============================================================
+# DATE NORMALIZATION
+# ============================================================
 
 def normalize_date(value):
-    """
-    Convert DOB values into YYYY-MM-DD when possible.
-
-    Accepts:
-        1987-06-15
-        1987-06-15T00:00:00Z
-        +1987-06-15T00:00:00Z
-    """
 
     if not value:
         return None
@@ -223,7 +215,7 @@ def normalize_date(value):
 
     match = re.search(
         r"(\d{4})-(\d{2})-(\d{2})",
-        value,
+        value
     )
 
     if not match:
@@ -236,48 +228,39 @@ def normalize_date(value):
     )
 
 
-def safe_int(value, default=0):
-    try:
-        return int(value)
-    except Exception:
-        return default
-
-
 # ============================================================
 # WIKIDATA REQUEST
 # ============================================================
 
-def wikidata_request(params, retries=5):
-    """
-    Perform a Wikidata API request with retry handling.
-    """
+def wikidata_request(params, retries=6):
 
     last_error = None
 
-    for attempt in range(1, retries + 1):
+    for attempt in range(
+        1,
+        retries + 1
+    ):
 
         try:
 
             response = session.get(
                 WIKIDATA_API,
                 params=params,
-                timeout=45,
+                timeout=45
             )
 
             if response.status_code == 200:
-
                 return response.json()
 
-            # Rate limited.
             if response.status_code == 429:
 
                 wait_time = min(
                     10 * attempt,
-                    60,
+                    60
                 )
 
                 print(
-                    f"\nWikidata rate limit (429). "
+                    f"  Rate limited. "
                     f"Waiting {wait_time}s..."
                 )
 
@@ -285,16 +268,15 @@ def wikidata_request(params, retries=5):
 
                 continue
 
-            # Server errors.
             if response.status_code >= 500:
 
                 wait_time = min(
                     5 * attempt,
-                    30,
+                    30
                 )
 
                 print(
-                    f"\nWikidata server error "
+                    f"  Wikidata server error "
                     f"{response.status_code}. "
                     f"Waiting {wait_time}s..."
                 )
@@ -311,11 +293,11 @@ def wikidata_request(params, retries=5):
 
             wait_time = min(
                 3 * attempt,
-                30,
+                30
             )
 
             print(
-                f"\nRequest error "
+                f"  Request error "
                 f"(attempt {attempt}/{retries}): "
                 f"{exc}"
             )
@@ -323,19 +305,16 @@ def wikidata_request(params, retries=5):
             time.sleep(wait_time)
 
     raise RuntimeError(
-        f"Wikidata request failed after "
+        "Wikidata request failed after "
         f"{retries} attempts: {last_error}"
     )
 
 
 # ============================================================
-# WIKIDATA SEARCH
+# SEARCH WIKIDATA
 # ============================================================
 
 def search_wikidata(player_name):
-    """
-    Search Wikidata for a player name.
-    """
 
     params = {
         "action": "wbsearchentities",
@@ -348,34 +327,40 @@ def search_wikidata(player_name):
         "type": "item",
     }
 
-    data = wikidata_request(params)
+    data = wikidata_request(
+        params
+    )
 
-    time.sleep(REQUEST_DELAY)
+    time.sleep(
+        REQUEST_DELAY
+    )
 
-    return data.get("search", [])
+    return data.get(
+        "search",
+        []
+    )
 
 
 # ============================================================
-# WIKIDATA ENTITY FETCH
+# GET WIKIDATA ENTITIES
 # ============================================================
 
 def get_entities(qids):
-    """
-    Retrieve multiple Wikidata entities in one request.
-
-    Wikidata supports multiple entity IDs in wbgetentities.
-    """
 
     if not qids:
         return {}
 
-    # Remove duplicates.
-    qids = list(dict.fromkeys(qids))
+    qids = list(
+        dict.fromkeys(qids)
+    )
 
     params = {
         "action": "wbgetentities",
         "ids": "|".join(qids),
-        "props": "labels|descriptions|aliases|claims|sitelinks",
+        "props": (
+            "labels|descriptions|"
+            "aliases|claims|sitelinks"
+        ),
         "languages": "en",
         "languagefallback": "1",
         "sitefilter": "enwiki",
@@ -383,65 +368,112 @@ def get_entities(qids):
         "formatversion": "2",
     }
 
-    data = wikidata_request(params)
+    data = wikidata_request(
+        params
+    )
 
-    time.sleep(REQUEST_DELAY)
+    time.sleep(
+        REQUEST_DELAY
+    )
 
-    return data.get("entities", {})
+    return data.get(
+        "entities",
+        {}
+    )
 
 
 # ============================================================
-# EXTRACT DOB
+# ENTITY HELPERS
 # ============================================================
+
+def extract_label(
+    entity,
+    fallback=""
+):
+
+    label = entity.get(
+        "labels",
+        {}
+    ).get("en")
+
+    if isinstance(
+        label,
+        dict
+    ):
+        return label.get(
+            "value",
+            fallback
+        )
+
+    return fallback
+
+
+def extract_description(entity):
+
+    description = entity.get(
+        "descriptions",
+        {}
+    ).get("en")
+
+    if isinstance(
+        description,
+        dict
+    ):
+        return description.get(
+            "value",
+            ""
+        )
+
+    return ""
+
 
 def extract_date_of_birth(entity):
-    """
-    Extract P569 date of birth from a Wikidata entity.
-    """
 
-    claims = entity.get("claims", {})
+    claims = entity.get(
+        "claims",
+        {}
+    )
 
-    dob_claims = claims.get("P569", [])
-
-    dates = []
+    dob_claims = claims.get(
+        "P569",
+        []
+    )
 
     for claim in dob_claims:
 
         try:
 
-            mainsnak = claim.get("mainsnak", {})
+            value = (
+                claim
+                .get("mainsnak", {})
+                .get("datavalue", {})
+                .get("value", {})
+            )
 
-            datavalue = mainsnak.get("datavalue", {})
+            date = normalize_date(
+                value.get("time")
+            )
 
-            value = datavalue.get("value", {})
-
-            time_value = value.get("time")
-
-            if time_value:
-
-                date = normalize_date(time_value)
-
-                if date:
-                    dates.append(date)
+            if date:
+                return date
 
         except Exception:
             continue
 
-    if dates:
-        return dates[0]
-
     return None
 
 
-# ============================================================
-# EXTRACT OCCUPATION QIDS
-# ============================================================
-
 def extract_occupation_qids(entity):
 
-    claims = entity.get("claims", {})
+    claims = entity.get(
+        "claims",
+        {}
+    )
 
-    occupation_claims = claims.get("P106", [])
+    occupation_claims = claims.get(
+        "P106",
+        []
+    )
 
     qids = []
 
@@ -449,11 +481,12 @@ def extract_occupation_qids(entity):
 
         try:
 
-            mainsnak = claim.get("mainsnak", {})
-
-            datavalue = mainsnak.get("datavalue", {})
-
-            value = datavalue.get("value", {})
+            value = (
+                claim
+                .get("mainsnak", {})
+                .get("datavalue", {})
+                .get("value", {})
+            )
 
             qid = value.get("id")
 
@@ -467,45 +500,7 @@ def extract_occupation_qids(entity):
 
 
 # ============================================================
-# EXTRACT DESCRIPTION
-# ============================================================
-
-def extract_description(entity):
-
-    descriptions = entity.get(
-        "descriptions",
-        {},
-    )
-
-    description = descriptions.get("en")
-
-    if isinstance(description, dict):
-        return description.get("value", "")
-
-    return ""
-
-
-# ============================================================
-# EXTRACT LABEL
-# ============================================================
-
-def extract_label(entity, fallback=""):
-
-    labels = entity.get(
-        "labels",
-        {},
-    )
-
-    label = labels.get("en")
-
-    if isinstance(label, dict):
-        return label.get("value", fallback)
-
-    return fallback
-
-
-# ============================================================
-# FOOTBALL DETECTION
+# FOOTBALL SIGNAL
 # ============================================================
 
 def football_signal(entity):
@@ -514,24 +509,23 @@ def football_signal(entity):
         extract_description(entity)
     )
 
-    occupation_qids = set(
+    occupations = set(
         extract_occupation_qids(entity)
     )
 
-    # Strong structured occupation signal.
-    if occupation_qids & FOOTBALL_OCCUPATION_QIDS:
+    if occupations & FOOTBALL_OCCUPATION_QIDS:
         return 1.0
 
-    # Description signal.
     for term in FOOTBALL_TERMS:
 
         if term in description:
             return 0.8
 
-    # Token-based fallback.
-    description_tokens = tokenize(description)
+    description_tokens = tokenize(
+        description
+    )
 
-    football_tokens = {
+    if description_tokens & {
         "football",
         "soccer",
         "footballer",
@@ -541,46 +535,34 @@ def football_signal(entity):
         "goalkeeper",
         "striker",
         "winger",
-    }
-
-    if description_tokens & football_tokens:
+    }:
         return 0.6
 
     return 0.0
 
 
 # ============================================================
-# CANDIDATE SCORING
+# SCORE CANDIDATE
 # ============================================================
 
 def score_candidate(
     player_name,
     source_dob,
     search_result,
-    entity,
+    entity
 ):
-    """
-    Score a Wikidata candidate.
-
-    Scoring is intentionally conservative.
-
-    Components:
-        - name similarity
-        - exact DOB
-        - football signal
-    """
 
     qid = search_result.get(
         "id",
-        "",
+        ""
     )
 
     matched_name = extract_label(
         entity,
         search_result.get(
             "label",
-            "",
-        ),
+            ""
+        )
     )
 
     description = extract_description(
@@ -593,7 +575,7 @@ def score_candidate(
 
     name_score = name_similarity(
         player_name,
-        matched_name,
+        matched_name
     )
 
     football_score = football_signal(
@@ -615,87 +597,79 @@ def score_candidate(
     )
 
     if dob_match:
-        score += DOB_EXACT_BONUS
+        score += 100
 
     return {
         "qid": qid,
         "matchedName": matched_name,
         "wikidataDateOfBirth": wikidata_dob,
         "description": description,
-        "nameScore": round(name_score, 4),
+        "nameScore": round(
+            name_score,
+            4
+        ),
         "footballScore": round(
             football_score,
-            4,
+            4
         ),
         "dobMatch": dob_match,
-        "score": round(score, 4),
+        "score": round(
+            score,
+            4
+        ),
     }
 
 
 # ============================================================
-# ACCEPT / REJECT LOGIC
+# ACCEPTANCE RULES
 # ============================================================
 
-def classify_candidate(candidate, source_dob):
+def classify_candidate(candidate):
 
-    name_score = candidate["nameScore"]
-
-    dob_match = candidate["dobMatch"]
+    name_score = candidate[
+        "nameScore"
+    ]
 
     football_score = candidate[
         "footballScore"
     ]
 
-    # --------------------------------------------------------
-    # Exact DOB + reasonable name = very strong.
-    # --------------------------------------------------------
+    dob_match = candidate[
+        "dobMatch"
+    ]
 
-    if dob_match and name_score >= 0.72:
-
+    # Exact DOB + reasonable name.
+    if (
+        dob_match
+        and name_score >= 0.72
+    ):
         return (
             True,
             "exact_name_dob"
         )
 
-    # --------------------------------------------------------
-    # Very strong name + football signal.
-    # --------------------------------------------------------
-
+    # Very strong name + football evidence.
     if (
-        name_score >= STRONG_NAME_SCORE
+        name_score >= 0.90
         and football_score >= 0.6
     ):
-
         return (
             True,
             "strong_name_football"
         )
 
-    # --------------------------------------------------------
-    # Very strong name without DOB.
-    #
-    # This is intentionally allowed because many Wikidata
-    # records can have missing DOB data.
-    # --------------------------------------------------------
-
+    # Extremely strong name.
     if name_score >= 0.96:
-
         return (
             True,
             "very_strong_name"
         )
 
-    # --------------------------------------------------------
-    # Moderate name + football + DOB unavailable.
-    #
-    # Require a fairly high combined score.
-    # --------------------------------------------------------
-
+    # Strong name + football evidence.
     if (
         name_score >= 0.85
         and football_score >= 0.6
     ):
-
         return (
             True,
             "strong_name_football"
@@ -708,10 +682,13 @@ def classify_candidate(candidate, source_dob):
 
 
 # ============================================================
-# PROCESS ONE PLAYER
+# ENRICH ONE PLAYER
 # ============================================================
 
-def enrich_player(player, index, total):
+def enrich_player(
+    player,
+    index
+):
 
     player_name = (
         player.get("playerName")
@@ -735,11 +712,15 @@ def enrich_player(player, index, total):
         source_dob
     )
 
-    result = dict(player)
+    result = dict(
+        player
+    )
 
-    # --------------------------------------------------------
-    # Empty name
-    # --------------------------------------------------------
+    checked_at = (
+        datetime.utcnow()
+        .isoformat()
+        + "Z"
+    )
 
     if not player_name:
 
@@ -751,8 +732,7 @@ def enrich_player(player, index, total):
                 "enrichmentStatus": "unmatched",
                 "matchMethod": "missing_name",
                 "matchScore": 0,
-                "enrichmentCheckedAt": datetime.utcnow().isoformat()
-                + "Z",
+                "enrichmentCheckedAt": checked_at,
             }
         )
 
@@ -766,10 +746,13 @@ def enrich_player(player, index, total):
             "sourceDateOfBirth": source_dob or "",
             "wikidataDateOfBirth": "",
             "score": 0,
+            "nameScore": 0,
+            "footballScore": 0,
+            "dobMatch": False,
         }
 
     # --------------------------------------------------------
-    # Search
+    # SEARCH
     # --------------------------------------------------------
 
     search_results = search_wikidata(
@@ -786,8 +769,7 @@ def enrich_player(player, index, total):
                 "enrichmentStatus": "unmatched",
                 "matchMethod": "no_search_results",
                 "matchScore": 0,
-                "enrichmentCheckedAt": datetime.utcnow().isoformat()
-                + "Z",
+                "enrichmentCheckedAt": checked_at,
             }
         )
 
@@ -801,13 +783,16 @@ def enrich_player(player, index, total):
             "sourceDateOfBirth": source_dob or "",
             "wikidataDateOfBirth": "",
             "score": 0,
+            "nameScore": 0,
+            "footballScore": 0,
+            "dobMatch": False,
         }
 
     # --------------------------------------------------------
-    # Candidate IDs
+    # FETCH CANDIDATES
     # --------------------------------------------------------
 
-    candidate_search_results = (
+    candidate_results = (
         search_results[
             :MAX_CANDIDATES
         ]
@@ -815,19 +800,21 @@ def enrich_player(player, index, total):
 
     qids = [
         item.get("id")
-        for item in candidate_search_results
+        for item in candidate_results
         if item.get("id")
     ]
 
-    entities = get_entities(qids)
+    entities = get_entities(
+        qids
+    )
 
     # --------------------------------------------------------
-    # Score candidates
+    # SCORE
     # --------------------------------------------------------
 
     candidates = []
 
-    for search_result in candidate_search_results:
+    for search_result in candidate_results:
 
         qid = search_result.get(
             "id"
@@ -836,7 +823,9 @@ def enrich_player(player, index, total):
         if not qid:
             continue
 
-        entity = entities.get(qid)
+        entity = entities.get(
+            qid
+        )
 
         if not entity:
             continue
@@ -845,7 +834,7 @@ def enrich_player(player, index, total):
             player_name,
             source_dob,
             search_result,
-            entity,
+            entity
         )
 
         candidates.append(
@@ -862,8 +851,7 @@ def enrich_player(player, index, total):
                 "enrichmentStatus": "unmatched",
                 "matchMethod": "no_valid_candidates",
                 "matchScore": 0,
-                "enrichmentCheckedAt": datetime.utcnow().isoformat()
-                + "Z",
+                "enrichmentCheckedAt": checked_at,
             }
         )
 
@@ -877,23 +865,24 @@ def enrich_player(player, index, total):
             "sourceDateOfBirth": source_dob or "",
             "wikidataDateOfBirth": "",
             "score": 0,
+            "nameScore": 0,
+            "footballScore": 0,
+            "dobMatch": False,
         }
 
-    # Highest score first.
     candidates.sort(
         key=lambda x: x["score"],
-        reverse=True,
+        reverse=True
     )
 
     best = candidates[0]
 
     accepted, method = classify_candidate(
-        best,
-        source_dob,
+        best
     )
 
     # --------------------------------------------------------
-    # MATCH
+    # ACCEPTED
     # --------------------------------------------------------
 
     if accepted:
@@ -916,12 +905,11 @@ def enrich_player(player, index, total):
                     "footballScore"
                 ],
                 "dobMatch": best["dobMatch"],
-                "enrichmentCheckedAt": datetime.utcnow().isoformat()
-                + "Z",
+                "enrichmentCheckedAt": checked_at,
             }
         )
 
-        diagnostic = {
+        return result, {
             "index": index,
             "playerName": player_name,
             "status": "matched",
@@ -940,10 +928,8 @@ def enrich_player(player, index, total):
             "dobMatch": best["dobMatch"],
         }
 
-        return result, diagnostic
-
     # --------------------------------------------------------
-    # UNMATCHED
+    # REJECTED
     # --------------------------------------------------------
 
     result.update(
@@ -970,12 +956,11 @@ def enrich_player(player, index, total):
             "bestCandidateDescription": best[
                 "description"
             ],
-            "enrichmentCheckedAt": datetime.utcnow().isoformat()
-            + "Z",
+            "enrichmentCheckedAt": checked_at,
         }
     )
 
-    diagnostic = {
+    return result, {
         "index": index,
         "playerName": player_name,
         "status": "unmatched",
@@ -996,14 +981,19 @@ def enrich_player(player, index, total):
         "dobMatch": best["dobMatch"],
     }
 
-    return result, diagnostic
-
 
 # ============================================================
-# CHECKPOINT FUNCTIONS
+# ATOMIC JSON SAVE
 # ============================================================
 
-def save_json(path, data):
+def save_json(
+    path,
+    data
+):
+
+    path = Path(
+        path
+    )
 
     temp_path = Path(
         str(path) + ".tmp"
@@ -1012,50 +1002,55 @@ def save_json(path, data):
     with open(
         temp_path,
         "w",
-        encoding="utf-8",
+        encoding="utf-8"
     ) as f:
 
         json.dump(
             data,
             f,
             ensure_ascii=False,
-            indent=2,
+            indent=2
         )
 
     os.replace(
         temp_path,
-        path,
+        path
     )
 
 
+# ============================================================
+# CHECKPOINT
+# ============================================================
+
 def save_checkpoint(
-    checkpoint_path,
+    path,
     results,
     diagnostics,
-    next_index,
+    next_index
 ):
 
     checkpoint = {
-        "version": "baseline-1.0",
-        "savedAt": datetime.utcnow().isoformat()
-        + "Z",
+        "version": "baseline-github-1.0",
+        "savedAt": (
+            datetime.utcnow()
+            .isoformat()
+            + "Z"
+        ),
         "nextIndex": next_index,
         "results": results,
         "diagnostics": diagnostics,
     }
 
     save_json(
-        checkpoint_path,
-        checkpoint,
+        path,
+        checkpoint
     )
 
 
-def load_checkpoint(
-    checkpoint_path
-):
+def load_checkpoint(path):
 
     path = Path(
-        checkpoint_path
+        path
     )
 
     if not path.exists():
@@ -1066,7 +1061,7 @@ def load_checkpoint(
         with open(
             path,
             "r",
-            encoding="utf-8",
+            encoding="utf-8"
         ) as f:
 
             return json.load(f)
@@ -1074,7 +1069,8 @@ def load_checkpoint(
     except Exception as exc:
 
         print(
-            "WARNING: Could not load checkpoint:"
+            "WARNING: checkpoint could "
+            "not be loaded:"
         )
 
         print(exc)
@@ -1083,18 +1079,15 @@ def load_checkpoint(
 
 
 # ============================================================
-# DIAGNOSTICS CSV
+# DIAGNOSTICS
 # ============================================================
 
 def write_diagnostics(
     path,
-    diagnostics,
+    diagnostics
 ):
 
-    if not diagnostics:
-        return
-
-    fieldnames = [
+    fields = [
         "index",
         "playerName",
         "status",
@@ -1113,13 +1106,13 @@ def write_diagnostics(
         path,
         "w",
         newline="",
-        encoding="utf-8",
+        encoding="utf-8"
     ) as f:
 
         writer = csv.DictWriter(
             f,
-            fieldnames=fieldnames,
-            extrasaction="ignore",
+            fieldnames=fields,
+            extrasaction="ignore"
         )
 
         writer.writeheader()
@@ -1135,31 +1128,53 @@ def write_diagnostics(
 
 def print_summary(
     results,
-    diagnostics,
+    diagnostics
 ):
 
-    total = len(results)
+    total = len(
+        results
+    )
 
     matched = sum(
         1
-        for row in diagnostics
-        if row.get("status")
+        for item in diagnostics
+        if item.get("status")
         == "matched"
     )
 
-    unmatched = total - matched
-
-    exact_dob = sum(
+    unmatched = sum(
         1
-        for row in diagnostics
-        if row.get("dobMatch")
+        for item in diagnostics
+        if item.get("status")
+        == "unmatched"
+    )
+
+    errors = sum(
+        1
+        for item in diagnostics
+        if item.get("status")
+        == "error"
+    )
+
+    dob_matches = sum(
+        1
+        for item in diagnostics
+        if item.get("dobMatch")
         is True
     )
 
     print()
-    print("=" * 70)
-    print("FYUCHA BASELINE ENRICHMENT SUMMARY")
-    print("=" * 70)
+    print(
+        "=" * 70
+    )
+
+    print(
+        "FYUCHA BASELINE ENRICHMENT SUMMARY"
+    )
+
+    print(
+        "=" * 70
+    )
 
     print(
         f"Processed:          {total:,}"
@@ -1174,7 +1189,11 @@ def print_summary(
     )
 
     print(
-        f"Exact DOB matches:  {exact_dob:,}"
+        f"Errors:             {errors:,}"
+    )
+
+    print(
+        f"Exact DOB matches:  {dob_matches:,}"
     )
 
     if total:
@@ -1184,7 +1203,9 @@ def print_summary(
             f"{matched / total * 100:.2f}%"
         )
 
-    print("=" * 70)
+    print(
+        "=" * 70
+    )
 
 
 # ============================================================
@@ -1193,35 +1214,26 @@ def print_summary(
 
 def main():
 
-    parser = argparse.ArgumentParser(
-        description=(
-            "Fyucha Player Database "
-            "Wikidata Baseline Enrichment"
-        )
-    )
+    parser = argparse.ArgumentParser()
 
     parser.add_argument(
         "--input",
-        default=DEFAULT_INPUT,
-        help="Input player JSON",
+        default=DEFAULT_INPUT
     )
 
     parser.add_argument(
         "--output",
-        default=DEFAULT_OUTPUT,
-        help="Output enriched JSON",
+        default=DEFAULT_OUTPUT
     )
 
     parser.add_argument(
         "--checkpoint",
-        default=DEFAULT_CHECKPOINT,
-        help="Checkpoint JSON",
+        default=DEFAULT_CHECKPOINT
     )
 
     parser.add_argument(
         "--diagnostics",
-        default=DEFAULT_DIAGNOSTICS,
-        help="Diagnostics CSV",
+        default=DEFAULT_DIAGNOSTICS
     )
 
     parser.add_argument(
@@ -1229,21 +1241,19 @@ def main():
         type=int,
         default=0,
         help=(
-            "Process only N players. "
-            "0 means all players."
-        ),
+            "Number of players to process. "
+            "0 = all."
+        )
     )
 
     parser.add_argument(
         "--resume",
-        action="store_true",
-        help="Resume from checkpoint",
+        action="store_true"
     )
 
     parser.add_argument(
         "--fresh",
-        action="store_true",
-        help="Ignore existing checkpoint",
+        action="store_true"
     )
 
     args = parser.parse_args()
@@ -1264,10 +1274,6 @@ def main():
         args.diagnostics
     )
 
-    # --------------------------------------------------------
-    # Validate input.
-    # --------------------------------------------------------
-
     if not input_path.exists():
 
         print(
@@ -1277,15 +1283,22 @@ def main():
 
         sys.exit(1)
 
-    # --------------------------------------------------------
-    # Load players.
-    # --------------------------------------------------------
-
     print()
-    print("=" * 70)
-    print("FYUCHA PLAYER DATABASE")
-    print("WIKIDATA BASELINE ENRICHMENT")
-    print("=" * 70)
+    print(
+        "=" * 70
+    )
+
+    print(
+        "FYUCHA PLAYER DATABASE"
+    )
+
+    print(
+        "GITHUB BASELINE WIKIDATA ENRICHMENT"
+    )
+
+    print(
+        "=" * 70
+    )
 
     print(
         f"Input:       {input_path}"
@@ -1308,36 +1321,41 @@ def main():
     with open(
         input_path,
         "r",
-        encoding="utf-8",
+        encoding="utf-8"
     ) as f:
 
         database = json.load(f)
 
     # --------------------------------------------------------
-    # Support either:
+    # Support:
     #
     # [
-    #   {...},
     #   {...}
     # ]
     #
-    # OR
+    # OR:
     #
     # {
     #   "players": [...]
     # }
     # --------------------------------------------------------
 
-    if isinstance(database, list):
+    if isinstance(
+        database,
+        list
+    ):
 
         players = database
         wrapper = None
 
-    elif isinstance(database, dict):
+    elif isinstance(
+        database,
+        dict
+    ):
 
         if isinstance(
             database.get("players"),
-            list,
+            list
         ):
 
             players = database[
@@ -1350,7 +1368,7 @@ def main():
 
             print(
                 "ERROR: JSON object does not "
-                "contain a 'players' list."
+                "contain a players list."
             )
 
             sys.exit(1)
@@ -1364,23 +1382,22 @@ def main():
         sys.exit(1)
 
     print(
-        f"Players available: {len(players):,}"
+        f"Players available: "
+        f"{len(players):,}"
     )
-
-    # --------------------------------------------------------
-    # Limit for testing.
-    # --------------------------------------------------------
 
     if args.limit > 0:
 
         target_total = min(
             args.limit,
-            len(players),
+            len(players)
         )
 
     else:
 
-        target_total = len(players)
+        target_total = len(
+            players
+        )
 
     print(
         f"Players to process: "
@@ -1388,14 +1405,12 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Existing checkpoint.
+    # Checkpoint loading
     # --------------------------------------------------------
 
     results = []
     diagnostics = []
     start_index = 0
-
-    checkpoint = None
 
     if (
         args.resume
@@ -1406,85 +1421,79 @@ def main():
             checkpoint_path
         )
 
-    if checkpoint:
+        if checkpoint:
 
-        results = checkpoint.get(
-            "results",
-            [],
-        )
+            results = checkpoint.get(
+                "results",
+                []
+            )
 
-        diagnostics = checkpoint.get(
-            "diagnostics",
-            [],
-        )
+            diagnostics = checkpoint.get(
+                "diagnostics",
+                []
+            )
 
-        start_index = safe_int(
-            checkpoint.get(
-                "nextIndex",
-                len(results),
-            ),
-            len(results),
-        )
+            start_index = int(
+                checkpoint.get(
+                    "nextIndex",
+                    len(results)
+                )
+            )
 
-        print()
-        print(
-            "RESUMING FROM CHECKPOINT"
-        )
+            print()
+            print(
+                "RESUMING FROM CHECKPOINT"
+            )
 
-        print(
-            f"Already processed: "
-            f"{start_index:,}"
-        )
+            print(
+                f"Already processed: "
+                f"{start_index:,}"
+            )
+
+        else:
+
+            print(
+                "No checkpoint found."
+            )
 
     else:
 
-        print()
         print(
             "Starting fresh."
         )
 
     # --------------------------------------------------------
-    # Protect against checkpoint beyond limit.
-    # --------------------------------------------------------
-
-    if start_index >= target_total:
-
-        print()
-        print(
-            "Nothing left to process "
-            "for the requested limit."
-        )
-
-        print_summary(
-            results,
-            diagnostics,
-        )
-
-        return
-
-    # --------------------------------------------------------
-    # Process players.
+    # Processing
     # --------------------------------------------------------
 
     for index in range(
         start_index,
-        target_total,
+        target_total
     ):
 
-        player = players[index]
+        player = players[
+            index
+        ]
 
-        name = (
-            player.get("playerName")
-            or player.get("name")
-            or player.get("fullName")
+        player_name = (
+            player.get(
+                "playerName"
+            )
+            or player.get(
+                "name"
+            )
+            or player.get(
+                "fullName"
+            )
             or "UNKNOWN"
         )
 
         print(
-            f"[{index + 1:,}/{target_total:,}] "
-            f"{name}",
+            f"[{index + 1:,}/"
+            f"{target_total:,}] "
+            f"{player_name}",
             end=" ",
-            flush=True,
+            flush=True
         )
 
         try:
@@ -1492,8 +1501,7 @@ def main():
             enriched, diagnostic = (
                 enrich_player(
                     player,
-                    index,
-                    target_total,
+                    index
                 )
             )
 
@@ -1505,28 +1513,33 @@ def main():
                 diagnostic
             )
 
-            if diagnostic[
-                "status"
-            ] == "matched":
+            if (
+                diagnostic["status"]
+                == "matched"
+            ):
 
                 print(
-                    f"→ MATCH "
+                    "→ MATCH "
                     f"{diagnostic['wikidataId']} "
-                    f"({diagnostic['reason']})"
+                    f"("
+                    f"{diagnostic['reason']}"
+                    ")"
                 )
 
             else:
 
                 print(
-                    f"→ UNMATCHED "
-                    f"({diagnostic['reason']})"
+                    "→ UNMATCHED "
+                    f"("
+                    f"{diagnostic['reason']}"
+                    ")"
                 )
 
         except KeyboardInterrupt:
 
             print()
             print(
-                "Interrupted by user."
+                "Interrupted."
             )
 
             print(
@@ -1537,11 +1550,12 @@ def main():
                 checkpoint_path,
                 results,
                 diagnostics,
-                index,
+                index
             )
 
-            print(
-                "Checkpoint saved."
+            write_diagnostics(
+                diagnostics_path,
+                diagnostics
             )
 
             raise
@@ -1552,7 +1566,6 @@ def main():
                 f"→ ERROR: {exc}"
             )
 
-            # Preserve the original record.
             error_result = dict(
                 player
             )
@@ -1568,9 +1581,11 @@ def main():
                     "enrichmentError": str(
                         exc
                     ),
-                    "enrichmentCheckedAt":
-                        datetime.utcnow().isoformat()
-                        + "Z",
+                    "enrichmentCheckedAt": (
+                        datetime.utcnow()
+                        .isoformat()
+                        + "Z"
+                    ),
                 }
             )
 
@@ -1581,7 +1596,9 @@ def main():
             diagnostics.append(
                 {
                     "index": index,
-                    "playerName": str(name),
+                    "playerName": str(
+                        player_name
+                    ),
                     "status": "error",
                     "reason": "processing_error",
                     "wikidataId": "",
@@ -1596,7 +1613,7 @@ def main():
             )
 
         # ----------------------------------------------------
-        # Checkpoint.
+        # Checkpoint every 100 players.
         # ----------------------------------------------------
 
         processed = index + 1
@@ -1608,31 +1625,29 @@ def main():
 
             print()
             print(
-                f"Saving checkpoint at "
-                f"{processed:,}..."
+                f"Saving checkpoint "
+                f"({processed:,})..."
             )
 
             save_checkpoint(
                 checkpoint_path,
                 results,
                 diagnostics,
-                processed,
+                processed
             )
 
             write_diagnostics(
                 diagnostics_path,
-                diagnostics,
+                diagnostics
             )
 
             print(
                 "Checkpoint saved."
             )
 
-            print()
-
-    # ========================================================
-    # FINAL OUTPUT
-    # ========================================================
+    # --------------------------------------------------------
+    # FINAL DATABASE
+    # --------------------------------------------------------
 
     if wrapper is not None:
 
@@ -1648,38 +1663,33 @@ def main():
 
         final_database = results
 
-    print()
-    print(
-        "Writing final enriched database..."
-    )
-
     save_json(
         output_path,
-        final_database,
+        final_database
     )
 
     write_diagnostics(
         diagnostics_path,
-        diagnostics,
+        diagnostics
     )
 
+    print()
     print(
-        "Final database written:"
+        "FINAL DATABASE CREATED:"
     )
 
     print(
         output_path.resolve()
     )
 
-    print()
     print_summary(
         results,
-        diagnostics,
+        diagnostics
     )
 
     print()
     print(
-        "Diagnostics written:"
+        "DIAGNOSTICS CREATED:"
     )
 
     print(
@@ -1688,13 +1698,9 @@ def main():
 
     print()
     print(
-        "DONE."
+        "ENRICHMENT COMPLETE."
     )
 
-
-# ============================================================
-# ENTRY POINT
-# ============================================================
 
 if __name__ == "__main__":
     main()

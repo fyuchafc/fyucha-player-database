@@ -1,7 +1,7 @@
 {
   "database": "Fyucha Football Player Master Database",
   "version": "1.0.0",
-  "generatedAt": "2026-09-27T09:14:18.374182+00:00",
+  "generatedAt": "2026-10-04T09:45:50.788062+00:00",
   "source": {
     "name": "OpenFootball Players",
     "repository": "https://github.com/openfootball/players",
